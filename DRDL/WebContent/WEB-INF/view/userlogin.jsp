@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<form:form method="post" action="plogin" commandName="projectManager"
+	<form:form method="post" action="login" commandName="user"
 		class="form-horizontal">
 		<div class="container">
 			<div class="panel panel-primary modal-dialog ">
@@ -47,10 +47,10 @@
 					</div>
 					<div class="form-group">
 						<div class="col-lg-offset-2 col-lg-10">
-							<a href="addProjectManager" class="btn btn-primary">New Sign
+							<a href="addUser" class="btn btn-primary">New Sign
 								In</a>
 							<button type="submit" class="btn btn-primary">
-								<spring:message code="label.projectManagerLogin" />
+								<spring:message code="label.userLogin" />
 							</button>
 						</div>
 

@@ -11,6 +11,9 @@
 <link href="<c:url value="/resources/css/fileinput.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/fileinput.min.js" type="text/javascript"></script>
+<link href="<c:url value="/resources/css/bootstrap.min.css" />"
+	rel="stylesheet" type="text/css" />
+<script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
 
 
 <script language="javascript" type="text/javascript">
@@ -38,10 +41,18 @@ body {
 </head>
 <body>
 <div class="page-header">
-   <h1 align="center">DRDL   
+   <h1 align="center">Defence Research and Development Organisation   
    </h1>
    <ul class="nav nav-tabs">
-   <li><a href="#">MASTERS</a></li>
+    <li class="dropdown" >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MASTERS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li> 
+          </ul>
+        </li>
    <li><a href="#">TRANSACTIONS</a></li>
    <li><a href="#">DECISION</a></li>
    <li><a href="#">QUERY FORMS</a></li>

@@ -25,7 +25,7 @@ public class ProjectManagerController {
 	@Autowired
 	private ProjectManagerService projectManagerService;
 
-	@RequestMapping(value="/login",method = RequestMethod.GET)
+	@RequestMapping(value="/plogin",method = RequestMethod.GET)
 	public ModelAndView showProjectManagerLogin(Map model, HttpSession session) {
 		if (session.getAttribute("name") == null) {
 			ProjectManager projectManager = new ProjectManager();
@@ -36,7 +36,7 @@ public class ProjectManagerController {
 		}
 	}
 
-	@RequestMapping(value="/login",method = RequestMethod.POST)
+	@RequestMapping(value="/plogin",method = RequestMethod.POST)
 	public ModelAndView processProjectManagerLogin(@Valid ProjectManager projectManager,
 			BindingResult result, Map model, HttpSession session) {
 		projectManagerLoginValidator.validate(projectManager, result);
@@ -64,7 +64,7 @@ public class ProjectManagerController {
 			return "projectManager";
 		}
 		projectManagerService.addProjectManager(projectManager);
-		return "redirect:/login";
+		return "redirect:/plogin";
 	}
 
 

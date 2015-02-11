@@ -9,6 +9,9 @@
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/b64.js"></script>
+<link href="<c:url value="/resources/css/bootstrap.min.css" />"
+	rel="stylesheet" type="text/css" />
+<script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
 <script language="javascript" type="text/javascript">
 	$(function() {
 		var str = $('#txt-image').val();
@@ -33,7 +36,7 @@ body {
 
 <body>
 <div class="page-header">
-   <h1 align="center">DRDL   
+   <h1 align="center">Defence Research and Development Organisation   
    </h1>
    <ul class="nav nav-tabs">
    <li><a href="#">MASTERS</a></li>

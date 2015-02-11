@@ -5,10 +5,13 @@
 <head>
     <title>Employee List</title>
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet" type="text/css"/>
+<link href="<c:url value="/resources/css/bootstrap.min.css" />"
+	rel="stylesheet" type="text/css" />
+<script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="page-header">
-   <h1 align="center">DRDL   
+   <h1 align="center">Defence Research and Development Organisation   
    </h1>
    <ul class="nav nav-tabs">
    <li><a href="#">MASTERS</a></li>
