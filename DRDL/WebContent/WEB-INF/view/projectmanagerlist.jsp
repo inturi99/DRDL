@@ -3,15 +3,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Employee List</title>
- <!-- <script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  -->
+    <title>ProjectManger List</title>
  <script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
  <script src="./resources/js/jquery-ui-1.10.2.smoothness.min.js" type="text/javascript"></script>
  <script src="./resources/js/jquery-validate.min.js" type="text/javascript"></script>
 
- <link href="<c:url value="/resources/css/bootstrap.css" />"
+<link href="<c:url value="/resources/css/bootstrap.css" />"
 	rel="stylesheet" type="text/css" />
 <link href="<c:url value="/resources/css/fileinput.min.css" />"
 	rel="stylesheet" type="text/css" />
@@ -25,7 +22,7 @@
    <h1 align="center">Defence Research and Development Organisation   
    </h1>
    <ul class="nav nav-tabs">
-    <li class="dropdown" >
+   <li class="dropdown" >
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MASTERS
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -42,34 +39,36 @@
     <li><a href="list">EMPLOYEE</a></li>
    </ul>
 <div style="padding: 25px">
-    <a href="addEmployee" class="btn btn-primary">
+    <a href="addProjectManager" class="btn btn-primary">
     <span class="glyphicon glyphicon-plus"></span>
-    Employee</a>
+    ProjectManager</a>
 <div class="table-responsive">
-<c:if test="${!empty employeeList}">
+<c:if test="${!empty pmList}">
     <table class="table table-striped table-bordered">
         <thead class="table-head">
         <tr>
+         <th class="text-center">Code</th>
             <th class="text-center">Name</th>
-            <th class="text-center">Email</th>
-          <th class="text-center">Date Of Birth</th>
-            <th class="text-center">Qualififaction</th>
-            <th class="text-center">lab</th>
+            <th class="text-center">Grade</th>
+          <th class="text-center">Designation</th>
+            <th class="text-center">Phone Number</th>
+            <th class="text-center">E-mail</th>
             <th></th>
             <th></th>
         </tr>
         </thead>
-        <c:forEach items="${employeeList}" var="employee">
+        <c:forEach items="${pmList}" var="projectManager">
             <tr>
-                <td align="center">${employee.name} </td>
-                <td align="center">${employee.email}</td>
-                  <td align="center">${employee.dob}</td>
-               <td align="center">${employee.qual} </td>
-                <td align="center">${employee.lab}</td>
+                <td align="center">${projectManager.pmcode} </td>
+                <td align="center">${projectManager.name}</td>
+                  <td align="center">${projectManager.grade}</td>
+               <td align="center">${projectManager.designation} </td>
+               <td align="center">${projectManager.phoneNumber}</td>
+                <td align="center">${projectManager.email}</td>
                
               
-                 <td align="center"><a href="edit?id=${employee.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td align="center"><a href="delete/${employee.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                 <td align="center"><a href="editProjectManager?id=${projectManager.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td align="center"><a href="deleteProjectManager/${projectManager.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
     </table>

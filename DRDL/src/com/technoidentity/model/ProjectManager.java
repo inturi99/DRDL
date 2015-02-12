@@ -8,40 +8,39 @@ import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.Email;
 
 @Entity
-@Table(name="ProjectManager")
+@Table(name = "ProjectManager")
+@Proxy(lazy=false)
 public class ProjectManager {
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
 	private Integer id;
 
-	 @Column(name = "name")
-	 @Size(min = 2, max = 30)
-	 private String name;
-
-	@Column(name = "password")
+	@Column(name = "pmcode")
 	@Size(min = 2, max = 30)
-	private String password;
+	private String pmcode;
 
+	@Column(name = "name")
+	@Size(min = 2, max = 30)
+	private String name;
+
+	@Column(name = "grade")
+	private String grade;
 	@Column(name = "designation")
 	@Size(min = 2, max = 30)
 	private String designation;
 
-	@Column(name = "project")
-	@Size(min = 2, max = 30)
-	private String project;
-
 	@Email
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "phoneNumber")
 	@Pattern(regexp = "^[0-9]{6,14}$")
 	private String phoneNumber;
-
 
 	public Integer getId() {
 		return id;
@@ -49,6 +48,14 @@ public class ProjectManager {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getPmcode() {
+		return pmcode;
+	}
+
+	public void setPmcode(String pmcode) {
+		this.pmcode = pmcode;
 	}
 
 	public String getName() {
@@ -59,14 +66,6 @@ public class ProjectManager {
 		this.name = name;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getDesignation() {
 		return designation;
 	}
@@ -74,13 +73,13 @@ public class ProjectManager {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-
-	public String getProject() {
-		return project;
+  
+	public String getGrade() {
+		return grade;
 	}
 
-	public void setProject(String project) {
-		this.project = project;
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 
 	public String getEmail() {
@@ -94,10 +93,9 @@ public class ProjectManager {
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-
+    
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	
 }

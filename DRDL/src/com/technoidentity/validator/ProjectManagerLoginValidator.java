@@ -1,4 +1,4 @@
-package com.technoidentity.validator;
+/*package com.technoidentity.validator;
 
 import java.util.List;
 
@@ -32,3 +32,4 @@ public class ProjectManagerLoginValidator {
 		 }
     }
  }
+*/

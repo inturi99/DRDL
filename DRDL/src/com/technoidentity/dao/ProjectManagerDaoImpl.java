@@ -6,7 +6,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.technoidentity.model.Employee;
 import com.technoidentity.model.ProjectManager;
 @Repository
 public class ProjectManagerDaoImpl implements ProjectManagerDao{
@@ -17,24 +16,32 @@ public class ProjectManagerDaoImpl implements ProjectManagerDao{
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(projectManager);
 	}
-
-
 	@Override
-	public List<ProjectManager> validateLoginEmployee(String name, String password) {
-		return sessionFactory
-				.getCurrentSession()
-				.createQuery(
-						"from ProjectManager where name=:name and password=:password")
-				.setString("name", name).setString("password",
-						password).list();
+	public void updateProjectManager(ProjectManager projectManager) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().update(projectManager);
+	}
+	@Override
+	public ProjectManager getProjectManagerId(Integer id) {
+		// TODO Auto-generated method stub
+		ProjectManager projectManager=(ProjectManager)sessionFactory.getCurrentSession().load(ProjectManager.class, new Integer(id));
+		return projectManager;
+	}
+	@Override
+	public List<ProjectManager> listProjectManagers() {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery("from ProjectManager").list();
+	}
+	@Override
+	public void removeProjectManager(Integer id) {
+		// TODO Auto-generated method stub
+		ProjectManager projectManager=(ProjectManager)sessionFactory.getCurrentSession().load(ProjectManager.class, id);
+		if(projectManager !=null){
+			sessionFactory.getCurrentSession().delete(projectManager);
+		}
 	}
 
-	@Override
-	public List<ProjectManager> getEmployeeByEmployee(String name) {
-		return sessionFactory.getCurrentSession().createQuery(
-				"from ProjectManager where name=:name").setParameter(
-				"name", name).list();
-	}
 
+	
 		
 }

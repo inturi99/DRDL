@@ -4,9 +4,13 @@
 <html>
 <head>
 <title>Empoyee</title>
-<script type="text/javascript"
+<!-- <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<link href="<c:url value="/resources/css/bootstrap.css" />"
+ -->
+ <script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+ <script src="./resources/js/jquery-ui-1.10.2.smoothness.min.js" type="text/javascript"></script>
+ <script src="./resources/js/jquery-validate.min.js" type="text/javascript"></script>
+ <link href="<c:url value="/resources/css/bootstrap.css" />"
 	rel="stylesheet" type="text/css" />
 <link href="<c:url value="/resources/css/fileinput.min.css" />"
 	rel="stylesheet" type="text/css" />
@@ -48,7 +52,7 @@ body {
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MASTERS
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
+            <li><a href="pmList">Project Manager </a></li>
             <li><a href="#">Page 1-2</a></li>
             <li><a href="#">Page 1-3</a></li> 
           </ul>

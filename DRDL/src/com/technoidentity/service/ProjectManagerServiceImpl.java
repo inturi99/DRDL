@@ -19,16 +19,26 @@ public class ProjectManagerServiceImpl implements ProjectManagerService {
 		
 	}
 	@Transactional
-	public List<ProjectManager> validateLoginEmployee(String name, String password) {
+	public void updateProjectManager(ProjectManager projectManager) {
 		// TODO Auto-generated method stub
-		return projectManagerDao.validateLoginEmployee(name, password);
+		projectManagerDao.updateProjectManager(projectManager);
 	}
-
 	@Transactional
-	public List<ProjectManager> getEmployeeByEmployee(String name) {
+	public ProjectManager getProjectManagerId(Integer id) {
 		// TODO Auto-generated method stub
-		return projectManagerDao.getEmployeeByEmployee(name);
+		return projectManagerDao.getProjectManagerId(id);
 	}
+	@Transactional
+	public List<ProjectManager> listProjectManagers() {
+		// TODO Auto-generated method stub
+		return projectManagerDao.listProjectManagers();
+	}
+	@Transactional
+	public void removeProjectManager(Integer id) {
+		// TODO Auto-generated method stub
+		projectManagerDao.removeProjectManager(id);
+	}
+	
 
 	
 
