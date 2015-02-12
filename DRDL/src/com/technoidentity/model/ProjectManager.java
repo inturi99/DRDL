@@ -1,19 +1,18 @@
 package com.technoidentity.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Proxy;
-import org.hibernate.validator.constraints.Email;
 
 @Entity
 @Table(name = "ProjectManager")
-@Proxy(lazy=false)
+@Proxy(lazy = false)
 public class ProjectManager {
 	@Id
 	@GeneratedValue
@@ -21,26 +20,24 @@ public class ProjectManager {
 	private Integer id;
 
 	@Column(name = "pmcode")
-	@Size(min = 2, max = 30)
 	private String pmcode;
 
 	@Column(name = "name")
-	@Size(min = 2, max = 30)
 	private String name;
 
 	@Column(name = "grade")
 	private String grade;
 	@Column(name = "designation")
-	@Size(min = 2, max = 30)
 	private String designation;
 
-	@Email
 	@Column(name = "email")
 	private String email;
 
 	@Column(name = "phoneNumber")
-	@Pattern(regexp = "^[0-9]{6,14}$")
 	private String phoneNumber;
+
+	@Column(name = "dob")
+	private Date dob;
 
 	public Integer getId() {
 		return id;
@@ -73,7 +70,7 @@ public class ProjectManager {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-  
+
 	public String getGrade() {
 		return grade;
 	}
@@ -93,9 +90,17 @@ public class ProjectManager {
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-    
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 
 }

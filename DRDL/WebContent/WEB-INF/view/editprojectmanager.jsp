@@ -104,7 +104,14 @@ body {
 										cssClass="form-control" />
 								</div>
 							</div>
-							
+							 <div class="form-group">
+								<label for="dob" class="col-sm-2 control-label">Date of Birth
+									</label>
+								<div class="col-sm-4">
+									<form:input path="dob" placeholder="Date of Birth"
+										cssClass="form-control" />
+								</div>
+							</div>
 						<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<button type="submit" class="btn btn-primary">

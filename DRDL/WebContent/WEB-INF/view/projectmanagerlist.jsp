@@ -53,6 +53,7 @@
           <th class="text-center">Designation</th>
             <th class="text-center">Phone Number</th>
             <th class="text-center">E-mail</th>
+            <th class="text-center">Date Of Birth</th>
             <th></th>
             <th></th>
         </tr>
@@ -65,7 +66,9 @@
                <td align="center">${projectManager.designation} </td>
                <td align="center">${projectManager.phoneNumber}</td>
                 <td align="center">${projectManager.email}</td>
+                <td align="center">${projectManager.dob}</td>
                
+              
               
                  <td align="center"><a href="editProjectManager?id=${projectManager.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td align="center"><a href="deleteProjectManager/${projectManager.id}"><span class="glyphicon glyphicon-remove"></span></a></td>

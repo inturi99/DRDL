@@ -9,8 +9,6 @@
 	type="text/javascript"></script>
 <script src="./resources/js/jquery-validate.min.js"
 	type="text/javascript"></script>
-
-<script src="./resources/js/jquery.min.js" type="text/javascript"></script>
 <link href="<c:url value="/resources/css/bootstrap.css" />"
 	rel="stylesheet" type="text/css" />
 <link href="<c:url value="/resources/css/fileinput.min.css" />"
@@ -101,7 +99,15 @@
 										cssClass="form-control" />
 								</div>
 							</div>
-
+                             <div class="form-group">
+								<label for="dob" class="col-sm-2 control-label">Date of Birth
+									</label>
+								<div class="col-sm-4">
+									<form:input path="dob" placeholder="Date of Birth"
+										cssClass="form-control" />
+								</div>
+							</div>
+                             
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<button type="submit" class="btn btn-primary">

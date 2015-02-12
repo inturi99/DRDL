@@ -28,9 +28,7 @@ public class ProjectManagerController {
 		  }
 	@RequestMapping(value="/addProjectManager",method=RequestMethod.POST)
 	public String addProjectManager(@ModelAttribute("projectManager") @Valid ProjectManager projectManager,BindingResult result){
-		if(result.hasErrors()){
-			return "projectmanager";
-		}
+		
 		projectManagerService.addProjectManager(projectManager);
 		return "redirect:/pmList";
 	}
