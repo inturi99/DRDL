@@ -17,7 +17,20 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
-
+<link href="<c:url value="/resources/css/datepicker.css" />"
+	rel="stylesheet" type="text/css" />
+<script src="./resources/js/bootstrap-datepicker.js" type="text/javascript"></script>
+ <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                $('#dobdatepicker').datepicker({
+                    format: "yyyy-mm-dd",
+                    showMeridian: true,
+                    autoclose: true,
+                });  
+            
+            });
+        </script>
 <style>
 .error {
 	color: #ee0d25;
@@ -99,12 +112,16 @@
 										cssClass="form-control" />
 								</div>
 							</div>
-                             <div class="form-group">
+                             <div class="form-group" >
 								<label for="dob" class="col-sm-2 control-label">Date of Birth
 									</label>
 								<div class="col-sm-4">
-									<form:input path="dob" placeholder="Date of Birth"
-										cssClass="form-control" />
+								  <div class="input-group">
+									<form:input path="dob"  id="dobdatepicker" placeholder="Date of Birth"
+										cssClass="date-picker form-control" />
+										 <label for="dobdatepicker" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                                      </label>
+								</div>
 								</div>
 							</div>
                              
