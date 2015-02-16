@@ -29,7 +29,7 @@ public class ProjectManagerController {
 	@RequestMapping(value="/addProjectManager",method=RequestMethod.POST)
 	public String addProjectManager(@ModelAttribute("projectManager") @Valid ProjectManager projectManager,BindingResult result){
 		
-		projectManagerService.addProjectManager(projectManager);
+		projectManagerService.addProjectManager(projectManager);;
 		return "redirect:/pmList";
 	}
 	@RequestMapping("/pmList")
