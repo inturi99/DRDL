@@ -118,10 +118,9 @@ body {
 							<div class="form-group">
 								<label for="photo" class="col-sm-2 control-label">Photo</label>
 								<div class="col-sm-9">
+								<img id=image class="img-responsive" alt="Cinque Terre" width="125" height="125">
 									<form:input id="txt-image" type="hidden" path="photo"
 										placeholder="photo" cssClass="form-control" />
-									<img id=image alt="" src="">
-
 								</div>
 							</div>
 							<div class="form-group">
