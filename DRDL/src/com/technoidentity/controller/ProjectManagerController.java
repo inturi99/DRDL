@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.technoidentity.model.ProjectManager;
+import com.technoidentity.dto.ProjectManagerDto;
 import com.technoidentity.service.ProjectManagerService;
 
 @Controller
@@ -23,13 +23,13 @@ public class ProjectManagerController {
 	private ProjectManagerService projectManagerService;
 	@RequestMapping(value="/addProjectManager",method=RequestMethod.GET)
 	 public String loadProjectManager(Map<String,Object> map){
-			map.put("projectManager", new ProjectManager());
+			map.put("projectManager", new ProjectManagerDto());
 		return "projectmanager";
 		  }
 	@RequestMapping(value="/addProjectManager",method=RequestMethod.POST)
-	public String addProjectManager(@ModelAttribute("projectManager") @Valid ProjectManager projectManager,BindingResult result){
+	public String addProjectManager(@ModelAttribute("projectManager") @Valid ProjectManagerDto projectManagerDto,BindingResult result){
 		
-		projectManagerService.addProjectManager(projectManager);;
+		projectManagerService.addProjectManager(projectManagerDto);;
 		return "redirect:/pmList";
 	}
 	@RequestMapping("/pmList")
@@ -46,10 +46,10 @@ public class ProjectManagerController {
 	}
 
 	@RequestMapping(value = "/editProjectManager", method = RequestMethod.POST)
-	public String updateeditProjectManager(@ModelAttribute("projectManager") ProjectManager projectManager,
+	public String updateeditProjectManager(@ModelAttribute("projectManager") ProjectManagerDto projectManagerDto,
 			@RequestParam(value = "id", required = true) Integer id, Model model) {
-		projectManager.setId(id);
-		projectManagerService.updateProjectManager(projectManager);;
+		projectManagerDto.setId(id);
+		projectManagerService.updateProjectManager(projectManagerDto);;
 		model.addAttribute("id", id);
 		return "redirect:/pmList";
 	}

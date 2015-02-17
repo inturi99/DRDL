@@ -24,7 +24,7 @@
             // When the document is ready
             $(document).ready(function () {
                 $('#dobdatepicker').datepicker({
-                    format: "yyyy-mm-dd",
+                    format: "dd/mm/yyyy",
                     showMeridian: true,
                     autoclose: true,
                 });  
