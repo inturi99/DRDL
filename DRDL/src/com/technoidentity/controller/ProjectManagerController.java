@@ -40,14 +40,14 @@ public class ProjectManagerController {
 	}
 	@RequestMapping(value = "/editProjectManager", method = RequestMethod.GET)
 	public String geteditProjectManagerId(
-			@RequestParam(value = "id", required = true) Integer id, Model model) {
+			@RequestParam(value = "id", required = true) String id, Model model) {
 		model.addAttribute("projectManagerDto", projectManagerService.getProjectManagerId(id));
 		return "editprojectmanager";
 	}
 
 	@RequestMapping(value = "/editProjectManager", method = RequestMethod.POST)
 	public String updateeditProjectManager(@ModelAttribute("projectManagerDto") ProjectManagerDto projectManagerDto,
-			@RequestParam(value = "id", required = true) Integer id, Model model) {
+			@RequestParam(value = "id", required = true) String id, Model model) {
 		projectManagerDto.setId(id);
 		projectManagerService.updateProjectManager(projectManagerDto);;
 		model.addAttribute("id", id);

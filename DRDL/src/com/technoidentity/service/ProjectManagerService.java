@@ -10,9 +10,9 @@ public interface ProjectManagerService {
 
 	public void updateProjectManager(ProjectManagerDto projectManagerDto);
 
-	public ProjectManager getProjectManagerId(Integer id);
+	public ProjectManager getProjectManagerId(String id);
 
-	public List<ProjectManager> listProjectManagers();
+	public List<ProjectManagerDto> listProjectManagers();
 
 	public void removeProjectManager(Integer id);
 }
