@@ -2,12 +2,13 @@ package com.technoidentity.service;
 
 import java.util.List;
 
+import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.model.Employee;
 
 public interface EmployeeService {
-	public void addEmployee(Employee employee);
+	public void addEmployee(EmployeeDto employeeDto);
 	public Employee getEmployeeId(Integer id);
-	public void updateEmpolyee(Employee employee);
+	public void updateEmpolyee(EmployeeDto employeeDto);
     public List<Employee> listEmployees();
 
     public void removeEmloyee(Integer id);

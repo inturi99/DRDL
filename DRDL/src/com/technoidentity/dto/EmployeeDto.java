@@ -1,141 +1,62 @@
-package com.technoidentity.model;
+package com.technoidentity.dto;
 
 
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
-import javax.validation.constraints.Size;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import org.hibernate.annotations.Proxy;
-import org.hibernate.validator.constraints.Email;
+public class EmployeeDto {
 
-@Entity
-@Table(name = "Employee")
-@Proxy(lazy = false)
-public class Employee {
-	@Id
-	@GeneratedValue
-	@Column(name = "id")
 	private Integer id;
-
-	@Column(name = "name")
-	@Size(min = 2, max = 30)
 	private String name;
-
-	@Column(name = "designation")
-	@Size(min = 2, max = 30)
 	private String designation;
-
-	@Column(name = "project")
-	@Size(min = 2, max = 30)
 	private String project;
-
-	@Email
-	@Column(name = "email")
 	private String email;
-
-	@Column(name = "qual")
-	@Size(min = 2, max = 20)
 	private String qual;
-	@Column(name = "lab")
-	@Size(min = 2, max = 10)
 	private String lab;
-
-	@Column(name = "dob")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dob;
-	@Column(name = "idcardno")
-	@Size(min = 4, max = 6)
 	private String idcardno;
-	@Column(name = "doj")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date doj;
-	@Column(name = "dol")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dol;
-	@Column(name = "wkc")
-	@Size(min = 2, max = 15)
 	private String wkc;
-	@Column(name = "dept")
-	@Size(min = 15, max = 100)
 	private String dept;
-	@Column(name = "pmcode")
-	
+
 	private Integer pmcode;
-	@Column(name = "iboss")
-	
+
 	private Integer iboss;
-
-	@Column(name = "resp")
-	@Size(min = 0, max = 255)
 	private String resp;
-	@Column(name = "job")
-	@Size(min = 0, max = 255)
 	private String job;
-	@Column(name = "salary")
-	
-	private Integer salary;
-	@Column(name = "paddress")
-	@Size(min = 0, max = 255)
-	private String paddress;
 
-	@Column(name = "pphone")
+	private Integer salary;
+	private String paddress;
 	private Integer pphone;
-	@Column(name = "taddress")
-	@Size(min = 0, max = 255)
 	private String taddress;
-	@Column(name = "tphone")
 	private Integer tphone;
-	@Column(name = "type")
-	@Size(min = 0, max = 10)
 	private String type;
-	@Column(name = "consigno")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date consigno;
-	
-	@Column(name = "conexpon")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date conexpon;
-	
-	@Column(name = "service")
-	@Size(min = 0, max = 10)
 	private String service;
-	@Column(name = "wkcphone")
-	@Size(min = 0, max = 13)
 	private String wkcphone;
-	@Column(name = "emptype")
-	@Size(min = 1, max = 3)
 	private String emptype;
-	@Column(name = "password")
-	@Size(min = 2, max = 8)
 	private String password;
-	@Column(name = "photo")
-	@Lob
 	private String Photo;
-	@Column(name = "catg")
-	@Size(min = 0, max = 100)
 	private String catg;
-	@Column(name = "start_sal")
 	private Integer start_sal;
-	@Column(name = "board_type")
-	@Size(min = 2, max = 4)
 	private String board_type;
-	@Column(name = "update_on")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date update_on;
-	@Column(name = "dot")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dot;
-	@Column(name = "empid_new")
-	@Size(min = 2, max = 5)
 	private String empid_new;
-	@Column(name = "mobile")
 	private Integer mobile;
 
-	@Column(name = "verified")
-	@Size(min = 2, max = 10)
 	private String verified;
-	@Column(name = "punch")
-	@Size(min = 2, max = 5)
 	private String punch;
 
 	public Integer getPmcode() {

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.model.Employee;
 import com.technoidentity.service.EmployeeService;
 
@@ -26,26 +27,26 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
-		map.put("employee", new Employee());
+		map.put("employee", new EmployeeDto());
 		return "employee";
 	}
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
 	public String addEmployee(
-			@ModelAttribute("employee") @Valid Employee employee,
+			@ModelAttribute("employee") @Valid EmployeeDto employeeDto,
 			BindingResult result, @RequestParam("photo") MultipartFile[] photo) {
 		try {
 			for (MultipartFile aFile : photo) {
 				String s = new sun.misc.BASE64Encoder().encode(aFile.getBytes());
 
-				employee.setPhoto(s);
+				employeeDto.setPhoto(s);
 			}
 
 		} catch (IOException ie) {
 			ie.printStackTrace();
 		}
 		try {
-			employeeService.addEmployee(employee);
+			employeeService.addEmployee(employeeDto);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -75,10 +76,10 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
-	public String updateEmployee(@ModelAttribute("employee") Employee employee,
+	public String updateEmployee(@ModelAttribute("employee") EmployeeDto employeeDto,
 			@RequestParam(value = "id", required = true) Integer id, Model model) {
-		employee.setId(id);
-		employeeService.updateEmpolyee(employee);
+		employeeDto.setId(id);
+		employeeService.updateEmpolyee(employeeDto);
 		model.addAttribute("id", id);
 		return "redirect:/list";
 	}

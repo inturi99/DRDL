@@ -30,7 +30,7 @@
 // When the document is ready
 $(document).ready(function () {
     $('.date-picker').datepicker({
-        format: "yyyy-mm-dd",
+        format: "dd/mm/yyyy",
         showMeridian: true,
         autoclose: true,
     });  
