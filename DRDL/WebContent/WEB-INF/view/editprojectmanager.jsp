@@ -69,8 +69,8 @@ body {
 					<h4 class=" panel-title text-center">Edit ProjectManager</h4>
 				</div>
 				<div class="panel-body">
-					<c:url var="saveUrl" value="editProjectManager?id=${projectManager.id}" />
-					<form:form modelAttribute="projectManager" method="post"
+					<c:url var="saveUrl" value="editProjectManager?id=${projectManagerDto.id}" />
+					<form:form modelAttribute="projectManagerDto" method="post"
 						action="${saveUrl}" cssClass="form-horizontal">
 				<div class="form-group">
 								<label for="pmcode" class="col-sm-2 control-label">Project Manager Code</label>

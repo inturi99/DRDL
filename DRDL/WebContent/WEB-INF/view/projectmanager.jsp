@@ -65,7 +65,7 @@
 					</div>
 					<div class="panel-body">
 						<form:form method="post" action="addProjectManager"
-							commandName="projectManager" cssClass="form-horizontal">
+							commandName="projectManagerDto" cssClass="form-horizontal">
 							<div class="form-group">
 								<label for="pmcode" class="col-sm-2 control-label">Project
 									Manager Code</label>

@@ -23,11 +23,11 @@ public class ProjectManagerController {
 	private ProjectManagerService projectManagerService;
 	@RequestMapping(value="/addProjectManager",method=RequestMethod.GET)
 	 public String loadProjectManager(Map<String,Object> map){
-			map.put("projectManager", new ProjectManagerDto());
+			map.put("projectManagerDto", new ProjectManagerDto());
 		return "projectmanager";
 		  }
 	@RequestMapping(value="/addProjectManager",method=RequestMethod.POST)
-	public String addProjectManager(@ModelAttribute("projectManager") @Valid ProjectManagerDto projectManagerDto,BindingResult result){
+	public String addProjectManager(@ModelAttribute("projectManagerDto") @Valid ProjectManagerDto projectManagerDto,BindingResult result){
 		
 		projectManagerService.addProjectManager(projectManagerDto);;
 		return "redirect:/pmList";
@@ -41,12 +41,12 @@ public class ProjectManagerController {
 	@RequestMapping(value = "/editProjectManager", method = RequestMethod.GET)
 	public String geteditProjectManagerId(
 			@RequestParam(value = "id", required = true) Integer id, Model model) {
-		model.addAttribute("projectManager", projectManagerService.getProjectManagerId(id));
+		model.addAttribute("projectManagerDto", projectManagerService.getProjectManagerId(id));
 		return "editprojectmanager";
 	}
 
 	@RequestMapping(value = "/editProjectManager", method = RequestMethod.POST)
-	public String updateeditProjectManager(@ModelAttribute("projectManager") ProjectManagerDto projectManagerDto,
+	public String updateeditProjectManager(@ModelAttribute("projectManagerDto") ProjectManagerDto projectManagerDto,
 			@RequestParam(value = "id", required = true) Integer id, Model model) {
 		projectManagerDto.setId(id);
 		projectManagerService.updateProjectManager(projectManagerDto);;

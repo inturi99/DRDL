@@ -58,20 +58,20 @@
             <th></th>
         </tr>
         </thead>
-        <c:forEach items="${pmList}" var="projectManager">
+        <c:forEach items="${pmList}" var="projectManagerDto">
             <tr>
-                <td align="center">${projectManager.pmcode} </td>
-                <td align="center">${projectManager.name}</td>
-                  <td align="center">${projectManager.grade}</td>
-               <td align="center">${projectManager.designation} </td>
-               <td align="center">${projectManager.phoneNumber}</td>
-                <td align="center">${projectManager.email}</td>
-                <td align="center">${projectManager.dob}</td>
+                <td align="center">${projectManagerDto.pmcode} </td>
+                <td align="center">${projectManagerDto.name}</td>
+                  <td align="center">${projectManagerDto.grade}</td>
+               <td align="center">${projectManagerDto.designation} </td>
+               <td align="center">${projectManagerDto.phoneNumber}</td>
+                <td align="center">${projectManagerDto.email}</td>
+                <td align="center">${projectManagerDto.dob}</td>
                
               
               
-                 <td align="center"><a href="editProjectManager?id=${projectManager.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td align="center"><a href="deleteProjectManager/${projectManager.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                 <td align="center"><a href="editProjectManager?id=${projectManagerDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td align="center"><a href="deleteProjectManager/${projectManagerDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
     </table>
