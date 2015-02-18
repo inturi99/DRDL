@@ -1,5 +1,6 @@
 package com.technoidentity.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,9 +105,58 @@ public class EmployeeServiceImpl  implements EmployeeService{
 		employeeDao.updateEmployee(employee);
 	}
 	@Transactional
-	public List<Employee> listEmployees() {
+	public List<EmployeeDto> listEmployees() {
 		// TODO Auto-generated method stub
-		return employeeDao.listEmployees();
+		List<EmployeeDto> employeeDtoList=new ArrayList<EmployeeDto>();
+		try{
+		List<Employee> employeeList=employeeDao.listEmployees();
+		for(Employee employee :employeeList){
+			EmployeeDto employeeDto=new EmployeeDto();
+			employeeDto.setId(employee.getId());
+			employeeDto.setName(employee.getName());
+			employeeDto.setDesignation(employee.getDesignation());
+			employeeDto.setProject(employee.getProject());
+			employeeDto.setEmail(employee.getEmail());
+			employeeDto.setQual(employee.getQual());
+			employeeDto.setLab(employee.getLab());
+			employeeDto.setDob(employee.getDob());
+			employeeDto.setIdcardno(employee.getIdcardno());
+			employeeDto.setDoj(employee.getDoj());
+			employeeDto.setDol(employee.getDol());
+			employeeDto.setWkc(employee.getWkc());
+			employeeDto.setDept(employee.getDept());
+			employeeDto.setPmcode(employee.getPmcode());
+			employeeDto.setIboss(employee.getIboss());
+			employeeDto.setResp(employee.getResp());
+			employeeDto.setJob(employee.getJob());
+			employeeDto.setSalary(employee.getSalary());
+			employeeDto.setPaddress(employee.getPaddress());
+			employeeDto.setPphone(employee.getPphone());
+			employeeDto.setTaddress(employee.getTaddress());
+			employeeDto.setTphone(employee.getTphone());
+			employeeDto.setType(employee.getType());
+			employeeDto.setConsigno(employee.getConsigno());
+			employeeDto.setConexpon(employee.getConexpon());
+			employeeDto.setService(employee.getService());
+			employeeDto.setWkcphone(employee.getWkcphone());
+			employeeDto.setEmptype(employee.getEmptype());
+			employeeDto.setPassword(employee.getPassword());
+			employeeDto.setPhoto(employee.getPhoto());
+			employeeDto.setCatg(employee.getCatg());
+			employeeDto.setStart_sal(employee.getStart_sal());
+			employeeDto.setBoard_type(employee.getBoard_type());
+			employeeDto.setUpdate_on(employee.getUpdate_on());
+			employeeDto.setDot(employee.getDot());
+			employeeDto.setEmpid_new(employee.getEmpid_new());
+			employeeDto.setMobile(employee.getMobile());
+			employeeDto.setVerified(employee.getVerified());
+			employeeDto.setPunch(employee.getPunch());
+			employeeDtoList.add(employeeDto);
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return employeeDtoList;
 	}
 	@Transactional
 	public void removeEmloyee(Integer id) {

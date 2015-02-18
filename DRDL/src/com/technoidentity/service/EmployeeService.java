@@ -9,7 +9,7 @@ public interface EmployeeService {
 	public void addEmployee(EmployeeDto employeeDto);
 	public Employee getEmployeeId(Integer id);
 	public void updateEmpolyee(EmployeeDto employeeDto);
-    public List<Employee> listEmployees();
+    public List<EmployeeDto> listEmployees();
 
     public void removeEmloyee(Integer id);
 
