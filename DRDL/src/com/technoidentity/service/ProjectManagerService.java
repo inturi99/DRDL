@@ -10,7 +10,7 @@ public interface ProjectManagerService {
 
 	public void updateProjectManager(ProjectManagerDto projectManagerDto);
 
-	public ProjectManager getProjectManagerId(String id);
+	public ProjectManagerDto getProjectManagerId(String id);
 
 	public List<ProjectManagerDto> listProjectManagers();
 

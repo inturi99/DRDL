@@ -1,6 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <html>
 <head>
     <title>ProjectManger List</title>
@@ -66,10 +67,8 @@
                <td align="center">${projectManagerDto.designation} </td>
                <td align="center">${projectManagerDto.phoneNumber}</td>
                 <td align="center">${projectManagerDto.email}</td>
-                <td align="center">${projectManagerDto.dob}</td>
-               
-              
-              
+                <%-- <td align="center">${projectManagerDto.dob}</td> --%>
+              <td align="center"> <fmt:formatDate value="${projectManagerDto.dob}" pattern="dd/MM/yyyy"/></td>
                  <td align="center"><a href="editProjectManager?id=${projectManagerDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td align="center"><a href="deleteProjectManager/${projectManagerDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>

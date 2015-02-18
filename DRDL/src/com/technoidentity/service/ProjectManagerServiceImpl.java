@@ -48,10 +48,19 @@ public class ProjectManagerServiceImpl implements ProjectManagerService {
 	}
 
 	@Transactional
-	public ProjectManager getProjectManagerId(String id) {
-		// TODO Auto-generated method stub
-
-		return projectManagerDao.getProjectManagerId(new Integer(id));
+	public ProjectManagerDto getProjectManagerId(String id) {
+			ProjectManager projectManager=projectManagerDao.getProjectManagerId(new Integer(id));
+				ProjectManagerDto projectManagerDto=new ProjectManagerDto();
+				projectManagerDto.setId(projectManager.getId().toString());
+				projectManagerDto.setPmcode(projectManager.getPmcode());
+				projectManagerDto.setName(projectManager.getName());
+				projectManagerDto.setEmail(projectManager.getEmail());
+				projectManagerDto.setDesignation(projectManager.getDesignation());
+				projectManagerDto.setGrade(projectManager.getGrade());
+				projectManagerDto.setDob(projectManager.getDob());
+				projectManagerDto.setPhoneNumber(projectManager.getPhoneNumber());
+				
+		return projectManagerDto;
 	}
 
 	@Transactional

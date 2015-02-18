@@ -1,6 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <html>
 <head>
 <title>Empoyee</title>
@@ -121,9 +122,11 @@ body {
 									</label>
 								<div class="col-sm-4">
 								  <div class="input-group">
-									<form:input path="dob"  id="dobdatepicker" placeholder="Date of Birth"
-										cssClass="date-picker form-control" />
-										 <label for="dobdatepicker" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+									<%-- <form:input path="dob"  id="dobdatepicker" placeholder="Date of Birth"
+										cssClass="date-picker form-control"/>
+									 --%>	
+									 <input type="text" value="<fmt:formatDate value="${projectManagerDto.dob}" pattern="dd/MM/yyyy"/>" name="dob" id="dobdatepicker" class="date-picker form-control"/>
+									  <label for="dobdatepicker" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
                                       </label>
 								</div>
 								</div>

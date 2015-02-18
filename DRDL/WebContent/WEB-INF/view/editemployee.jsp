@@ -1,6 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <html>
 <head>
 <title>Empoyee</title>
@@ -106,10 +107,12 @@ body {
 									Birth</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="dob" id="date-picker-1"
+										<%-- <form:input path="dob" id="date-picker-1"
 											placeholder="Date of Birth"
-											cssClass="date-picker form-control" />
-										<label for="date-picker-1" class="input-group-addon btn"><span
+											cssClass="date-picker form-control" /> --%>
+											 <input type="text" value="<fmt:formatDate value="${employeeDto.dob}" pattern="dd/MM/yyyy"/>" name="dob" id="date-picker-1" class="date-picker form-control"/>
+									
+									 	<label for="date-picker-1" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
 								</div>
@@ -139,10 +142,12 @@ body {
 								<label for="doj" class="col-sm-2 control-label">DATEOFJOINING</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="doj" id="date-picker-2"
+										<%-- <form:input path="doj" id="date-picker-2"
 											placeholder="Date of Joining"
 											cssClass="date-picker form-control" />
-										<label for="date-picker-2" class="input-group-addon btn"><span
+										 --%>
+										  <input type="text" value="<fmt:formatDate value="${employeeDto.doj}" pattern="dd/MM/yyyy"/>" name="doj" id="date-picker-2" class="date-picker form-control"/>
+										 <label for="date-picker-2" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
 								</div>
@@ -150,10 +155,12 @@ body {
 								<label for="dol" class="col-sm-2 control-label">DATEOFLEAVING</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="dol" id="date-picker-3"
+										<%-- <form:input path="dol" id="date-picker-3"
 											placeholder="Date of Leaving"
 											cssClass="date-picker form-control" />
-										<label for="date-picker-3" class="input-group-addon btn"><span
+										 --%>
+										  <input type="text" value="<fmt:formatDate value="${employeeDto.dol}" pattern="dd/MM/yyyy"/>" name="dol" id="date-picker-3" class="date-picker form-control"/>
+										 <label for="date-picker-3" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
 								</div>
@@ -247,8 +254,10 @@ body {
 								<label for="consigno" class="col-sm-2 control-label">CONSIGNO</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="consigno" id="date-picker-4"
-											placeholder="consigno" cssClass="date-picker form-control" />
+										<%-- <form:input path="consigno" id="date-picker-4"
+											placeholder="consigno" cssClass="date-picker form-control" /> --%>
+											 <input type="text" value="<fmt:formatDate value="${employeeDto.consigno}" pattern="dd/MM/yyyy"/>" name="consigno" id="date-picker-4" class="date-picker form-control"/>
+										
 										<label for="date-picker-4" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
@@ -256,8 +265,9 @@ body {
 								<label for="conexpon" class="col-sm-2 control-label">CONEXPON</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="conexpon" id="date-picker-5"
-											placeholder="conexpon" cssClass="date-picker form-control" />
+										<%-- <form:input path="conexpon" id="date-picker-5"
+											placeholder="conexpon" cssClass="date-picker form-control" /> --%>
+											<input type="text" value="<fmt:formatDate value="${employeeDto.conexpon}" pattern="dd/MM/yyyy"/>" name="conexpon" id="date-picker-5" class="date-picker form-control"/>
 										<label for="date-picker-5" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
@@ -305,8 +315,10 @@ body {
 								<label for="update_on" class="col-sm-2 control-label">UPDATE_ON</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="update_on" id="date-picker-6"
-											placeholder="update_on" cssClass="date-picker form-control" />
+										<%-- <form:input path="update_on" id="date-picker-6"
+											placeholder="update_on" cssClass="date-picker form-control" /> --%>
+											<input type="text" value="<fmt:formatDate value="${employeeDto.update_on}" pattern="dd/MM/yyyy"/>" name="update_on" id="date-picker-6" class="date-picker form-control"/>
+										
 										<label for="date-picker-6" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
@@ -314,8 +326,10 @@ body {
 								<label for="dot" class="col-sm-2 control-label">DOT</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<form:input path="dot" id="date-picker-7"
-											placeholder="conexpon" cssClass="date-picker form-control" />
+										<%-- <form:input path="dot" id="date-picker-7"
+											placeholder="conexpon" cssClass="date-picker form-control" /> --%>
+											<input type="text" value="<fmt:formatDate value="${employeeDto.dot}" pattern="dd/MM/yyyy"/>" name="dot" id="date-picker-7" class="date-picker form-control"/>
+										
 										<label for="date-picker-7" class="input-group-addon btn"><span
 											class="glyphicon glyphicon-calendar"></span> </label>
 									</div>
