@@ -2,6 +2,7 @@ package com.technoidentity.model;
 
 
 
+import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -112,7 +113,7 @@ public class Employee {
 	private String password;
 	@Column(name = "photo")
 	@Lob
-	private String Photo;
+	private byte[] Photo;
 	@Column(name = "catg")
 	@Size(min = 0, max = 100)
 	private String catg;
@@ -359,11 +360,11 @@ public class Employee {
 		this.idcardno = idcardno;
 	}
 
-	public String getPhoto() {
+	public byte[] getPhoto() {
 		return Photo;
 	}
 
-	public void setPhoto(String photo) {
+	public void setPhoto(byte[] photo) {
 		Photo = photo;
 	}
 

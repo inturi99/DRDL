@@ -7,7 +7,7 @@ import com.technoidentity.model.Employee;
 
 public interface EmployeeService {
 	public void addEmployee(EmployeeDto employeeDto);
-	public Employee getEmployeeId(String id);
+	public EmployeeDto getEmployeeId(String id);
 	public void updateEmpolyee(EmployeeDto employeeDto);
     public List<EmployeeDto> listEmployees();
 
