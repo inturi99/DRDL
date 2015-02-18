@@ -27,13 +27,13 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
-		map.put("employee", new EmployeeDto());
+		map.put("employeeDto", new EmployeeDto());
 		return "employee";
 	}
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
 	public String addEmployee(
-			@ModelAttribute("employee") @Valid EmployeeDto employeeDto,
+			@ModelAttribute("employeeDto") @Valid EmployeeDto employeeDto,
 			BindingResult result, @RequestParam("photo") MultipartFile[] photo) {
 		try {
 			for (MultipartFile aFile : photo) {
@@ -71,12 +71,12 @@ public class EmployeeController {
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String getEmployeeId(
 			@RequestParam(value = "id", required = true) Integer id, Model model) {
-		model.addAttribute("employee", employeeService.getEmployeeId(id));
+		model.addAttribute("employeeDto", employeeService.getEmployeeId(id));
 		return "editemployee";
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
-	public String updateEmployee(@ModelAttribute("employee") EmployeeDto employeeDto,
+	public String updateEmployee(@ModelAttribute("employeeDto") EmployeeDto employeeDto,
 			@RequestParam(value = "id", required = true) Integer id, Model model) {
 		employeeDto.setId(id);
 		employeeService.updateEmpolyee(employeeDto);

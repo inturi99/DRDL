@@ -59,17 +59,17 @@
             <th></th>
         </tr>
         </thead>
-        <c:forEach items="${employeeList}" var="employee">
+        <c:forEach items="${employeeList}" var="employeeDto">
             <tr>
-                <td align="center">${employee.name} </td>
-                <td align="center">${employee.email}</td>
-                  <td align="center">${employee.dob}</td>
-               <td align="center">${employee.qual} </td>
-                <td align="center">${employee.lab}</td>
+                <td align="center">${employeeDto.name} </td>
+                <td align="center">${employeeDto.email}</td>
+                  <td align="center">${employeeDto.dob}</td>
+               <td align="center">${employeeDto.qual} </td>
+                <td align="center">${employeeDto.lab}</td>
                
               
-                 <td align="center"><a href="edit?id=${employee.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td align="center"><a href="delete/${employee.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                 <td align="center"><a href="edit?id=${employeeDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td align="center"><a href="delete/${employeeDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
     </table>

@@ -80,8 +80,8 @@ body {
 						<h4 class=" panel-title text-center">Edit Employee</h4>
 					</div>
 					<div class="panel-body">
-						<c:url var="saveUrl" value="edit?id=${employee.id}" />
-						<form:form modelAttribute="employee" method="post"
+						<c:url var="saveUrl" value="edit?id=${employeeDto.id}" />
+						<form:form modelAttribute="employeeDto" method="post"
 							action="${saveUrl}" cssClass="form-horizontal">
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">Name </label>

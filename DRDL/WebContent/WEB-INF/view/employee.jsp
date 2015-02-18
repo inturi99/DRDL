@@ -94,7 +94,7 @@ body {
 					</div>
 					<div class="panel-body">
 						<form:form method="post" action="addEmployee"
-							commandName="employee" enctype="multipart/form-data"
+							commandName="employeeDto" enctype="multipart/form-data"
 							cssClass="form-horizontal">
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">Name </label>
