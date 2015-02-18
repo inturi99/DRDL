@@ -70,14 +70,14 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String getEmployeeId(
-			@RequestParam(value = "id", required = true) Integer id, Model model) {
+			@RequestParam(value = "id", required = true) String id, Model model) {
 		model.addAttribute("employeeDto", employeeService.getEmployeeId(id));
 		return "editemployee";
 	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public String updateEmployee(@ModelAttribute("employeeDto") EmployeeDto employeeDto,
-			@RequestParam(value = "id", required = true) Integer id, Model model) {
+			@RequestParam(value = "id", required = true) String id, Model model) {
 		employeeDto.setId(id);
 		employeeService.updateEmpolyee(employeeDto);
 		model.addAttribute("id", id);

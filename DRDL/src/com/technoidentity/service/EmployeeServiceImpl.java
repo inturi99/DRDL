@@ -63,7 +63,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
 	@Transactional
 	public void updateEmpolyee(EmployeeDto employeeDto) {
 		// TODO Auto-generated method stub
-		Employee employee=employeeDao.getEmployeeId(employeeDto.getId());
+		Employee employee=employeeDao.getEmployeeId(new Integer(employeeDto.getId()));
 		employee.setName(employeeDto.getName());
 		employee.setDesignation(employeeDto.getDesignation());
 		employee.setProject(employeeDto.getProject());
@@ -112,7 +112,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
 		List<Employee> employeeList=employeeDao.listEmployees();
 		for(Employee employee :employeeList){
 			EmployeeDto employeeDto=new EmployeeDto();
-			employeeDto.setId(employee.getId());
+			employeeDto.setId(employee.getId().toString());
 			employeeDto.setName(employee.getName());
 			employeeDto.setDesignation(employee.getDesignation());
 			employeeDto.setProject(employee.getProject());
@@ -164,9 +164,9 @@ public class EmployeeServiceImpl  implements EmployeeService{
 		employeeDao.removeEmploye(id);
 	}
 	@Transactional
-	public Employee getEmployeeId(Integer id) {
+	public Employee getEmployeeId(String id) {
 		// TODO Auto-generated method stub
-		return employeeDao.getEmployeeId(id);
+		return employeeDao.getEmployeeId(new Integer(id));
 	}
 
 }

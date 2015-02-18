@@ -8,7 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class EmployeeDto {
 
-	private Integer id;
+	private String id;
 	private String name;
 	private String designation;
 	private String project;
@@ -99,12 +99,12 @@ public class EmployeeDto {
 		this.mobile = mobile;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer empid) {
-		this.id = empid;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getTaddress() {
