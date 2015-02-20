@@ -34,9 +34,9 @@ public class EmployeeDto {
 
 	private Integer salary;
 	private String paddress;
-	private Integer pphone;
+	private Long pphone;
 	private String taddress;
-	private Integer tphone;
+	private Long tphone;
 	private String type;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date consigno;
@@ -55,7 +55,7 @@ public class EmployeeDto {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dot;
 	private String empid_new;
-	private Integer mobile;
+	private Long mobile;
 
 	private String verified;
 	private String punch;
@@ -102,11 +102,11 @@ public class EmployeeDto {
 		this.start_sal = start_sal;
 	}
 
-	public Integer getMobile() {
+	public Long getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Integer mobile) {
+	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
 
@@ -239,11 +239,11 @@ public class EmployeeDto {
 		this.paddress = paddress;
 	}
 
-	public Integer getPphone() {
+	public Long getPphone() {
 		return pphone;
 	}
 
-	public void setPphone(Integer pphone) {
+	public void setPphone(Long pphone) {
 		this.pphone = pphone;
 	}
 
@@ -255,11 +255,11 @@ public class EmployeeDto {
 		this.type = type;
 	}
 
-	public Integer getTphone() {
+	public Long getTphone() {
 		return tphone;
 	}
 
-	public void setTphone(Integer tphone) {
+	public void setTphone(Long tphone) {
 		this.tphone = tphone;
 	}
 

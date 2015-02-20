@@ -84,12 +84,12 @@ public class Employee {
 	private String paddress;
 
 	@Column(name = "pphone")
-	private Integer pphone;
+	private Long pphone;
 	@Column(name = "taddress")
 	@Size(min = 0, max = 255)
 	private String taddress;
 	@Column(name = "tphone")
-	private Integer tphone;
+	private Long tphone;
 	@Column(name = "type")
 	@Size(min = 0, max = 10)
 	private String type;
@@ -131,7 +131,7 @@ public class Employee {
 	private String empid_new;
 	
 	@Column(name = "mobile")
-	private Integer mobile;
+	private Long mobile;
 
 	@Column(name = "verified")
 	@Size(min = 2, max = 10)
@@ -182,11 +182,11 @@ public class Employee {
 		this.start_sal = start_sal;
 	}
 
-	public Integer getMobile() {
+	public Long getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Integer mobile) {
+	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
 
@@ -319,11 +319,11 @@ public class Employee {
 		this.paddress = paddress;
 	}
 
-	public Integer getPphone() {
+	public Long getPphone() {
 		return pphone;
 	}
 
-	public void setPphone(Integer pphone) {
+	public void setPphone(Long pphone) {
 		this.pphone = pphone;
 	}
 
@@ -335,11 +335,11 @@ public class Employee {
 		this.type = type;
 	}
 
-	public Integer getTphone() {
+	public Long getTphone() {
 		return tphone;
 	}
 
-	public void setTphone(Integer tphone) {
+	public void setTphone(Long tphone) {
 		this.tphone = tphone;
 	}
 
