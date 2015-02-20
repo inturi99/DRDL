@@ -18,24 +18,34 @@ public class VendorServiceImpl implements VendorService {
 
 	@Transactional
 	public void addVendor(VendorDto vendorDto) {
+		try{
 		Vendor vendor = new Vendor();
 		vendor.setVendorCode(vendorDto.getVendorCode());
 		vendor.setVendorName(vendorDto.getVendorName());
 		vendor.setAddress(vendorDto.getAddress());
+		/*String phn=vendorDto.getPhoneNumber();
+		Long pn=Long.valueOf(phn);
+		vendor.setPhoneNumber(pn);
+		*/
 		vendor.setPhoneNumber(vendorDto.getPhoneNumber());
 		vendorDao.addVendor(vendor);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	@Transactional
 	public void updateVendor(VendorDto vendorDto) {
+		try{
 
 		Vendor vendor = vendorDao.getVendorId(new Integer(vendorDto.getId()));
 		vendor.setVendorCode(vendorDto.getVendorCode());
 		vendor.setVendorName(vendorDto.getVendorName());
 		vendor.setAddress(vendorDto.getAddress());
-		vendor.setPhoneNumber(vendorDto.getPhoneNumber());
-		vendorDao.updateVendor(vendor);
-
+     	vendorDao.updateVendor(vendor);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	@Transactional
@@ -71,7 +81,7 @@ public class VendorServiceImpl implements VendorService {
 
 	}
 
-	@Override
+	@Transactional
 	public void removeVendor(Integer id) {
 		// TODO Auto-generated method stub
     vendorDao.removeVendor(id);

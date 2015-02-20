@@ -27,7 +27,7 @@ public class VendorController {
 		return "vendor";
 		  }
 	@RequestMapping(value="/addVendor",method=RequestMethod.POST)
-	public String addVendor(@ModelAttribute("vendorDto") @Valid VendorDto vendorDto,BindingResult result){
+	public String addVendor(@ModelAttribute("vendorDto") VendorDto vendorDto,BindingResult result){
 		vendorService.addVendor(vendorDto);
 		return "redirect:/venList";
 	}

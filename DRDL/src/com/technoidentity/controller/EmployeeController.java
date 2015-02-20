@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.technoidentity.dto.EmployeeDto;
-import com.technoidentity.model.Employee;
 import com.technoidentity.service.EmployeeService;
 
 @Controller

@@ -22,7 +22,7 @@ private String vendorName;
 @Column(name="address")
 private String address;
 @Column(name="phoneNumber")
-private Integer phoneNumber;
+private Long phoneNumber;
 public Integer getId() {
 	return id;
 }
@@ -47,10 +47,10 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
-public Integer getPhoneNumber() {
+public Long getPhoneNumber() {
 	return phoneNumber;
 }
-public void setPhoneNumber(Integer phoneNumber) {
+public void setPhoneNumber(Long phoneNumber) {
 	this.phoneNumber = phoneNumber;
 }
 

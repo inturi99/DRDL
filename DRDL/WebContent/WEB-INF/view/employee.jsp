@@ -342,7 +342,7 @@ body {
 									<form:input path="empid_new" placeholder="empid_new"
 										cssClass="form-control" />
 								</div>
-								<label for="mobile" class="col-sm-2 control-label">MOBILE</label>
+								<label class="col-sm-2 control-label">MOBILE</label>
 								<div class="col-sm-4">
 									<form:input path="mobile" placeholder="mobile"
 										cssClass="form-control" />

@@ -129,6 +129,7 @@ public class Employee {
 	@Column(name = "empid_new")
 	@Size(min = 2, max = 5)
 	private String empid_new;
+	
 	@Column(name = "mobile")
 	private Integer mobile;
 

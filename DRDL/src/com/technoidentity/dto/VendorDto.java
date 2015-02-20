@@ -1,12 +1,13 @@
 package com.technoidentity.dto;
 
 
+
 public class VendorDto {
 	private String id;	
 	private String vendorCode;
 	private String vendorName;
 	private String address;
-	private Integer phoneNumber;
+	private Long phoneNumber;
 	public String getId() {
 		return id;
 	}
@@ -31,10 +32,10 @@ public class VendorDto {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Integer getPhoneNumber() {
+	public Long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	
