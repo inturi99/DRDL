@@ -2,7 +2,6 @@ package com.technoidentity.model;
 
 
 
-import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -24,11 +23,12 @@ public class Employee {
 	@GeneratedValue
 	@Column(name = "id")
 	private Integer id;
-
+	@Column(name = "empNo")
+	private String employeeNumber;
 	@Column(name = "name")
 	@Size(min = 2, max = 30)
 	private String name;
-
+	
 	@Column(name = "designation")
 	@Size(min = 2, max = 30)
 	private String designation;
@@ -138,7 +138,17 @@ public class Employee {
 	@Column(name = "punch")
 	@Size(min = 2, max = 5)
 	private String punch;
+    
+	
+	public String getEmployeeNumber() {
+		return employeeNumber;
+	}
 
+	public void setEmployeeNumber(String employeeNumber) {
+		this.employeeNumber = employeeNumber;
+	}
+    
+	
 	public Integer getPmcode() {
 		return pmcode;
 	}

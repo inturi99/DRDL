@@ -25,6 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		try {
 			// TODO Auto-generated method stub
 			Employee employee = new Employee();
+			employee.setEmployeeNumber(employeeDto.getEmployeeNumber());
 			employee.setName(employeeDto.getName());
 			employee.setDesignation(employeeDto.getDesignation());
 			employee.setProject(employeeDto.getProject());
@@ -82,7 +83,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 			// TODO Auto-generated method stub
 			Employee employee = employeeDao.getEmployeeId(new Integer(
 					employeeDto.getId()));
+			//employee.setEmployeeNumber(employeeDto.getEmployeeNumber());
 			employee.setName(employeeDto.getName());
+			employee.setEmployeeNumber(employeeDto.getEmployeeNumber());;
 			employee.setDesignation(employeeDto.getDesignation());
 			employee.setProject(employeeDto.getProject());
 			employee.setEmail(employeeDto.getEmail());
@@ -143,6 +146,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 			for (Employee employee : employeeList) {
 				EmployeeDto employeeDto = new EmployeeDto();
 				employeeDto.setId(employee.getId().toString());
+				String empId=employee.getId().toString();
+				String empName=employee.getName().substring(0, 3).toUpperCase();
+				String empNo=empName +" - "+ empId;
+				employeeDto.setEmployeeNumber(empNo);
 				employeeDto.setName(employee.getName());
 				employeeDto.setDesignation(employee.getDesignation());
 				employeeDto.setProject(employee.getProject());
@@ -206,6 +213,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		try {
 			Employee employee = employeeDao.getEmployeeId(new Integer(id));
 			employeeDto.setId(employee.getId().toString());
+			String empId=employee.getId().toString();
+			String empName=employee.getName().substring(0, 3).toUpperCase();
+			String empNo=empName +" - "+ empId;
+			employeeDto.setEmployeeNumber(empNo);
 			employeeDto.setName(employee.getName());
 			employeeDto.setDesignation(employee.getDesignation());
 			employeeDto.setProject(employee.getProject());

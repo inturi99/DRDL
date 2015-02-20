@@ -51,17 +51,19 @@
     <table class="table table-striped table-bordered">
         <thead class="table-head">
         <tr>
+            <th class="text-center">EmpNO</th>
             <th class="text-center">Name</th>
             <th class="text-center">Email</th>
           <th class="text-center">Date Of Birth</th>
             <th class="text-center">Qualififaction</th>
-            <th class="text-center">lab</th>
+            <th class="text-center">Lab</th>
             <th></th>
             <th></th>
         </tr>
         </thead>
         <c:forEach items="${employeeList}" var="employeeDto">
             <tr>
+                <td align="center">${employeeDto.employeeNumber} </td>
                 <td align="center">${employeeDto.name} </td>
                 <td align="center">${employeeDto.email}</td>
                  <%--  <td align="center">${employeeDto.dob}</td> --%>

@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class EmployeeDto {
 
 	private String id;
+	private String employeeNumber;
 	private String name;
 	private String designation;
 	private String project;
@@ -58,7 +59,17 @@ public class EmployeeDto {
 
 	private String verified;
 	private String punch;
+    
+	
+	public String getEmployeeNumber() {
+		return employeeNumber;
+	}
 
+	public void setEmployeeNumber(String employeeNumber) {
+		this.employeeNumber = employeeNumber;
+	}
+    
+	
 	public Integer getPmcode() {
 		return pmcode;
 	}
