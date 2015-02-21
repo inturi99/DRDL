@@ -85,6 +85,18 @@ body {
 						<form:form modelAttribute="employeeDto" method="post"
 							action="${saveUrl}" cssClass="form-horizontal">
 							<div class="form-group">
+							<label for="emptype" class="col-sm-2 control-label">Employee
+									Type</label>
+								<div class="col-sm-4">
+									<form:select path="emptype" 
+										cssClass="form-control" >
+										<form:option value="NONE" label="--- Select ---"/>
+                                             <form:option value="PermanentEmployee" >Permanent Employee</form:option>
+                                             <form:option value="ContractEmployee" >Contract Employee</form:option>
+										</form:select>
+								</div>
+								</div>
+							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">Name </label>
 								<div class="col-sm-4">
 									<form:input path="name" placeholder="name"
@@ -280,12 +292,7 @@ body {
 									<form:input path="wkcphone" placeholder="wkcphone"
 										cssClass="form-control" />
 								</div>
-								<label for="emptype" class="col-sm-2 control-label">EMP
-									TYPE</label>
-								<div class="col-sm-4">
-									<form:input path="emptype" placeholder="emptype"
-										cssClass="form-control" />
-								</div>
+								
 							</div>
 							<div class="form-group">
 								<label for="password" class="col-sm-2 control-label">PASSWORD</label>
