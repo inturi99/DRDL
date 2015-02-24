@@ -36,7 +36,7 @@
 		<h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
 		</h1>
 		</div>
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" style="margin-top: -25px">
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
 				<ul class="dropdown-menu">

@@ -32,12 +32,11 @@
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="page-header">
-		<h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
-		</h1>
+	<div class="page-header" align="center">
+	     <img src="resources/images/drdo.png" alt="logo" ></img>
 		</div>
 		<div>
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" style="margin-top: -25px">
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
 				<ul class="dropdown-menu">
