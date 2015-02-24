@@ -62,8 +62,9 @@ body {
 
 <body>
 	<div class="page-header">
-		<h1 align="center">Defence Research and Development Organisation
+		<h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
 		</h1>
+		</div>
 		<ul class="nav nav-tabs">
 			<li><a href="#">MASTERS</a></li>
 			<li><a href="#">TRANSACTIONS</a></li>
@@ -94,6 +95,12 @@ body {
                                              <form:option value="PermanentEmployee" >Permanent Employee</form:option>
                                              <form:option value="ContractEmployee" >Contract Employee</form:option>
 										</form:select>
+								</div>
+								<label for="photo" class="col-sm-2 control-label">Photo</label>
+								<div class="col-sm-4">
+								<img id=image class="img-responsive" alt="Cinque Terre" width="125" height="125">
+									<form:input id="txt-image" type="hidden" path="photo"
+										placeholder="photo" cssClass="form-control" />
 								</div>
 								</div>
 							<div class="form-group">
@@ -131,12 +138,7 @@ body {
 							</div>
 
 							<div class="form-group">
-								<label for="photo" class="col-sm-2 control-label">Photo</label>
-								<div class="col-sm-9">
-								<img id=image class="img-responsive" alt="Cinque Terre" width="125" height="125">
-									<form:input id="txt-image" type="hidden" path="photo"
-										placeholder="photo" cssClass="form-control" />
-								</div>
+								
 							</div>
 							<div class="form-group">
 								<label for="idcardno" class="col-sm-2 control-label">IDCARDNO</label>

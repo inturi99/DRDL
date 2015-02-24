@@ -107,6 +107,12 @@ body {
                                              <form:option value="ContractEmployee" >Contract Employee</form:option>
 										</form:select>
 								</div>
+								<label for="photo" class="col-sm-2 control-label">Photo</label>
+								<div class="col-sm-4">
+									<form:input id="input-id" class="file" path="photo" type="file"
+										data-preview-file-type="text" />
+
+								</div>
 								</div>
 								<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">Name </label>
@@ -139,16 +145,6 @@ body {
 									</div>
 								</div>
 							</div>
-
-							<div class="form-group">
-								<label for="photo" class="col-sm-2 control-label">Photo</label>
-								<div class="col-sm-9">
-									<form:input id="input-id" class="file" path="photo" type="file"
-										data-preview-file-type="text" />
-
-								</div>
-							</div>
-
 							<div class="form-group">
 								<label for="idcardno" class="col-sm-2 control-label">IDCARDNO</label>
 								<div class="col-sm-4">

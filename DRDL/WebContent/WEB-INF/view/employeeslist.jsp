@@ -23,8 +23,9 @@
 </head>
 <body>
 <div class="page-header">
-   <h1 align="center">Defence Research and Development Organisation   
-   </h1>
+  <h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
+		</h1>
+		</div>
    <ul class="nav nav-tabs">
     <li class="dropdown" >
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">MASTERS
