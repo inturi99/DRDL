@@ -1,8 +1,7 @@
 package com.technoidentity.dto;
 
-
-
-public class VendorDto {
+import java.io.Serializable;
+public class VendorDto implements Serializable {
 	private String id;	
 	private String vendorCode;
 	private String vendorName;

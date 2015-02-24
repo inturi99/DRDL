@@ -20,17 +20,25 @@
 <link href="<c:url value="/resources/css/datepicker.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap-datepicker.js" type="text/javascript"></script>
- <script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
-                $('#dobdatepicker').datepicker({
-                    format: "dd/mm/yyyy",
-                    showMeridian: true,
-                    autoclose: true,
-                });  
-            
-            });
-        </script>
+ <script type="text/javascript">       
+ $(document).ready(
+			function() {
+				$('#addVen').submit(
+						function(e) {
+							$.post('/DRDL/addVendor', $(this)
+									.serialize(), 
+									function() {
+								       alert("SuccessFully Inserted");
+							
+							});			
+							clearInputs();
+							e.preventDefault();
+						});
+			});
+        function clearInputs() {
+        	$("form")[0].reset();
+	}       
+ </script>
 <style>
 .error {
 	color: #ee0d25;
@@ -64,20 +72,20 @@
 						<h4 class=" panel-title text-center">Add Vendor</h4>
 					</div>
 					<div class="panel-body">
-						<form:form method="post" action="addVendor"
+						<form:form id="addVen"
 							commandName="vendorDto" cssClass="form-horizontal">
 							<div class="form-group">
 								<label for="vendorCode" class="col-sm-2 control-label">Vendor
 									Code</label>
 								<div class="col-sm-4">
-									<form:input path="vendorCode" placeholder="VendorCode Code"
+									<form:input path="vendorCode" id="vendorCode" placeholder="VendorCode Code"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="vendorName" class="col-sm-2 control-label">Vendor Name </label>
 								<div class="col-sm-4">
-									<form:input path="vendorName" placeholder="vendorName"
+									<form:input path="vendorName" id="vendorName" placeholder="vendorName"
 										cssClass="form-control" />
 								</div>
 							</div>
@@ -85,20 +93,20 @@
 								<label for="address" class="col-sm-2 control-label">address
 								</label>
 								<div class="col-sm-4">
-									<form:input path="address" placeholder="address"
+									<form:input path="address" id="address" placeholder="address"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="phoneNumber" class="col-sm-2 control-label">PhoneNumber</label>
 								<div class="col-sm-4">
-									<form:input path="phoneNumber" placeholder="phoneNumber"
+									<form:input path="phoneNumber" id="phoneNumber" placeholder="phoneNumber"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
-									<button type="submit" class="btn btn-primary">
+									<button id="submit" type="submit" class="btn btn-primary">
 										<spring:message code="label.addVendor" />
 									</button>
 								</div>
