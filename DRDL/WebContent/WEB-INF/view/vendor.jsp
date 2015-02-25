@@ -25,8 +25,8 @@
 			function() {
 				$('#addVen').submit(
 						function(e) {
-							$.post('/DRDL/addVendor', $(this)
-									.serialize(), 
+							$.post('/DRDL/addVendor',
+									 $(this).serialize(), 
 									function() {
 								       alert("SuccessFully Inserted");
 							
@@ -37,7 +37,56 @@
 			});
         function clearInputs() {
         	$("form")[0].reset();
-	}       
+	}     
+	/* function doAjaxPost() {
+	    // get the form values
+	    var vendorCode = $('#vendorCode').val()+"s1";
+	    var vendorName = $('#vendorName').val();
+	    var address = $('#address').val();
+	    var phoneNumber = $('#phoneNumber').val();
+	    var status=$('#status').val();
+
+	    $.ajax({
+	        type: "POST",
+	        url: contexPath + "/DRDL/addVendor" ,
+	        data: {"vendorCode":"vvvv","vendorName":vendorName,"address":address,"phoneNumber":phoneNumber,"status":status},
+	        success: function(response){
+	            // we have the response
+	            
+	            if(response.status == "SUCCESS"){
+	                vendorInfo = "<ol>";
+	                for(i =0 ; i < response.result.length ; i++){
+	                	vendorInfo += "<br><li><b>vendorCode</b> : " + response.result[i].vendorCode +
+	                    ";<b> vendorName</b> : " + response.result[i].vendorName +
+	                    ";<b> address</b> : " + response.result[i].address +
+	                    ";<b> PhoneNumber</b> : " + response.result[i].phoneNumber;
+	                	";<b> Status</b> : " + response.result[i].status;
+	                 }
+	                vendorInfo += "</ol>";
+	                 $('#info').html("Vendor has been added to the list successfully. " + vendorInfo);
+	                 $('#vendorCode').val('');
+	                 $('#vendorName').val('');
+	                 $('#address').val('');
+	                 $('#phoneNumber').val('');
+	                 $('#status').val('');
+	                 $('#error').hide('slow');
+	                 $('#info').show('slow');
+	             }else{
+	                 errorInfo = "";
+	                 for(i =0 ; i < response.result.length ; i++){
+	                     errorInfo += "<br>" + (i + 1) +". " + response.result[i].code;
+	                 }
+	                 $('#error').html("Please correct following errors: " + errorInfo);
+	                 $('#info').hide('slow');
+	                 $('#error').show('slow');
+	             }
+	         },
+	         error: function(e){
+	             alert('Error: ' + e);
+	         }
+	    });
+	} */
+
  </script>
 <style>
 .error {
@@ -73,7 +122,7 @@
 						<h4 class=" panel-title text-center">Add Vendor</h4>
 					</div>
 					<div class="panel-body">
-						<form:form id="addVen"
+						<form:form 
 							commandName="vendorDto" cssClass="form-horizontal">
 							<div class="form-group">
 								<label for="vendorCode" class="col-sm-2 control-label">Vendor
@@ -102,6 +151,13 @@
 								<label for="phoneNumber" class="col-sm-2 control-label">PhoneNumber</label>
 								<div class="col-sm-4">
 									<form:input path="phoneNumber" id="phoneNumber" placeholder="phoneNumber"
+										cssClass="form-control" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="status" class="col-sm-2 control-label">Status</label>
+								<div class="col-sm-2">
+									<form:checkbox path="status" value="active" id="status" placeholder="status"
 										cssClass="form-control" />
 								</div>
 							</div>

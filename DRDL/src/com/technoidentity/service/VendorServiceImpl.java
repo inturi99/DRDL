@@ -28,6 +28,7 @@ public class VendorServiceImpl implements VendorService {
 		vendor.setPhoneNumber(pn);
 		*/
 		vendor.setPhoneNumber(vendorDto.getPhoneNumber());
+		vendor.setStatus(vendorDto.getStatus());
 		vendorDao.addVendor(vendor);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -42,6 +43,7 @@ public class VendorServiceImpl implements VendorService {
 		vendor.setVendorCode(vendorDto.getVendorCode());
 		vendor.setVendorName(vendorDto.getVendorName());
 		vendor.setAddress(vendorDto.getAddress());
+		vendor.setStatus(vendorDto.getStatus());
      	vendorDao.updateVendor(vendor);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -57,6 +59,7 @@ public class VendorServiceImpl implements VendorService {
 		vendorDto.setVendorName(vendor.getVendorName());
 		vendorDto.setAddress(vendor.getAddress());
 		vendorDto.setPhoneNumber(vendor.getPhoneNumber());
+		vendorDto.setStatus(vendor.getStatus());
 		return vendorDto;
 	}
 
@@ -72,6 +75,7 @@ public class VendorServiceImpl implements VendorService {
 				vendorDto.setVendorName(vendor.getVendorName());
 				vendorDto.setAddress(vendor.getAddress());
 				vendorDto.setPhoneNumber(vendor.getPhoneNumber());
+				vendorDto.setStatus(vendor.getStatus());
 				vendorDtoList.add(vendorDto);
 			}
 		} catch (Exception e) {

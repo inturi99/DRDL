@@ -7,6 +7,7 @@ public class VendorDto implements Serializable {
 	private String vendorName;
 	private String address;
 	private Long phoneNumber;
+	private String status;
 	public String getId() {
 		return id;
 	}
@@ -36,6 +37,12 @@ public class VendorDto implements Serializable {
 	}
 	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 }

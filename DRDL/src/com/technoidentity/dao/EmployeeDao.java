@@ -9,7 +9,7 @@ public interface EmployeeDao {
 	    public void updateEmployee(Employee employee);
 	    public Employee getEmployeeId(Integer id);
 	    public List<Employee> listEmployees();
-
+        public List<Employee> findByName(String name);
 	    public void removeEmploye(Integer id);
 
 }

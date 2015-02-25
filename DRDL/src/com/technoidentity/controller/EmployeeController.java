@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.service.EmployeeService;
@@ -81,6 +83,15 @@ public class EmployeeController {
 		employeeService.updateEmpolyee(employeeDto);
 		model.addAttribute("id", id);
 		return "redirect:/list";
+	}
+	@RequestMapping(value="/load",method=RequestMethod.GET)
+	public ModelAndView load(){
+		return new ModelAndView("/table");
+	}
+	@RequestMapping(value="/load/{name}",method=RequestMethod.GET)
+	public ModelAndView loadByName(@PathVariable("name") String name,ModelMap model){
+	model.put("employees", employeeService.findByFirstName(name));
+	return new ModelAndView("/search",model);
 	}
 
 }

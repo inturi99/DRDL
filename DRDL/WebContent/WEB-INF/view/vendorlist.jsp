@@ -70,7 +70,7 @@
 								<th class="text-center">Name</th>
 								<th class="text-center">Address</th>
 								<th class="text-center">Phone Number</th>
-								
+								<th class="text-center">Status</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -81,7 +81,7 @@
 								<td align="center">${vendorDto.vendorName}</td>
 								<td align="center">${vendorDto.address}</td>
 								<td align="center">${vendorDto.phoneNumber}</td>
-								
+								<td align="center">${vendorDto.status}</td>
 								<td align="center"><a
 									href="editVendor?id=${vendorDto.id}"><span
 										class="glyphicon glyphicon-edit"></span></a></td>
