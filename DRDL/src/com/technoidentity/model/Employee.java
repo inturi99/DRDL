@@ -3,12 +3,14 @@ package com.technoidentity.model;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -16,7 +18,7 @@ import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.Email;
 
 @Entity
-@Table(name = "Employee")
+@Table(name = "employee")
 @Proxy(lazy = false)
 public class Employee {
 	@Id
@@ -139,7 +141,8 @@ public class Employee {
 	@Column(name = "punch")
 	@Size(min = 2, max = 5)
 	private String punch;
-    
+	 @OneToMany(mappedBy = "employee")
+	 private List<MonthlyAttendence> monthlyAttendences;
 	
 	public String getEmployeeNumber() {
 		return employeeNumber;
@@ -152,6 +155,15 @@ public class Employee {
 	
 	public Integer getPmcode() {
 		return pmcode;
+	}
+	       
+
+	public List<MonthlyAttendence> getMonthlyAttendences() {
+		return monthlyAttendences;
+	}
+
+	public void setMonthlyAttendences(List<MonthlyAttendence> monthlyAttendences) {
+		this.monthlyAttendences = monthlyAttendences;
 	}
 
 	public void setPmcode(Integer pmcode) {
