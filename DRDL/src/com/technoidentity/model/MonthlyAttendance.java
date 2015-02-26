@@ -12,9 +12,9 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 @Entity
-@Table(name = "monthlyAttendence")
+@Table(name = "monthlyAttendance")
 @Proxy(lazy = false)
-public class MonthlyAttendence {
+public class MonthlyAttendance {
 	@Id
 	@GeneratedValue
 	@Column(name = "id")

@@ -36,7 +36,15 @@
             <li><a href="#">Page 1-3</a></li> 
           </ul>
         </li>
-   <li><a href="#">TRANSACTIONS</a></li>
+         <li class="dropdown" >
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">TRANSACTIONS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="addAttendance">Monthly Employee Attendance  </a></li>
+            <li><a href="#">Page 1-3</a></li> 
+          </ul>
+        </li>
+  
    <li><a href="#">DECISION</a></li>
    <li><a href="#">QUERY FORMS</a></li>
    <li><a href="#">REPORTS</a></li>
