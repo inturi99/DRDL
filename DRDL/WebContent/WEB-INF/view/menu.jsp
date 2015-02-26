@@ -1,13 +1,18 @@
-
 <ul class="nav nav-tabs" style="margin-top: -25px">
 	<li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="pmList">ProjectManager</a></li>
-			<li><a href="#">Page 1-2</a></li>
+			<li><a href="pmList">Project Manager </a></li>
+			<li><a href="venList">Vendor</a></li>
 			<li><a href="#">Page 1-3</a></li>
 		</ul></li>
-	<li><a href="#">TRANSACTIONS</a></li>
+	<li class="dropdown"><a class="dropdown-toggle"
+		data-toggle="dropdown" href="#">TRANSACTIONS <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="addAttendance">Monthly Employee Attendance </a></li>
+			<li><a href="#">Page 1-3</a></li>
+		</ul></li>
+
 	<li><a href="#">DECISION</a></li>
 	<li><a href="#">QUERY FORMS</a></li>
 	<li><a href="#">REPORTS</a></li>

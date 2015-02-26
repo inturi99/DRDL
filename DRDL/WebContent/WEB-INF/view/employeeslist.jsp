@@ -22,35 +22,8 @@
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="page-header" style="margin-top: 0px">
-  <h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
-		</h1>
-		</div>
-   <ul class="nav nav-tabs" style="margin-top: -25px">
-    <li class="dropdown" >
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MASTERS
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="pmList">Project Manager </a></li>
-            <li><a href="venList">Vendor</a></li>
-            <li><a href="#">Page 1-3</a></li> 
-          </ul>
-        </li>
-         <li class="dropdown" >
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">TRANSACTIONS
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="addAttendance">Monthly Employee Attendance  </a></li>
-            <li><a href="#">Page 1-3</a></li> 
-          </ul>
-        </li>
-  
-   <li><a href="#">DECISION</a></li>
-   <li><a href="#">QUERY FORMS</a></li>
-   <li><a href="#">REPORTS</a></li>
-   <li><a href="#">EXIT</a></li>
-    <li><a href="list">EMPLOYEE</a></li>
-   </ul>
+<jsp:include page="header.jsp"/>
+<jsp:include page="menu.jsp"/>
 <div style="padding: 25px">
     <a href="addEmployee" class="btn btn-primary">
     <span class="glyphicon glyphicon-plus"></span>
@@ -88,7 +61,6 @@
         </c:forEach>
     </table>
 </c:if>
-</div>
 </div>
 </div>
 </body>

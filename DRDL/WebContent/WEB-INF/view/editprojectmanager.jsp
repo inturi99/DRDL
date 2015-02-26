@@ -50,19 +50,8 @@ body {
 </head>
 
 <body>
-<div class="page-header" style="margin-top: 0px">
-  <h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
-		</h1>
-		</div>
-   <ul class="nav nav-tabs" style="margin-top: -25px">
-   <li><a href="#">MASTERS</a></li>
-   <li><a href="#">TRANSACTIONS</a></li>
-   <li><a href="#">DECISION</a></li>
-   <li><a href="#">QUERY FORMS</a></li>
-   <li><a href="#">REPORTS</a></li>
-   <li><a href="#">EXIT</a></li>
-    <li><a href="list">EMPLOYEE</a></li>
-   </ul>
+<jsp:include page="header.jsp"/>
+<jsp:include page="menu.jsp"/>
 	<div class="container">
 		<div class="col-sm-offset-1 col-sm-10">
 
