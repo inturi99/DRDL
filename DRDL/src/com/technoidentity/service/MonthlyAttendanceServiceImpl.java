@@ -26,9 +26,9 @@ public class MonthlyAttendanceServiceImpl implements MonthlyAttendanceService {
 			Employee employee=employeeDao.getEmployeeId(new Integer(monthlyAttendanceDto.getEmployeeId()));     
 			monthlyAttendance.setEmployee(employee);
 			monthlyAttendance.setDate(monthlyAttendanceDto.getDate());
-			monthlyAttendance.setPrasent(new Integer(monthlyAttendanceDto.getPrasent()));
-			monthlyAttendance.setAbsent(new Integer(monthlyAttendanceDto.getAbsent()));
-			monthlyAttendance.setLate(new Integer(monthlyAttendanceDto.getLate()));
+			monthlyAttendance.setPrasent(monthlyAttendanceDto.getPrasent());
+			monthlyAttendance.setAbsent(monthlyAttendanceDto.getAbsent());
+			monthlyAttendance.setLate(monthlyAttendanceDto.getLate());
 			monthlyAttendanceDao.addAttendence(monthlyAttendance);
                  
 		} catch (Exception e) {
