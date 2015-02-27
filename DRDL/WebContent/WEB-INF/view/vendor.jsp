@@ -17,6 +17,9 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./resources/js/knockout-3.1.0.js" type="text/javascript"></script>
+<script src="./resources/js/main.js" type="text/javascript"></script>
+
 <script src="./resources/js/bootstrapValidator.min.js" type="text/javascript"></script>
 <script src="./resources/js/moment.min.js" type="text/javascript"></script>
 <link href="<c:url value="/resources/css/datepicker.css" />"
@@ -89,7 +92,7 @@
     $(function () {
        $('#vendorDto').bootstrapValidator(validationRules);
        $('#vendorDto').bootstrapValidator('revalidateField', $(this).data('for'));
-        var urlprefix = 'DRDL/addVendor';
+        var urlprefix = 'DRDL/venList';
         var webapiUrl = 'DRDL/addVendor';
         var viewModel = {
          vendorCode: ko.observable(''),
@@ -113,8 +116,7 @@
                        $.ajax({
                            url: webapiUrl,
                            type: "POST",
-                          
-                           contentType: 'json',
+                           contentType: 'application/json',
                            data:JSON.stringify(top),
                            success: function (data) {
                                window.location.href = "list";
@@ -128,13 +130,13 @@
 
             },
             cancel: function () {
-                window.location = urlprefix + "DRDL/venList";
+                window.location = urlprefix;
             }
         };
         $.ajax({
             url: webapiUrl,
             type: "GET",
-            contentType: 'json',
+            contentType: 'application/json',
             success: function (data) {
                 viewModel.grades(data);
                 ko.applyBindings(viewModel);
@@ -172,14 +174,14 @@
 								<label for="vendorCode" class="col-sm-2 control-label">Vendor
 									Code</label>
 								<div class="col-sm-4">
-									<form:input path="vendorCode" id="vendorCode" placeholder="VendorCode Code"
+									<form:input path="vendorCode" id="vendorCode" data-bind="value : vendorCode" placeholder="VendorCode Code"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="vendorName" class="col-sm-2 control-label">Vendor Name </label>
 								<div class="col-sm-4">
-									<form:input path="vendorName" id="vendorName" placeholder="vendorName"
+									<form:input path="vendorName" id="vendorName" data-bind="value : vendorName" placeholder="vendorName"
 										cssClass="form-control" />
 								</div>
 							</div>
@@ -187,27 +189,27 @@
 								<label for="address" class="col-sm-2 control-label">address
 								</label>
 								<div class="col-sm-4">
-									<form:input path="address" id="address" placeholder="address"
+									<form:input path="address" id="address" data-bind="value : address" placeholder="address"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="phoneNumber" class="col-sm-2 control-label">PhoneNumber</label>
 								<div class="col-sm-4">
-									<form:input path="phoneNumber" id="phoneNumber" placeholder="phoneNumber"
+									<form:input path="phoneNumber" id="phoneNumber"  data-bind="value : phoneNumber" placeholder="phoneNumber"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="status" class="col-sm-2 control-label">Status</label>
 								<div class="col-sm-2">
-									<form:checkbox path="status" value="active" id="status" placeholder="status"
+									<form:checkbox path="status" value="active" id="status" data-bind="value : status" placeholder="status"
 										cssClass="form-control" />
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
-									<button onclick="createVendor" type="submit" class="btn btn-primary">
+									<button  type="submit" data-bind="click: addVendor " value="Create" class="btn btn-primary">
 										<spring:message code="label.addVendor" />
 									</button>
 								</div>
