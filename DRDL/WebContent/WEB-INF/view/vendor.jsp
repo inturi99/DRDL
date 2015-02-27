@@ -17,77 +17,137 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./resources/js/bootstrapValidator.min.js" type="text/javascript"></script>
+<script src="./resources/js/moment.min.js" type="text/javascript"></script>
 <link href="<c:url value="/resources/css/datepicker.css" />"
 	rel="stylesheet" type="text/css" />
+	<link href="<c:url value="/resources/css/bootstrapValidator.min.css" />"
+	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap-datepicker.js" type="text/javascript"></script>
- <script type="text/javascript">       
- $(document).ready(
-			function() {
-				$('#addVen').submit(
-						function(e) {
-							$.post('/DRDL/addVendor',
-									 $(this).serialize(), 
-									function() {
-								       alert("SuccessFully Inserted");
-							
-							});			
-							clearInputs();
-							e.preventDefault();
-						});
-			});
-        function clearInputs() {
-        	$("form")[0].reset();
-	}     
-	/* function doAjaxPost() {
-	    // get the form values
-	    var vendorCode = $('#vendorCode').val()+"s1";
-	    var vendorName = $('#vendorName').val();
-	    var address = $('#address').val();
-	    var phoneNumber = $('#phoneNumber').val();
-	    var status=$('#status').val();
+ <script type="text/javascript">
+    var validationRules = {
+        container: 'tooltip',
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	vendorCode: {
+                message: 'VendorCode is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'VendorCode is required and cannot be empty'
+                    }
+                }
+            },
+           
+        	vendorName: {
+                message: 'Vendor Name is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Vendor Name is required and cannot be empty'
+                    }
+                }
+            },
+           
+            address: {
+                message: 'Address is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Address is required and cannot be empty'
+                    }
+                }
+            },
+            phoneNumber: {
+                message: '  Phone number is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Phone number is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 7,
+                        max: 15,
+                        message: 'Phone number must be more than 7 and less than 15 characters long'
+                    }
+                }
+            },
+           
+           
+            status: {
+                message: 'Status is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Status is required and cannot be empty'
+                    }
+                }
+            }
+        }
+           
+    };
+    $(function () {
+       $('#vendorDto').bootstrapValidator(validationRules);
+       $('#vendorDto').bootstrapValidator('revalidateField', $(this).data('for'));
+        var urlprefix = 'DRDL/addVendor';
+        var webapiUrl = 'DRDL/addVendor';
+        var viewModel = {
+         vendorCode: ko.observable(''),
+         vendorName: ko.observable(''),
+         address: ko.observable(''),
+            PhoneNumber: ko.observable(''),
+            status: ko.observable(''),
+            createVendor: function (data) {
+                var validator = $('#vendorDto').data('bootstrapValidator');
+                validator.validate();
+                if (validator.isValid()) {
+                    var self = this;
+                    var top = {
+                    		 vendorCode: data.vendorCode(),
+                             vendorName: data.vendorName(),
+                             address: data.address(),
+                             PhoneNumber:data. PhoneNumber(),
+                             status: data.status(),    
+                    }
+                 
+                       $.ajax({
+                           url: webapiUrl,
+                           type: "POST",
+                          
+                           contentType: 'json',
+                           data:JSON.stringify(top),
+                           success: function (data) {
+                               window.location.href = "list";
+                           },
+                           error: function (status) {
+                               var a = status;
+                           }
+                       });
+                    
+                }
 
-	    $.ajax({
-	        type: "POST",
-	        url: contexPath + "/DRDL/addVendor" ,
-	        data: {"vendorCode":"vvvv","vendorName":vendorName,"address":address,"phoneNumber":phoneNumber,"status":status},
-	        success: function(response){
-	            // we have the response
-	            
-	            if(response.status == "SUCCESS"){
-	                vendorInfo = "<ol>";
-	                for(i =0 ; i < response.result.length ; i++){
-	                	vendorInfo += "<br><li><b>vendorCode</b> : " + response.result[i].vendorCode +
-	                    ";<b> vendorName</b> : " + response.result[i].vendorName +
-	                    ";<b> address</b> : " + response.result[i].address +
-	                    ";<b> PhoneNumber</b> : " + response.result[i].phoneNumber;
-	                	";<b> Status</b> : " + response.result[i].status;
-	                 }
-	                vendorInfo += "</ol>";
-	                 $('#info').html("Vendor has been added to the list successfully. " + vendorInfo);
-	                 $('#vendorCode').val('');
-	                 $('#vendorName').val('');
-	                 $('#address').val('');
-	                 $('#phoneNumber').val('');
-	                 $('#status').val('');
-	                 $('#error').hide('slow');
-	                 $('#info').show('slow');
-	             }else{
-	                 errorInfo = "";
-	                 for(i =0 ; i < response.result.length ; i++){
-	                     errorInfo += "<br>" + (i + 1) +". " + response.result[i].code;
-	                 }
-	                 $('#error').html("Please correct following errors: " + errorInfo);
-	                 $('#info').hide('slow');
-	                 $('#error').show('slow');
-	             }
-	         },
-	         error: function(e){
-	             alert('Error: ' + e);
-	         }
-	    });
-	} */
+            },
+            cancel: function () {
+                window.location = urlprefix + "DRDL/venList";
+            }
+        };
+        $.ajax({
+            url: webapiUrl,
+            type: "GET",
+            contentType: 'json',
+            success: function (data) {
+                viewModel.grades(data);
+                ko.applyBindings(viewModel);
+            },
+            error: function (status) {
+                var a = status;
+            }
+        });
 
- </script>
+
+    });
+   
+</script>
 <style>
 .error {
 	color: #ee0d25;
@@ -107,7 +167,7 @@
 					</div>
 					<div class="panel-body">
 						<form:form 
-							commandName="vendorDto" cssClass="form-horizontal">
+							commandName="vendorDto" id="vendorDto" cssClass="form-horizontal">
 							<div class="form-group">
 								<label for="vendorCode" class="col-sm-2 control-label">Vendor
 									Code</label>
@@ -147,7 +207,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
-									<button id="submit" type="submit" class="btn btn-primary">
+									<button onclick="createVendor" type="submit" class="btn btn-primary">
 										<spring:message code="label.addVendor" />
 									</button>
 								</div>

@@ -15,10 +15,14 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./resources/js/bootstrapValidator.min.js" type="text/javascript"></script>
+<script src="./resources/js/moment.min.js" type="text/javascript"></script>
+<link href="<c:url value="/resources/css/bootstrapValidator.min.css" />"
+	rel="stylesheet" type="text/css" />
 <link href="<c:url value="/resources/css/datepicker.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap-datepicker.js" type="text/javascript"></script>
- <script type="text/javascript">
+<!--  <script type="text/javascript">
  $(function() {
 		var str = $('#txt-image').val();
 		$('#image').attr('src', 'data:image/jpg;base64,' + str);
@@ -33,7 +37,75 @@
             
             });
 </script>
-
+ -->
+ <script type="text/javascript">
+    var validationRules = {
+        container: 'tooltip',
+        // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	vendorCode: {
+                message: 'VendorCode is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'VendorCode is required and cannot be empty'
+                    }
+                }
+            },
+           
+        	vendorName: {
+                message: 'Vendor Name is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Vendor Name is required and cannot be empty'
+                    }
+                }
+            },
+           
+            address: {
+                message: 'Address is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Address is required and cannot be empty'
+                    }
+                }
+            },
+            phoneNumber: {
+                message: '  Phone number is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Phone number is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 7,
+                        max: 15,
+                        message: 'Phone number must be more than 7 and less than 15 characters long'
+                    }
+                }
+            },
+           
+           
+            status: {
+                message: 'Status is not valid',
+                validators: {
+                    notEmpty: {
+                        message: 'Status is required and cannot be empty'
+                    }
+                }
+            }
+        }
+           
+    };
+    $(function () {
+       $('#vendorDto').bootstrapValidator(validationRules);
+       $('#vendorDto').bootstrapValidator('revalidateField', $(this).data('for'));
+    });
+   
+</script>
 <style>
 .error {
 	color: #ee0d25;
@@ -61,7 +133,7 @@ body {
 				</div>
 				<div class="panel-body">
 					<c:url var="saveUrl" value="editVendor?id=${vendorDto.id}" />
-					<form:form modelAttribute="vendorDto" method="post"
+					<form:form modelAttribute="vendorDto" id="vendorDto" method="post"
 						action="${saveUrl}" cssClass="form-horizontal">
 			     	<div class="form-group">
 								<label for="vendorCode" class="col-sm-2 control-label">Vendor
@@ -102,7 +174,7 @@ body {
 							</div>
 						<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
-									<button type="submit" class="btn btn-primary">
+									<button type="submit" onclick="updateVendor" class="btn btn-primary">
 										<spring:message code="label.updateVendor" />
 									</button>
 								</div>
