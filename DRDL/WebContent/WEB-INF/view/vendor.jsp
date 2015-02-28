@@ -92,15 +92,16 @@
     $(function () {
        $('#vendorDto').bootstrapValidator(validationRules);
        $('#vendorDto').bootstrapValidator('revalidateField', $(this).data('for'));
-        var urlprefix = 'DRDL/venList';
-        var webapiUrl = 'DRDL/addVendor';
+        var urlprefix = 'http://localhost:8082/DRDL/addVendor';
+        var webapiUrl = 'http://localhost:8082/DRDL/addVendor';
         var viewModel = {
          vendorCode: ko.observable(''),
          vendorName: ko.observable(''),
          address: ko.observable(''),
-            PhoneNumber: ko.observable(''),
-            status: ko.observable(''),
-            createVendor: function (data) {
+          PhoneNumber: ko.observable(''),
+          status: ko.observable(''),
+            
+          addVendor: function (data) {
                 var validator = $('#vendorDto').data('bootstrapValidator');
                 validator.validate();
                 if (validator.isValid()) {
