@@ -91,8 +91,8 @@ public class JobContractServiceImpl implements JobContractService {
 				jobContractDto.setId(jobContract.getId().toString());
 				Employee employee=employeeDao.getEmployeeId(new Integer(jobContractDto.getEmployeeId()));     
 				ProjectManager projectManager=projectManagerDao.getProjectManagerId(new Integer(jobContractDto.getProjectManagerId()));     
-				jobContractDto.setEmployeeId(employee.toString());
-				jobContractDto.setProjectManagerId(projectManager.toString());
+				jobContractDto.setEmployeeId(employee.getId().toString());
+				jobContractDto.setProjectManagerId(projectManager.getId().toString());
 				jobContractDto.setJcpropcd(jobContract.getJcpropcd());
 				jobContractDto.setJob(jobContract.getJob());
 				jobContractDto.setAmt(jobContract.getAmt());
@@ -100,6 +100,7 @@ public class JobContractServiceImpl implements JobContractService {
 				jobContractDto.setJcdate(jobContractDto.getJcdate());
 				jobContractDto.setPdate(jobContractDto.getPdate());
 				jobContractDto.setReceipt(jobContractDto.getReceipt());
+				jobContractDtoList.add(jobContractDto);
 			}
 			
 		}catch(Exception e){
