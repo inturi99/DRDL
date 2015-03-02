@@ -23,11 +23,16 @@
  <script type="text/javascript">
             // When the document is ready
             $(document).ready(function () {
-                $('#dobdatepicker').datepicker({
+                $('#pdate').datepicker({
                     format: "dd/mm/yyyy",
                     showMeridian: true,
                     autoclose: true,
-                });  
+                }); 
+                $('#jcdate').datepicker({
+                    format: "dd/mm/yyyy",
+                    showMeridian: true,
+                    autoclose: true,
+                }); 
             
             });
         </script>
@@ -73,9 +78,9 @@
 									</label>
 								<div class="col-sm-4">
 								  <div class="input-group">
-									<form:input path="pdate"  id="dobdatepicker" placeholder="Date of Birth"
+									<form:input path="pdate"  id="pdate" placeholder="Date of Birth"
 										cssClass="date-picker form-control" />
-										 <label for="dobdatepicker" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+										 <label for="pdate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
                                       </label>
 								</div>
 								</div>
@@ -118,9 +123,9 @@
 									</label>
 								<div class="col-sm-4">
 								  <div class="input-group">
-									<form:input path="jcdate"  id="dobdatepicker" placeholder="Date of Job Completion"
+									<form:input path="jcdate"  id="jcdate" placeholder="Date of Job Completion"
 										cssClass="date-picker form-control" />
-										 <label for="dobdatepicker" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+										 <label for="jcdate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
                                       </label>
 								</div>
 								</div>
