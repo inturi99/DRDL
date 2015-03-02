@@ -58,14 +58,16 @@ public class JobContractServiceImpl implements JobContractService {
 		
 	}
 
-	@Override
-	public JobContractDto getJobContractId(Integer id) {
+	@Transactional
+	public JobContractDto getJobContractId(String id) {
 		JobContractDto jobContractDto=new JobContractDto();
 		try{
 			JobContract jobContract=jobContractDao.getJobContractId(new Integer(id));
 			jobContractDto.setId(jobContract.getId().toString());
-			jobContractDto.setEmployeeId(employeeDao.getEmployeeByEmployeeId(id).toString());
-			jobContractDto.setProjectManagerId(projectManagerDao.getProjectManagerId(id).toString());
+			Employee employee=employeeDao.getEmployeeId(new Integer(jobContractDto.getEmployeeId()));     
+			ProjectManager projectManager=projectManagerDao.getProjectManagerId(new Integer(jobContractDto.getProjectManagerId()));     
+			jobContractDto.setEmployeeId(employee.toString());
+			jobContractDto.setProjectManagerId(projectManager.toString());
 			jobContractDto.setJcpropcd(jobContract.getJcpropcd());
 			jobContractDto.setJob(jobContract.getJob());
 			jobContractDto.setAmt(jobContract.getAmt());
@@ -79,7 +81,7 @@ public class JobContractServiceImpl implements JobContractService {
 		return jobContractDto;
 	}
 
-	@Override
+	@Transactional
 	public List<JobContractDto> listJobContracts() {
 		List<JobContractDto> jobContractDtoList=new ArrayList<JobContractDto>();
 		try{

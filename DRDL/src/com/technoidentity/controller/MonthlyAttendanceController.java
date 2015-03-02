@@ -19,9 +19,9 @@ import com.technoidentity.service.MonthlyAttendanceService;
 @Controller
 public class MonthlyAttendanceController {
 	@Autowired
-	public MonthlyAttendanceService monthlyAttendanceService;
+	private MonthlyAttendanceService monthlyAttendanceService;
     @Autowired
-    public EmployeeService employeeService;
+    private EmployeeService employeeService;
 	@RequestMapping(value = "/addAttendance", method = RequestMethod.GET)
 	public String loadAttence(Map<String, Object> map,HttpServletRequest request) {
 		map.put("list", employeeService.listEmployees());	

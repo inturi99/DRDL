@@ -42,8 +42,16 @@ public class ProjectManager {
 	@Column(name = "dob")
 	private Date dob;
     
-	@OneToMany(mappedBy = "ProjectManager")
-	 private List<JobContract> jobContracts;
+	@OneToMany(mappedBy = "projectManager")
+    private List<JobContract> jobContracts;
+	public List<JobContract> getJobContracts() {
+		return jobContracts;
+	}
+
+	public void setJobContracts(List<JobContract> jobContracts) {
+		this.jobContracts = jobContracts;
+	}
+
 	public Integer getId() {
 		return id;
 	}

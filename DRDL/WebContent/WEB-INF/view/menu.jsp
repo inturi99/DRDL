@@ -11,6 +11,7 @@
 		data-toggle="dropdown" href="#">TRANSACTIONS <span class="caret"></span></a>
 		<ul class="dropdown-menu">
 			<li><a href="addAttendance">Monthly Employee Attendance </a></li>
+			<li><a href="jcList">Non Salary </a></li>
 			<li><a href="#">Page 1-3</a></li>
 		</ul></li>
 

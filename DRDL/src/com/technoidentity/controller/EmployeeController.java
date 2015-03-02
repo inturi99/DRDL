@@ -24,7 +24,7 @@ import com.technoidentity.service.EmployeeService;
 @Controller
 public class EmployeeController {
 	@Autowired
-	public EmployeeService employeeService;
+	private EmployeeService employeeService;
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {

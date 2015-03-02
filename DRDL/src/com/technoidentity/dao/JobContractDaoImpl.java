@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.technoidentity.model.JobContract;
-
+@Repository
 public class JobContractDaoImpl implements JobContractDao {
 	@Autowired
 	private SessionFactory sessionFactory;
