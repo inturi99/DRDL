@@ -29,7 +29,7 @@
     <span class="glyphicon glyphicon-plus"></span>
     Job Contract Employee</a>
 <div class="table-responsive">
-<c:if test="${!empty jobContractList}">
+<c:if test="${!empty jcList}">
     <table class="table table-striped table-bordered">
         <thead class="table-head">
         <tr>
@@ -38,13 +38,13 @@
             <th class="text-center">jcdate</th>
             <th class="text-center">amt</th>
            <th class="text-center">receipt</th>
-            <th class="text-center">Qualififaction</th>
+            <th class="text-center">Payment Mode</th>
             
             <th></th>
             <th></th>
         </tr>
         </thead>
-        <c:forEach items="${jobContractList}" var="jobContractDto">
+        <c:forEach items="${jcList}" var="jobContractDto">
             <tr>
                 <td align="center">${jobContractDto.jcpropcd} </td>
                 <td align="center"> <fmt:formatDate value="${jobContractDto.pdate}" pattern="dd/MM/yyyy"/></td>
@@ -52,7 +52,7 @@
                 <td align="center">${jobContractDto.amt} </td>
                 <td align="center">${jobContractDto.receipt}</td>
                <td align="center">${jobContractDto.paymode} </td>
-                 <td align="center"><a href="edit?id=${jobContractDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                 <td align="center"><a href="editjobcontract?id=${jobContractDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td align="center"><a href="delete/${jobContractDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>

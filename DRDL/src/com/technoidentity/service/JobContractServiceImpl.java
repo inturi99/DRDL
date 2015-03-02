@@ -64,10 +64,8 @@ public class JobContractServiceImpl implements JobContractService {
 		try{
 			JobContract jobContract=jobContractDao.getJobContractId(new Integer(id));
 			jobContractDto.setId(jobContract.getId().toString());
-			Employee employee=employeeDao.getEmployeeId(new Integer(jobContractDto.getEmployeeId()));     
-			ProjectManager projectManager=projectManagerDao.getProjectManagerId(new Integer(jobContractDto.getProjectManagerId()));     
-			jobContractDto.setEmployeeId(employee.toString());
-			jobContractDto.setProjectManagerId(projectManager.toString());
+			jobContractDto.setEmployeeId(jobContract.getEmployee().getId().toString());
+			jobContractDto.setProjectManagerId(jobContract.getProjectManager().getId().toString());
 			jobContractDto.setJcpropcd(jobContract.getJcpropcd());
 			jobContractDto.setJob(jobContract.getJob());
 			jobContractDto.setAmt(jobContract.getAmt());
@@ -84,15 +82,12 @@ public class JobContractServiceImpl implements JobContractService {
 	@Transactional
 	public List<JobContractDto> listJobContracts() {
 		List<JobContractDto> jobContractDtoList=new ArrayList<JobContractDto>();
-		try{
 			List<JobContract> jobContractList=jobContractDao.listJobContracts();
 			for(JobContract jobContract : jobContractList){
 				JobContractDto jobContractDto=new JobContractDto();
 				jobContractDto.setId(jobContract.getId().toString());
-				Employee employee=employeeDao.getEmployeeId(new Integer(jobContractDto.getEmployeeId()));     
-				ProjectManager projectManager=projectManagerDao.getProjectManagerId(new Integer(jobContractDto.getProjectManagerId()));     
-				jobContractDto.setEmployeeId(employee.getId().toString());
-				jobContractDto.setProjectManagerId(projectManager.getId().toString());
+				jobContractDto.setEmployeeId(jobContract.getEmployee().getId().toString());
+				jobContractDto.setProjectManagerId(jobContract.getProjectManager().getId().toString());
 				jobContractDto.setJcpropcd(jobContract.getJcpropcd());
 				jobContractDto.setJob(jobContract.getJob());
 				jobContractDto.setAmt(jobContract.getAmt());
@@ -102,10 +97,6 @@ public class JobContractServiceImpl implements JobContractService {
 				jobContractDto.setReceipt(jobContractDto.getReceipt());
 				jobContractDtoList.add(jobContractDto);
 			}
-			
-		}catch(Exception e){
-			e.printStackTrace();
-		}
 		return jobContractDtoList;
 	}
 	
