@@ -34,7 +34,7 @@ public class JobContractDaoImpl implements JobContractDao {
 	@Override
 	public List<JobContract> listJobContracts() {
 		// TODO Auto-generated method stub
-		return sessionFactory.getCurrentSession().createQuery("select * from JobContract").list();
+		return sessionFactory.getCurrentSession().createQuery("from JobContract").list();
 	}
 
 }
