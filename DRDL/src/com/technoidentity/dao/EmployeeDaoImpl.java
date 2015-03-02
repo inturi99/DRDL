@@ -30,7 +30,11 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return sessionFactory.getCurrentSession().createQuery("from Employee").list();
 
 	}
+	@Override
+	public List<Employee> listcontractEmployees() {
+	return sessionFactory.getCurrentSession().createQuery("from Employee where emptype like 'Co%'").list();
 
+	}
 	@Override
 	public void removeEmploye(Integer id) {
 		 Employee employee = (Employee) sessionFactory.getCurrentSession().load(

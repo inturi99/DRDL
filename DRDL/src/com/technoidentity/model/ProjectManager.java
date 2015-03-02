@@ -2,11 +2,13 @@ package com.technoidentity.model;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Proxy;
@@ -39,7 +41,9 @@ public class ProjectManager {
 
 	@Column(name = "dob")
 	private Date dob;
-
+    
+	@OneToMany(mappedBy = "ProjectManager")
+	 private List<JobContract> jobContracts;
 	public Integer getId() {
 		return id;
 	}

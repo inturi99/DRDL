@@ -62,6 +62,12 @@ public class EmployeeController {
 		map.put("employeeList", employeeService.listEmployees());
 		return "employeeslist";
 	}
+	@RequestMapping("/contrList")
+	public String listContractEmployee(Map<String, Object> map) {
+		// map.put("employee", new Employee());
+		map.put("contrList", employeeService.listContractEmployee());
+		return "contractemployeelist";
+	}
 
 	@RequestMapping("/delete/{employeeId}")
 	public String deleteEmployee(@PathVariable("employeeId") Integer employeeId) {

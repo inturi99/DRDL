@@ -12,6 +12,7 @@ public interface EmployeeService {
     public List<EmployeeDto> listEmployees();
     public List<EmployeeDto> findByFirstName(String name);
     public void removeEmloyee(Integer id);
+    public List<EmployeeDto> listContractEmployee();
     public List<EmployeeDto> getEmployeeByEmployeeId(String employeeId);
 
 }

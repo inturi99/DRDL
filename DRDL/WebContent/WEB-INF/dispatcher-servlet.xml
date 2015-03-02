@@ -46,6 +46,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 				<value>com.technoidentity.model.Vendor</value>
 				<value>com.technoidentity.model.MonthlyAttendance
 				</value>
+				<value>com.technoidentity.model.MonthlyWorkingDays
+				</value>
 				</list>
 		</property>
 		<property name="hibernateProperties">
