@@ -80,7 +80,7 @@ public class Employee {
 	private String job;
 	@Column(name = "salary")
 	
-	private Integer salary;
+	private Double salary;
 	@Column(name = "paddress")
 	@Size(min = 0, max = 255)
 	private String paddress;
@@ -157,13 +157,12 @@ public class Employee {
 		return pmcode;
 	}
 	       
-
-	public List<MonthlyAttendance> getMonthlyAttendences() {
-		return monthlyAttendances;
-	}
-
 	public void setMonthlyAttendances(List<MonthlyAttendance> monthlyAttendances) {
 		this.monthlyAttendances = monthlyAttendances;
+	}
+
+	public List<MonthlyAttendance> getMonthlyAttendances() {
+		return monthlyAttendances;
 	}
 
 	public void setPmcode(Integer pmcode) {
@@ -178,11 +177,13 @@ public class Employee {
 		this.iboss = iboss;
 	}
 
-	public Integer getSalary() {
+	
+
+	public Double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(Integer salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 

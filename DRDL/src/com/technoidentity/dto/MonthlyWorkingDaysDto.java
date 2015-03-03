@@ -7,10 +7,10 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class MonthlyWorkingDaysDto {
 	private String Id;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "MM")
 	private Date month;
 	private Integer workingdays;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "yyyy")
 	private Date year;
 	public String getId() {
 		return Id;

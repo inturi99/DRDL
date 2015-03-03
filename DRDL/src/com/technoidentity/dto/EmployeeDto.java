@@ -32,7 +32,7 @@ public class EmployeeDto {
 	private String resp;
 	private String job;
 
-	private Integer salary;
+	private Double salary;
 	private String paddress;
 	private Long pphone;
 	private String taddress;
@@ -86,11 +86,12 @@ public class EmployeeDto {
 		this.iboss = iboss;
 	}
 
-	public Integer getSalary() {
+	
+	public Double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(Integer salary) {
+	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 

@@ -11,6 +11,7 @@
 		data-toggle="dropdown" href="#">TRANSACTIONS <span class="caret"></span></a>
 		<ul class="dropdown-menu">
 			<li><a href="addAttendance">MONTHLY EMPLOYEE ATTENDANCE </a></li>
+			<li><a href="addIncrement">EMPLOYEE INCREMENTS</a></li>
 			 <li class="dropdown dropdown-submenu">
 			 <a href="#" class="dropdown-toggle" data-toggle="dropdown">JOB CONTRACT PROPOSALS</a>
              <ul class="dropdown-menu">
@@ -30,13 +31,13 @@
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#">QUERY FORMS <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
+					<li><a href="#">JOB CONTRACT </a></li>
 					<li><a href="#">DECISION MAKING</a></li>										
 				</ul></li>
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#">REPORTS<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
+					<li><a href="#">JOB CONTRACT </a></li>
 					<li><a href="#">STATUS REPORT</a></li>
 					<li><a href="#">SELECT PROJECT</a></li>
 					<li><a href="#">SALARY FULL LIST </a></li>					
