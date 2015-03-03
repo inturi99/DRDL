@@ -17,21 +17,24 @@ import org.hibernate.annotations.Proxy;
 public class JobContract {
 	@Id
 	@GeneratedValue
-	@Column(name = "id")
+	@Column(name ="id")
 	private Integer id;
-	@Column(name = "jcpropcd")
+	@Column(name ="jcpropcd")
 	private String jcpropcd;
+	
 	@Column(name="pdate")
 	private Date pdate;
+	
 	@Column(name="jcdate")
 	private Date jcdate;
-	@Column(name = "job")
+	
+	@Column(name ="job")
 	private String job;
 	@Column(name="amt")
 	private Double amt;
 	@Column(name = "receipt")
 	private String receipt;
-	@Column(name = "paymode")
+	@Column(name ="paymode")
 	private String paymode;
 	@ManyToOne
     private Employee employee;
