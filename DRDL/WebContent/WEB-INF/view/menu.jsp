@@ -21,9 +21,26 @@
 		</ul>
 		</li>
 
-	<li><a href="#">DECISION</a></li>
-	<li><a href="#">QUERY FORMS</a></li>
-	<li><a href="#">REPORTS</a></li>
+	<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">DECISION <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="pmList">JOB CONTRACT </a></li>
+					<li><a href="#">SALARY</a></li>										
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">QUERY FORMS <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="pmList">JOB CONTRACT </a></li>
+					<li><a href="#">DECISION MAKING</a></li>										
+				</ul></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">REPORTS<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="pmList">JOB CONTRACT </a></li>
+					<li><a href="#">STATUS REPORT</a></li>
+					<li><a href="#">SELECT PROJECT</a></li>
+					<li><a href="#">SALARY FULL LIST </a></li>					
+				</ul></li>
 	<li><a href="#">EXIT</a></li>
 	<li><a href="list">EMPLOYEE</a></li>
 </ul>

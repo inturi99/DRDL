@@ -4,11 +4,8 @@
 <%@taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <html>
 <head>
-    <title>Employee List</title>
- <!-- <script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  -->
- <script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <title>Contract Employee List</title>
+<script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
  <script src="./resources/js/jquery-ui-1.10.2.smoothness.min.js" type="text/javascript"></script>
  <script src="./resources/js/jquery-validate.min.js" type="text/javascript"></script>
 
@@ -20,53 +17,22 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./resources/js/bootstrap-submenu.min.js"
+	type="text/javascript"></script>
+	<link href="<c:url value="/resources/css/bootstrap-submenu.min.css" />"
+	rel="stylesheet" type="text/css" />
+<script src="./resources/js/bootstrap-submenu.js"
+	type="text/javascript"></script>
+	<script src="./resources/js/submenu.js"
+	type="text/javascript"></script>
+	<link href="<c:url value="/resources/css/submenu.css" />"
+	rel="stylesheet" type="text/css" />
+	<link href="<c:url value="/resources/css/bootstrap-submenu.css" />"
+	rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="page-header">
-   <h1  align="center" style="font-family: serif; color:#357ebd;">Defence Research and Development Organization
-		</h1>  
-  
-   </div>
-   <div>
-   <ul class="nav nav-tabs" style="margin-top: -25px">
-    <li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">PROJECT MANAGER DETAILS </a></li>
-					<li><a href="venList">VENDOR DETAILS</a></li>
-					<li><a href="#">CONT EMPLOYES DETAILS</a></li>
-					<li><a href="#">ADD ON.OF DAYS PER MONTH </a></li>					
-				</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">TRANSACTIONS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT PROPOSALS </a></li>	
-					<li><a href="addAttendance">Monthly Employee Attendance  </a></li>								
-				</ul></li>
-			
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">DECISION <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
-					<li><a href="#">SALARY</a></li>										
-				</ul></li>
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">QUERY FORMS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
-					<li><a href="#">DECISION MAKING</a></li>										
-				</ul></li>
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">REPORTS<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
-					<li><a href="#">STATUS REPORT</a></li>
-					<li><a href="#">SELECT PROJECT</a></li>
-					<li><a href="#">SALARY FULL LIST </a></li>					
-				</ul></li>
-   <li><a href="#">EXIT</a></li>
-    <li><a href="list">EMPLOYEE</a></li>
-   </ul>
+<jsp:include page="header.jsp"/>
+<jsp:include page="menu.jsp"/>
 <div style="padding: 25px">
     <a href="addEmployee" class="btn btn-primary">
     <span class="glyphicon glyphicon-plus"></span>
