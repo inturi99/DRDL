@@ -92,11 +92,17 @@ public class EmployeeController {
 	}
 	@RequestMapping(value="/load",method=RequestMethod.GET)
 	public ModelAndView load(){
-		return new ModelAndView("/table");
+		return new ModelAndView("/table1");
 	}
 	@RequestMapping(value="/load/{name}",method=RequestMethod.GET)
 	public ModelAndView loadByName(@PathVariable("name") String name,ModelMap model){
 	model.put("employees", employeeService.findByFirstName(name));
+	return new ModelAndView("/search",model);
+	}
+	@RequestMapping(value="/load/{employeeNumber}/{name}",method=RequestMethod.GET)
+	public ModelAndView loadByemployeeNumberandName(@PathVariable("employeeNumber") String employeeNumber,@PathVariable("name") String name,ModelMap model){
+	model.put("employees", employeeService.find(employeeNumber, name));
+	model.put("list", employeeService.listEmployees());
 	return new ModelAndView("/search",model);
 	}
 

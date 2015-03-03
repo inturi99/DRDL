@@ -10,6 +10,7 @@ public interface EmployeeDao {
 	    public Employee getEmployeeId(Integer id);
 	    public List<Employee> listEmployees();
         public List<Employee> findByName(String name);
+        public List<Employee> find(String employeeNumber,String name);
 	    public void removeEmploye(Integer id);
 	    public List<Employee> listcontractEmployees();
 	    public List<Employee> getEmployeeByEmployeeId(Integer id);

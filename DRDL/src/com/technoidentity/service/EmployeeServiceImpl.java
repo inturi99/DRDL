@@ -83,7 +83,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 			// TODO Auto-generated method stub
 			Employee employee = employeeDao.getEmployeeId(new Integer(
 					employeeDto.getId()));
-			//employee.setEmployeeNumber(employeeDto.getEmployeeNumber());
+			String empId=employee.getId().toString();
+			String empName=employee.getName().substring(0, 3).toUpperCase();
+			String empNo=empName +" - "+ empId;
+			employeeDto.setEmployeeNumber(empNo);
 			employee.setName(employeeDto.getName());
 			employee.setEmployeeNumber(employeeDto.getEmployeeNumber());;
 			employee.setDesignation(employeeDto.getDesignation());
@@ -450,5 +453,64 @@ public class EmployeeServiceImpl implements EmployeeService {
 					e.printStackTrace();
 				}
 				return employeeDtoList;
-					}
+		}
+	@Transactional
+	public List<EmployeeDto> find(String employeeNumber, String name) {
+		List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();
+		try {
+			List<Employee> employeeList = employeeDao.find(employeeNumber, name);
+			for (Employee employee : employeeList) {
+				EmployeeDto employeeDto = new EmployeeDto();
+				employeeDto.setId(employee.getId().toString());
+				employeeDto.setEmployeeNumber(employee.getEmployeeNumber());
+				employeeDto.setName(employee.getName());
+				employeeDto.setDesignation(employee.getDesignation());
+				employeeDto.setProject(employee.getProject());
+				employeeDto.setEmail(employee.getEmail());
+				employeeDto.setQual(employee.getQual());
+				employeeDto.setLab(employee.getLab());
+				employeeDto.setDob(employee.getDob());
+				employeeDto.setIdcardno(employee.getIdcardno());
+				employeeDto.setDoj(employee.getDoj());
+				employeeDto.setDol(employee.getDol());
+				employeeDto.setWkc(employee.getWkc());
+				employeeDto.setDept(employee.getDept());
+				employeeDto.setPmcode(employee.getPmcode());
+				employeeDto.setIboss(employee.getIboss());
+				employeeDto.setResp(employee.getResp());
+				employeeDto.setJob(employee.getJob());
+				employeeDto.setSalary(employee.getSalary());
+				employeeDto.setPaddress(employee.getPaddress());
+				employeeDto.setPphone(employee.getPphone());
+				employeeDto.setTaddress(employee.getTaddress());
+				employeeDto.setTphone(employee.getTphone());
+				employeeDto.setType(employee.getType());
+				employeeDto.setConsigno(employee.getConsigno());
+				employeeDto.setConexpon(employee.getConexpon());
+				employeeDto.setService(employee.getService());
+				employeeDto.setWkcphone(employee.getWkcphone());
+				employeeDto.setEmptype(employee.getEmptype());
+				employeeDto.setPassword(employee.getPassword());
+
+				byte[] photoBytes = employee.getPhoto();
+				BASE64Encoder bn = new BASE64Encoder();
+				String photoInString = bn.encodeBuffer(photoBytes);
+				employeeDto.setPhoto(photoInString);
+
+				employeeDto.setCatg(employee.getCatg());
+				employeeDto.setStart_sal(employee.getStart_sal());
+				employeeDto.setBoard_type(employee.getBoard_type());
+				employeeDto.setUpdate_on(employee.getUpdate_on());
+				employeeDto.setDot(employee.getDot());
+				employeeDto.setEmpid_new(employee.getEmpid_new());
+				employeeDto.setMobile(employee.getMobile());
+				employeeDto.setVerified(employee.getVerified());
+				employeeDto.setPunch(employee.getPunch());
+				employeeDtoList.add(employeeDto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return employeeDtoList;
+	}
 }

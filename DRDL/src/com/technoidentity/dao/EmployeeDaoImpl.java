@@ -64,6 +64,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createQuery("from Employee where id =:id").setParameter("id", id).list();
 	}
+
+	@Override
+	public List<Employee> find(String employeeNumber, String name) {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createCriteria(Employee.class)
+				.add(Restrictions.eq("employeeNumber", employeeNumber))
+				.add(Restrictions.eq("name", name))
+				.list();
+	}
 	
 
 }
