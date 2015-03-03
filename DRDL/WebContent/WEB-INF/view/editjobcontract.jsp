@@ -66,7 +66,7 @@ body {
 						action="${saveUrl}" cssClass="form-horizontal">
 				<div class="form-group">
 								<label for="jcpropcd" class="col-sm-2 control-label">Requisition Code</label>
-								<div class="col-sm-2">
+								<div class="col-sm-4">
 									<form:input path="jcpropcd" id="jcpropcd" placeholder="jcpropcd"
 										cssClass="form-control" />
 								</div>
@@ -81,8 +81,6 @@ body {
 					                   itemValue="id" />
 										</form:select>
 								</div>
-								</div>
-							   <div class="form-group" >
 								<label for="pdate" class="col-sm-2 control-label">Requisition Date
 									</label>
 								<div class="col-sm-4">
@@ -93,8 +91,20 @@ body {
                                       </label>
 								</div>
 								</div>
+								</div>
+							<div class="form-group">
+								<label for="job" class="col-sm-2 control-label">Job</label>
+								<div class="col-sm-10">
+									<form:input path="job" id="job" placeholder="job"
+										cssClass="form-control" />
+								</div>
 							</div>
-							  <div class="form-group">
+							<div class="form-group">
+								<label for="amt" class="col-sm-2 control-label">Amount</label>
+								<div class="col-sm-4">
+									<form:input path="amt" id="amt" placeholder="Amount"
+										cssClass="form-control" />
+								</div>
 								<label for="employeeId" class="col-sm-2 control-label">Contractor/Job Executor </label>
 								<div class="col-sm-4">
 									<form:select path="employeeId"
@@ -104,30 +114,14 @@ body {
 					                   itemValue="id" />
 										</form:select>
 								</div>
-								</div>
-							<div class="form-group">
-								<label for="job" class="col-sm-2 control-label">Job</label>
-								<div class="col-sm-2">
-									<form:input path="job" id="job" placeholder="job"
-										cssClass="form-control" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="amt" class="col-sm-2 control-label">Amount</label>
-								<div class="col-sm-2">
-									<form:input path="amt" id="amt" placeholder="Amount"
-										cssClass="form-control" />
-								</div>
 							</div>
 							
                             <div class="form-group">
-								<label for="receipt" class="col-sm-2 control-label">receipt</label>
-								<div class="col-sm-2">
+								<label for="receipt" class="col-sm-2 control-label">Receipt No</label>
+								<div class="col-sm-4">
 									<form:input path="receipt"  id="receipt" placeholder="receipt"
 										cssClass="form-control" />
 								</div>
-							</div>
-							 <div class="form-group" >
 								<label for="jcdate" class="col-sm-2 control-label">Date of Job Completion
 									</label>
 								<div class="col-sm-4">
@@ -138,14 +132,12 @@ body {
                                       </label>
 								</div>
 								</div>
-								</div>
+							</div>
 								<div class="form-group">
-								<label for="paymode" class="col-sm-2 control-label">Payment Mode</label>
-								<div class="col-sm-2">
-									Cash:<form:radiobutton path="paymode" value="cash" id="paymode"
-										cssClass="form-control" />
-										Cheque:<form:radiobutton path="paymode" value="cheque" id="paymode"
-										cssClass="form-control" />
+								<label for="paymode" class="col-sm-5 control-label">Payment Mode</label>
+								<div class="col-sm-5">
+									Cash:<form:radiobutton path="paymode" value="cash" id="paymode"/>
+									Cheque:<form:radiobutton path="paymode" value="cheque" id="paymode" />	
 								</div>
 							</div>
 						<div class="form-group">

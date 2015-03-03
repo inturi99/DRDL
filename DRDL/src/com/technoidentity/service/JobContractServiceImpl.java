@@ -69,10 +69,10 @@ public class JobContractServiceImpl implements JobContractService {
 			jobContractDto.setJcpropcd(jobContract.getJcpropcd());
 			jobContractDto.setJob(jobContract.getJob());
 			jobContractDto.setAmt(jobContract.getAmt());
-			jobContractDto.setPaymode(jobContractDto.getPaymode());
-			jobContractDto.setJcdate(jobContractDto.getJcdate());
-			jobContractDto.setPdate(jobContractDto.getPdate());
-			jobContractDto.setReceipt(jobContractDto.getReceipt());
+			jobContractDto.setPaymode(jobContract.getPaymode());
+			jobContractDto.setJcdate(jobContract.getJcdate());
+			jobContractDto.setPdate(jobContract.getPdate());
+			jobContractDto.setReceipt(jobContract.getReceipt());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -98,6 +98,12 @@ public class JobContractServiceImpl implements JobContractService {
 				jobContractDtoList.add(jobContractDto);
 			}
 		return jobContractDtoList;
+	}
+
+	@Transactional
+	public void removeJobContractEmloyee(Integer id) {
+		jobContractDao.removeJobContractEmploye(id);
+		
 	}
 	
 

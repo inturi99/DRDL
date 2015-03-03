@@ -45,47 +45,8 @@
 
 </head>
 <body>
-	<div class="page-header">
-		<h1 align="center">Defence Research and Development Organisation
-		</h1>
-		<ul class="nav nav-tabs">
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">PROJECT MANAGER DETAILS </a></li>
-					<li><a href="#">VENDOR DETAILS</a></li>
-					<li><a href="#">CONT EMPLOYES DETAILS</a></li>
-					<li><a href="#">ADD ON.OF DAYS PER MONTH </a></li>					
-				</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">TRANSACTIONS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT PROPOSALS </a></li>									
-				</ul></li>
-			
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">DECISION <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
-					<li><a href="#">SALARY</a></li>										
-				</ul></li>
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">QUERY FORMS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
-					<li><a href="#">DECISION MAKING</a></li>										
-				</ul></li>
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">REPORTS<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="pmList">JOB CONTRACT </a></li>
-					<li><a href="#">STATUS REPORT</a></li>
-					<li><a href="#">SELECT PROJECT</a></li>
-					<li><a href="#">SALARY FULL LIST </a></li>					
-				</ul></li>
-   <li><a href="#">EXIT</a></li>
-    <li><a href="list">EMPLOYEE</a></li>
-   </ul>
+<jsp:include page="header.jsp" />
+	<jsp:include page="menu.jsp" />
 		<div class="container">
 			<div class="col-sm-offset-1 col-sm-10">
 				<div class="panel panel-primary ">

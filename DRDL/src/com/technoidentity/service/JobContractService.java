@@ -9,4 +9,5 @@ public interface JobContractService {
 	 public void updateJobContract(JobContractDto jobContractDto);
 	    public JobContractDto getJobContractId(String id);
 	    public List<JobContractDto> listJobContracts();
+	    public void removeJobContractEmloyee(Integer id);
 }

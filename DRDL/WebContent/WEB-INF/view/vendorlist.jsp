@@ -32,31 +32,8 @@
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="page-header" align="center" style="margin-top: 0px">
-	     <img src="resources/images/drdo.png" alt="logo" ></img>
-		</div>
-		<div>
-		<ul class="nav nav-tabs" style="margin-top: -25px">
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li class="dropdown-submenu"><a href="pmList" class="dropdown-toggle" data-toggle="dropdown">Project Manager </a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Submenu1</a></li>
-							<li><a href="#">Submenu2</a></li>
-						</ul>
-					</li>
-					<li><a href="venList">Vendor</a></li>
-					<li><a href="#">Page 1-3</a></li>
-				</ul>
-			</li>
-			<li><a href="#">TRANSACTIONS</a></li>
-			<li><a href="#">DECISION</a></li>
-			<li><a href="#">QUERY FORMS</a></li>
-			<li><a href="#">REPORTS</a></li>
-			<li><a href="#">EXIT</a></li>
-			<li><a href="list">EMPLOYEE</a></li>
-		</ul>
+	<jsp:include page="header.jsp" />
+	<jsp:include page="menu.jsp" />
 		<div style="padding: 25px">
 			<a href="addVendor" class="btn btn-primary"> <span
 				class="glyphicon glyphicon-plus"></span> Vendor

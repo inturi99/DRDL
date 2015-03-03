@@ -10,10 +10,16 @@
 	<li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#">TRANSACTIONS <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="addAttendance">Monthly Employee Attendance </a></li>
-			<li><a href="jcList">Non Salary </a></li>
-			<li><a href="#">Page 1-3</a></li>
-		</ul></li>
+			<li><a href="addAttendance">MONTHLY EMPLOYEE ATTENDANCE </a></li>
+			 <li class="dropdown dropdown-submenu">
+			 <a href="#" class="dropdown-toggle" data-toggle="dropdown">JOB CONTRACT PROPOSALS</a>
+             <ul class="dropdown-menu">
+               <li><a tabindex="-1" href="jcList">NON SALARY TYPE </a></li>
+               <li><a tabindex="-1" href="jcList">SALARY TYPE </a></li>
+             </ul>
+			</li>
+		</ul>
+		</li>
 
 	<li><a href="#">DECISION</a></li>
 	<li><a href="#">QUERY FORMS</a></li>

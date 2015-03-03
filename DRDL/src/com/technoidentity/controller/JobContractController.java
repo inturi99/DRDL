@@ -47,16 +47,18 @@ public String listJobContracts(Map<String, Object> map) {
 	map.put("jcList", jobContractService.listJobContracts());
 	return "jobcontractlist";
 }
-@RequestMapping("/delete/{jobcontratId}")
+@RequestMapping("/deletejobcontract/{jobcontratId}")
 public String deleteEmployee(@PathVariable("jobcontratId") Integer jobcontratId) {
-	//jobContractService.d
+	jobContractService.removeJobContractEmloyee(jobcontratId);
 	return "redirect:/jcList";
 }
 @RequestMapping(value = "/editjobcontract", method = RequestMethod.GET)
 public String getJobContractId(
 		@RequestParam(value = "id", required = true) String id, Model model) {
 	model.addAttribute("jobContractDto", jobContractService.getJobContractId(id));
-	return "editjobContract";
+	model.addAttribute("list", employeeService.listEmployees());
+	model.addAttribute("pmlist",projectManagerService.listProjectManagers());
+	return "editjobcontract";
 }
 
 @RequestMapping(value = "/editjobcontract", method = RequestMethod.POST)
@@ -65,6 +67,8 @@ public String upJobContract(@ModelAttribute("jobContractDto") JobContractDto job
 	jobContractDto.setId(id);
 	jobContractService.updateJobContract(jobContractDto);
 	model.addAttribute("id",id);
+	model.addAttribute("list", employeeService.listEmployees());
+	model.addAttribute("pmlist",projectManagerService.listProjectManagers());
 	return "redirect:/jcList";
 }
 }

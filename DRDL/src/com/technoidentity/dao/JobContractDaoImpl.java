@@ -37,4 +37,15 @@ public class JobContractDaoImpl implements JobContractDao {
 		return sessionFactory.getCurrentSession().createQuery("from JobContract").list();
 	}
 
+	@Override
+	public void removeJobContractEmploye(Integer id) {
+		 JobContract jobContract = (JobContract) sessionFactory.getCurrentSession().load(
+	                JobContract.class, id);
+	        if (null != jobContract) {
+	            sessionFactory.getCurrentSession().delete(jobContract);
+	        }
+
+		
+	}
+
 }

@@ -33,12 +33,12 @@
     <table class="table table-striped table-bordered">
         <thead class="table-head">
         <tr>
-            <th class="text-center">jcpropcd</th>
-            <th class="text-center">pdate</th>
-            <th class="text-center">jcdate</th>
-            <th class="text-center">amt</th>
-           <th class="text-center">receipt</th>
-            <th class="text-center">Payment Mode</th>
+            <th class="text-center">REQUISITION CODE</th>
+            <th class="text-center">REQUISITION DATE</th>
+            <th class="text-center">DATE OF JOB COMPLETION</th>
+            <th class="text-center">AMOUNT</th>
+           <th class="text-center">RECIPT NO</th>
+            <th class="text-center">PAYMENT MODE</th>
             
             <th></th>
             <th></th>
@@ -53,7 +53,7 @@
                 <td align="center">${jobContractDto.receipt}</td>
                <td align="center">${jobContractDto.paymode} </td>
                  <td align="center"><a href="editjobcontract?id=${jobContractDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                <td align="center"><a href="delete/${jobContractDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
+                <td align="center"><a href="deletejobcontract/${jobContractDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>
         </c:forEach>
     </table>

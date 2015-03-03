@@ -5,10 +5,8 @@
 <html>
 <head>
     <title>Employee List</title>
- <!-- <script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  -->
- <script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+ 
+  <script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
  <script src="./resources/js/jquery-ui-1.10.2.smoothness.min.js" type="text/javascript"></script>
  <script src="./resources/js/jquery-validate.min.js" type="text/javascript"></script>
 
@@ -20,6 +18,19 @@
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./resources/js/bootstrap-submenu.min.js"
+	type="text/javascript"></script>
+	<link href="<c:url value="/resources/css/bootstrap-submenu.min.css" />"
+	rel="stylesheet" type="text/css" />
+<script src="./resources/js/bootstrap-submenu.js"
+	type="text/javascript"></script>
+	<script src="./resources/js/submenu.js"
+	type="text/javascript"></script>
+	<link href="<c:url value="/resources/css/submenu.css" />"
+	rel="stylesheet" type="text/css" />
+	<link href="<c:url value="/resources/css/bootstrap-submenu.css" />"
+	rel="stylesheet" type="text/css" />
+	
 </head>
 <body>
 <jsp:include page="header.jsp"/>

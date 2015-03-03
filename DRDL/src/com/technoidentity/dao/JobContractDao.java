@@ -9,4 +9,5 @@ public interface JobContractDao {
 	 public void updateJobContract(JobContract jobContract);
 	    public JobContract getJobContractId(Integer id);
 	    public List<JobContract> listJobContracts();
+	    public void removeJobContractEmploye(Integer id);
 }
