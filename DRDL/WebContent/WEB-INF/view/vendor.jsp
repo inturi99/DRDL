@@ -1,32 +1,7 @@
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="pageCashing.jsp"%>
 <html>
 <head>
-<title>Project Manager</title>
-<script src="./resources/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="./resources/js/jquery-ui-1.10.2.smoothness.min.js"
-	type="text/javascript"></script>
-<script src="./resources/js/jquery-validate.min.js"
-	type="text/javascript"></script>
-<link href="<c:url value="/resources/css/bootstrap.css" />"
-	rel="stylesheet" type="text/css" />
-<link href="<c:url value="/resources/css/fileinput.min.css" />"
-	rel="stylesheet" type="text/css" />
-<script src="./resources/js/fileinput.min.js" type="text/javascript"></script>
-<link href="<c:url value="/resources/css/bootstrap.min.css" />"
-	rel="stylesheet" type="text/css" />
-<script src="./resources/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="./resources/js/knockout-3.1.0.js" type="text/javascript"></script>
-<script src="./resources/js/main.js" type="text/javascript"></script>
-
-<script src="./resources/js/bootstrapValidator.min.js" type="text/javascript"></script>
-<script src="./resources/js/moment.min.js" type="text/javascript"></script>
-<link href="<c:url value="/resources/css/datepicker.css" />"
-	rel="stylesheet" type="text/css" />
-	<link href="<c:url value="/resources/css/bootstrapValidator.min.css" />"
-	rel="stylesheet" type="text/css" />
-<script src="./resources/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<title>Vendor</title>
  <script type="text/javascript">
     var validationRules = {
         container: 'tooltip',
