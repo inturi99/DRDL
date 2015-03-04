@@ -3,6 +3,7 @@ package com.technoidentity.controller;
 import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,7 +92,9 @@ public class EmployeeController {
 		return "redirect:/list";
 	}
 	@RequestMapping(value="/load",method=RequestMethod.GET)
-	public ModelAndView load(){
+	public ModelAndView load(Map<String, Object> map,HttpServletRequest request){
+		map.put("list", employeeService.listEmployees());	
+		map.put("employeeDto", new EmployeeDto());
 		return new ModelAndView("/table1");
 	}
 	@RequestMapping(value="/load/{name}",method=RequestMethod.GET)

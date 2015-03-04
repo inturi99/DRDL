@@ -58,12 +58,22 @@
 		<div class="col-sm-offset-1 col-sm-10">
 			<div class="panel panel-primary ">
 				<div class="panel-body">
+				<form:form method="get" action="load"
+							commandName="employeeDto" cssClass="form-horizontal">
+				 <div class="form-group">
+								<label for="employeeId" class="col-sm-2 control-label">Employee Id </label>
+								<div class="col-sm-4">
+									<form:select path="id"
+										cssClass="form-control" >
+										<form:option label="-- Select Employee Id --" value="-1" />
+				               <form:options items="${list}" itemLabel="employeeNumber"
+					                   itemValue="id" id="employeeNumber" />
+										</form:select>
+										<input type="text" name="employeeNumber" id="employeeNumber" />
+								</div>
+								</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label" for="employeeNumber">EmployeeNumber</label> 
-						<div class="col-sm-3">
-						<input
-							type="text" name="employeeNumber" id="employeeNumber" />
-							</div>
+						
 						<label class="col-sm-2 control-label" for="name">Name</label> 
 						<div class="col-sm-3">
 						<input type="text" name="name" id="name" />
@@ -88,9 +98,10 @@
 							<jsp:include page="search.jsp" />
 						</tbody>
 					</table>
+				</form:form>
 				</div>
 			</div>
-		</div>
+			</div>
 	</div>
 </body>
 </html>

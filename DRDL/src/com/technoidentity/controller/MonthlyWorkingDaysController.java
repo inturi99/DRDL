@@ -19,12 +19,12 @@ import com.technoidentity.service.MonthlyWorkingDaysService;
 	public class MonthlyWorkingDaysController {
 		@Autowired
 		private MonthlyWorkingDaysService monthlyWorkingdaysService;
-	   @RequestMapping(value="/addMonthlyworkigdays", method = RequestMethod.GET)
+	   @RequestMapping(value="/addMonthlyworkingdays", method = RequestMethod.GET)
 		public String loadWorkingDays(Map<String, Object> map,HttpServletRequest request) {
 			map.put("monthlyWorkingDaysDto", new MonthlyWorkingDaysDto());
 			return "workingdays";
 		}
-	   @RequestMapping(value="/addMonthlyworkigdays",method=RequestMethod.POST)
+	   @RequestMapping(value="/addMonthlyworkingdays",method=RequestMethod.POST)
 		public String addProjectManager(@ModelAttribute("monthlyWorkingDaysDto") @Valid MonthlyWorkingDaysDto monthlyWorkingDaysDto,BindingResult result){
 			monthlyWorkingdaysService.saveMonthlyworkingdays(monthlyWorkingDaysDto);
 		   return "redirect:/list";
