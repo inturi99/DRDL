@@ -8,7 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class MonthlyAttendanceDto {
 	
 	private String id;
-	@DateTimeFormat(pattern = "DD/MM/yyyy")
+	@DateTimeFormat(pattern = "MM/yyyy")
 	private Date date;
 	private Integer prasent;
 	private Integer absent;
