@@ -58,12 +58,17 @@
 		<div class="col-sm-offset-1 col-sm-10">
 			<div class="panel panel-primary ">
 				<div class="panel-body">
-					<div>
-						<label  for="employeeNumber">EmployeeNumber</label> <input
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="employeeNumber">EmployeeNumber</label> 
+						<div class="col-sm-3">
+						<input
 							type="text" name="employeeNumber" id="employeeNumber" />
-						<label for="name">LastName</label> <input type="text" name="name"
-							id="name" />
-					<button type="button" id="button">Search</button>
+							</div>
+						<label class="col-sm-2 control-label" for="name">Name</label> 
+						<div class="col-sm-3">
+						<input type="text" name="name" id="name" />
+							</div>
+					<button type="button" class="btn btn-primary"  id="button">Search</button>
                      </div>  
 					<div id="info"></div>
 					<table id="loadTable" class="table table-striped table-bordered">
