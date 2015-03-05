@@ -33,28 +33,21 @@
 
 
 <script language="javascript" type="text/javascript">
-$(document).ready(function() {
-	$('#button').click(function() {
-				var employeeNumber = $('#firstInput').val();
-				var name = $('#lastInput').val();
-				$.ajax({
-					type:'GET',
-					url:"/DRDL/load/"+"/"+ employeeNumber + "/" + name,
-					success:
-						function loadTable(employeeNumber,name) {
-						url:"/DRDL/load/"+"/"+ employeeNumber + "/" + name,
-						$('#tbody').load(url, function(response, status, xhr) {
-							if (status == "error") {
-								var msg = "Sorry but there was an error : ";
-								$("#info").html(msg + xhr.status + " " + xhr.statusText);
-							}
-						});
-						clearInputs();	
-					}
-				});
+	$(document).ready(function() {
+		$('#button').click(function() {
+			var employeeNumber = $('#employeeNumber').val();
+			var name = $('#name').val();
+			$.ajax({
+				type : 'GET',
+				url : "/DRDL/load/" + "/" + employeeNumber + "/" + name,
+				success : function loadTable(response) {
+					$("#tbody").html(response);
+
+				},
+
 			});
-     });
-	
+		});
+	});
 </script>
 
 </head>
@@ -66,15 +59,12 @@ $(document).ready(function() {
 			<div class="panel panel-primary ">
 				<div class="panel-body">
 					<div>
-						<label for="firstInput">EmployeeNumber</label> <input type="text"
-							name="employeeNumber" id="firstInput" />
-					</div>
-					<div>
-						<label for="lastInput">LastName</label> <input type="text"
-							name="name" id="lastInput" />
-					</div>
-					<button type="button" id="button">Find</button>
-
+						<label  for="employeeNumber">EmployeeNumber</label> <input
+							type="text" name="employeeNumber" id="employeeNumber" />
+						<label for="name">LastName</label> <input type="text" name="name"
+							id="name" />
+					<button type="button" id="button">Search</button>
+                     </div>  
 					<div id="info"></div>
 					<table id="loadTable" class="table table-striped table-bordered">
 						<thead>
