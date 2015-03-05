@@ -6,8 +6,9 @@
             // When the document is ready
             $(document).ready(function () {
                 $('#dobdatepicker').datepicker({
-                    format: "dd/mm/yyyy",
-                    showMeridian: true,
+                	 viewMode: 'years',
+                     format: 'mm/yyyy',
+                    
                     autoclose: true,
                 });  
             
@@ -47,7 +48,7 @@
 								<label for="date" class="col-sm-2 control-label">Date
 									</label>
 								<div class="col-sm-4">
-								  <div class="input-group">
+								  <div class="input-group ">
 									<form:input path="date"  id="dobdatepicker" placeholder="Date of Birth"
 										cssClass="date-picker form-control" />
 										 <label for="dobdatepicker" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
