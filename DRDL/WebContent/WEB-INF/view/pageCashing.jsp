@@ -34,5 +34,6 @@
 	<script type="text/javascript" src="resources/js/b64.js"></script>
 	<script src="./resources/js/bootstrapValidator.min.js" type="text/javascript"></script>
 <script src="./resources/js/moment.min.js" type="text/javascript"></script>
-
+<script src="./resources/js/dobPicker.js" type="text/javascript"></script>
+<script src="./resources/js/dobPicker.min.js" type="text/javascript"></script>
 <!-- <script src="./resources/js/knockout-3.1.0.js" type="text/javascript"></script> -->

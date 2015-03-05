@@ -2,24 +2,34 @@
 <html>
 <head>
 <title>Working Days</title>
- <script type="text/javascript">
-            // When the document is ready
-            $(document).ready(function () {
-                $('#month').datepicker({
-                    format: "mm",
-                    showMeridian: true,
-                    autoclose: true,
-                }); 
-                
-                $('#year').datepicker({
-                	viewMode: 'years',
-                	format: "yyyy",
-                    showMeridian: true,
-                    autoclose: true,
-                }); 
-            
-            });
-        </script>
+   <script>
+$(document).ready(function(){
+  $.dobPicker({
+    daySelector: '#dobday', /* Required */
+    monthSelector: '#dobmonth', /* Required */
+    yearSelector: '#dobyear', /* Required */
+    dayDefault: 'Day', /* Optional */
+    monthDefault: 'Month', /* Optional */
+    yearDefault: 'Year', /* Optional */
+    minimumAge: 8, /* Optional */
+    maximumAge: 100 /* Optional */
+  });
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 <style>
 .error {
 	color: #ee0d25;
@@ -39,22 +49,18 @@
 					<div class="panel-body">
 						<form:form method="post" action="addMonthlyworkingdays"
 							commandName="monthlyWorkingDaysDto" cssClass="form-horizontal">
+							<div class="form-group">
+								<label for="workingdays" class="col-sm-2 control-label">workingdays</label>
+								<div class="col-sm-4">
+									<form:select path="workingdays" id="dobday" placeholder="workingdays"
+										cssClass="form-control" />
+								</div>
+							</div>
 							<div class="form-group" >
 								<label for="month" class="col-sm-2 control-label">Month
 									</label>
 								<div class="col-sm-4">
-								  <div class="input-group">
-									<form:input path="month"  id="month" placeholder="Month"
-										cssClass="date-picker form-control" />
-										 <label for="month" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
-                                      </label>
-								</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="workingdays" class="col-sm-2 control-label">workingdays</label>
-								<div class="col-sm-4">
-									<form:input path="workingdays" placeholder="workingdays"
+									<form:select path="month"  id="dobmonth" placeholder="Month"
 										cssClass="form-control" />
 								</div>
 							</div>
@@ -62,15 +68,10 @@
 								<label for="year" class="col-sm-2 control-label">Year
 									</label>
 								<div class="col-sm-4">
-								  <div class="input-group">
-									<form:input path="year"  id="year" placeholder="Year"
-										cssClass="date-picker form-control" />
-										 <label for="year" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
-                                      </label>
-								</div>
+									<form:select path="year"  id="dobyear" placeholder="Year"
+										cssClass="form-control" />		 
 								</div>
 							</div>
-                             
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<button type="submit" class="btn btn-primary">
