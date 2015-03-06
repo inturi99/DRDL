@@ -78,7 +78,7 @@ jQuery.extend({
     
     var date = new Date();
     var year = date.getFullYear();
-    var start = year - params.minimumAge;
+    var start = year;
     var count = start - params.maximumAge;
     
     for(i=start;i>=count;i--){
