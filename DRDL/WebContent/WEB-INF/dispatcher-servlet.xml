@@ -40,6 +40,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
+			<value>com.technoidentity.model.Project</value>
 			<value>com.technoidentity.model.ProjectManager</value>
 				<value>com.technoidentity.model.User</value>
 				<value>com.technoidentity.model.Employee</value>

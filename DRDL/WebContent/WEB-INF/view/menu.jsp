@@ -2,6 +2,7 @@
 	<li class="dropdown"><a class="dropdown-toggle"
 		data-toggle="dropdown" href="#">MASTERS <span class="caret"></span></a>
 		<ul class="dropdown-menu">
+		           <li><a href="pList">PROJECT</a></li>
 					<li><a href="pmList">PROJECT MANAGER DETAILS </a></li>
 					<li><a href="venList">VENDOR DETAILS</a></li>
 					<li><a href="contrList">CONT EMPLOYES DETAILS</a></li>
