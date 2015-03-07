@@ -40,9 +40,15 @@
 										itemValue="employeeNumber" />
 								</form:select>
 							</div>
-							<label class="col-sm-2 control-label" for="name">Name</label>
+							<label for="employeeId" class="col-sm-2 control-label">Employee
+								Name</label>
 							<div class="col-sm-3">
-								<input type="text" name="name" id="name" />
+								<form:select path="id" id="name"
+									cssClass="form-control">
+									<form:option label="-- Select Employee Name--" value="-1" />
+									<form:options items="${list}" itemLabel="name"
+										itemValue="name" />
+								</form:select>
 							</div>
 							<button type="button" class="btn btn-primary" id="button">Search</button>
 						</div>
