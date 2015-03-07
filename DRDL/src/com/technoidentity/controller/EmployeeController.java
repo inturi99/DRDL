@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.technoidentity.dto.EmployeeDto;
+import com.technoidentity.service.DownloadServiceImpl;
 import com.technoidentity.service.EmployeeService;
 
 @Controller
 public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
+	@Autowired
+	private DownloadServiceImpl downloadServiceImpl;
 
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
@@ -109,10 +113,8 @@ public class EmployeeController {
 	return new ModelAndView("/search",model);
 	}
 	@RequestMapping(value = "/download", method = RequestMethod.GET)
-	public String download(
-			@RequestParam(value = "id", required = true) String id, Model model) {
-		model.addAttribute("employeeDto", employeeService.getEmployeeId(id));
-		return "dowanload";
+	public void download(@RequestParam String type,HttpServletResponse response) {
+		downloadServiceImpl.download(type,response);
 	}
 
 }

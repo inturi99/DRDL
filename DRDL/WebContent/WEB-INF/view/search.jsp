@@ -14,7 +14,7 @@
                      <td align="center">${employeeDto.qual} </td>
 					  <td align="center"><a href="edit?id=${employeeDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td align="center"><a href="delete/${employeeDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
-          	  <td align="center"><a href="dowanload/${employeeDto.id}"><span class="glyphicon glyphicon-download"></span></a></td>
+          	    <td align="center"><a href="dowanload/${employeeDto.id}"><span class="glyphicon glyphicon-download"></span></a></td>
 					</tr>
 				</core:forEach>
 
