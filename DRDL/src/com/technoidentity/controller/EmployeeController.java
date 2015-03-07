@@ -108,5 +108,11 @@ public class EmployeeController {
 	model.put("list", employeeService.listEmployees());
 	return new ModelAndView("/search",model);
 	}
+	@RequestMapping(value = "/download", method = RequestMethod.GET)
+	public String download(
+			@RequestParam(value = "id", required = true) String id, Model model) {
+		model.addAttribute("employeeDto", employeeService.getEmployeeId(id));
+		return "dowanload";
+	}
 
 }

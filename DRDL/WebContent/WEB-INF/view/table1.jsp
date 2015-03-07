@@ -64,6 +64,7 @@
 									<th class="text-center">Qualififaction</th>
 									<th></th>
 									<th></th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody id="tbody">
