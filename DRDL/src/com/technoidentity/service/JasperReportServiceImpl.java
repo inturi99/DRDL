@@ -3,11 +3,9 @@ package com.technoidentity.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import sun.misc.BASE64Encoder;
@@ -15,12 +13,15 @@ import sun.misc.BASE64Encoder;
 import com.technoidentity.dao.EmployeeDao;
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.model.Employee;
+
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 @Service
-public class DownLoadEmployeeService {
+public class JasperReportServiceImpl implements JasperReportService {
 	@Autowired
 	private EmployeeDao employeeDao;
 	List<EmployeeDto> employeeDtoList ;
-	@Transactional
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 	public JRDataSource getEmployeeId(String id) {
 		employeeDtoList = new ArrayList<EmployeeDto>();
 		EmployeeDto employeeDto = new EmployeeDto();
@@ -80,7 +81,7 @@ public class DownLoadEmployeeService {
 		return new JRBeanCollectionDataSource(employeeDtoList);
 
 	}
-    @Transactional
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 	public JRDataSource getDataSource() {
     	employeeDtoList = new ArrayList<EmployeeDto>();
 		try {

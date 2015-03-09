@@ -24,7 +24,7 @@ public class DownloadServiceImpl {
 	@Autowired
 	private ExporterService exporter;
 	@Autowired
-	private DownLoadEmployeeService downLoadEmployeeService;
+	private JasperReportService jasperReportService;
 	public static final String TEMPLATE = "/employees.jrxml";
 	public static final String outPdf ="/employees.pdf";
 	
@@ -49,7 +49,7 @@ public class DownloadServiceImpl {
 			 
 			// 5. Create the JasperPrint object
 			// Make sure to pass the JasperReport, report parameters, and data source
-			JasperPrint jp = JasperFillManager.fillReport(jr, params,downLoadEmployeeService.getEmployeeId(id));
+			JasperPrint jp = JasperFillManager.fillReport(jr, params,jasperReportService.getEmployeeId(id));
 			
 			JasperExportManager.exportReportToPdfFile(jp,outPdf );
 			 
