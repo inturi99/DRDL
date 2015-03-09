@@ -215,27 +215,6 @@ $(document).ready(function () {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="consigno" class="col-sm-2 control-label">CONSIGNO</label>
-							<div class="col-sm-4">
-								<div class="input-group">
-									<form:input path="consigno" id="date-picker-4"
-										placeholder="consigno" cssClass="date-picker form-control" />
-									<label for="date-picker-4" class="input-group-addon btn"><span
-										class="glyphicon glyphicon-calendar"></span> </label>
-								</div>
-							</div>
-							<label for="conexpon" class="col-sm-2 control-label">CONEXPON</label>
-							<div class="col-sm-4">
-								<div class="input-group">
-									<form:input path="conexpon" id="date-picker-5"
-										placeholder="conexpon" cssClass="date-picker form-control" />
-									<label for="date-picker-5" class="input-group-addon btn"><span
-										class="glyphicon glyphicon-calendar"></span> </label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
 							<label for="wkcphone" class="col-sm-2 control-label">WKCPHONE</label>
 							<div class="col-sm-4">
 								<form:input path="wkcphone" placeholder="wkcphone"
@@ -271,18 +250,18 @@ $(document).ready(function () {
 							<label for="update_on" class="col-sm-2 control-label">UPDATE_ON</label>
 							<div class="col-sm-4">
 								<div class="input-group">
-									<form:input path="update_on" id="date-picker-6"
+									<form:input path="update_on" id="date-picker-4"
 										placeholder="update_on" cssClass="date-picker form-control" />
-									<label for="date-picker-6" class="input-group-addon btn"><span
+									<label for="date-picker-4" class="input-group-addon btn"><span
 										class="glyphicon glyphicon-calendar"></span> </label>
 								</div>
 							</div>
 							<label for="dot" class="col-sm-2 control-label">DOT</label>
 							<div class="col-sm-4">
 								<div class="input-group">
-									<form:input path="dot" id="date-picker-7"
+									<form:input path="dot" id="date-picker-5"
 										placeholder="conexpon" cssClass="date-picker form-control" />
-									<label for="date-picker-7" class="input-group-addon btn"><span
+									<label for="date-picker-5" class="input-group-addon btn"><span
 										class="glyphicon glyphicon-calendar"></span> </label>
 								</div>
 							</div>

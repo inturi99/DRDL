@@ -235,35 +235,6 @@ body {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="consigno" class="col-sm-2 control-label">CONSIGNO</label>
-							<div class="col-sm-4">
-								<div class="input-group">
-									<%-- <form:input path="consigno" id="date-picker-4"
-											placeholder="consigno" cssClass="date-picker form-control" /> --%>
-									<input type="text"
-										value="<fmt:formatDate value="${employeeDto.consigno}" pattern="dd/MM/yyyy"/>"
-										name="consigno" id="date-picker-4"
-										class="date-picker form-control" /> <label for="date-picker-4"
-										class="input-group-addon btn"><span
-										class="glyphicon glyphicon-calendar"></span> </label>
-								</div>
-							</div>
-							<label for="conexpon" class="col-sm-2 control-label">CONEXPON</label>
-							<div class="col-sm-4">
-								<div class="input-group">
-									<%-- <form:input path="conexpon" id="date-picker-5"
-											placeholder="conexpon" cssClass="date-picker form-control" /> --%>
-									<input type="text"
-										value="<fmt:formatDate value="${employeeDto.conexpon}" pattern="dd/MM/yyyy"/>"
-										name="conexpon" id="date-picker-5"
-										class="date-picker form-control" /> <label for="date-picker-5"
-										class="input-group-addon btn"><span
-										class="glyphicon glyphicon-calendar"></span> </label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
 							<label for="wkcphone" class="col-sm-2 control-label">WKCPHONE</label>
 							<div class="col-sm-4">
 								<form:input path="wkcphone" placeholder="wkcphone"
@@ -303,8 +274,8 @@ body {
 											placeholder="update_on" cssClass="date-picker form-control" /> --%>
 									<input type="text"
 										value="<fmt:formatDate value="${employeeDto.update_on}" pattern="dd/MM/yyyy"/>"
-										name="update_on" id="date-picker-6"
-										class="date-picker form-control" /> <label for="date-picker-6"
+										name="update_on" id="date-picker-4"
+										class="date-picker form-control" /> <label for="date-picker-4"
 										class="input-group-addon btn"><span
 										class="glyphicon glyphicon-calendar"></span> </label>
 								</div>
@@ -316,9 +287,9 @@ body {
 											placeholder="conexpon" cssClass="date-picker form-control" /> --%>
 									<input type="text"
 										value="<fmt:formatDate value="${employeeDto.dot}" pattern="dd/MM/yyyy"/>"
-										name="dot" id="date-picker-7" class="date-picker form-control" />
+										name="dot" id="date-picker-5" class="date-picker form-control" />
 
-									<label for="date-picker-7" class="input-group-addon btn"><span
+									<label for="date-picker-5" class="input-group-addon btn"><span
 										class="glyphicon glyphicon-calendar"></span> </label>
 								</div>
 							</div>

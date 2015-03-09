@@ -38,10 +38,10 @@ public class EmployeeDto {
 	private String taddress;
 	private Long tphone;
 	private String type;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	/*@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date consigno;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date conexpon;
+	private Date conexpon;*/
 	private String service;
 	private String wkcphone;
 	private String emptype;
@@ -263,23 +263,6 @@ public class EmployeeDto {
 	public void setTphone(Long tphone) {
 		this.tphone = tphone;
 	}
-
-	public Date getConsigno() {
-		return consigno;
-	}
-
-	public void setConsigno(Date consigno) {
-		this.consigno = consigno;
-	}
-
-	public Date getConexpon() {
-		return conexpon;
-	}
-
-	public void setConexpon(Date conexpon) {
-		this.conexpon = conexpon;
-	}
-
 	public String getService() {
 		return service;
 	}

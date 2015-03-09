@@ -95,11 +95,11 @@ public class Employee {
 	@Column(name = "type")
 	@Size(min = 0, max = 10)
 	private String type;
-	@Column(name = "consigno")
+	/*@Column(name = "consigno")
 	private Date consigno;
 	
 	@Column(name = "conexpon")
-	private Date conexpon;
+	private Date conexpon;*/
 	
 	@Column(name = "service")
 	@Size(min = 0, max = 10)
@@ -356,21 +356,7 @@ public class Employee {
 		this.tphone = tphone;
 	}
 
-	public Date getConsigno() {
-		return consigno;
-	}
 
-	public void setConsigno(Date consigno) {
-		this.consigno = consigno;
-	}
-
-	public Date getConexpon() {
-		return conexpon;
-	}
-
-	public void setConexpon(Date conexpon) {
-		this.conexpon = conexpon;
-	}
 
 	public String getService() {
 		return service;

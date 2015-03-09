@@ -53,8 +53,7 @@ public class DownLoadEmployeeService {
 			employeeDto.setTaddress(employee.getTaddress());
 			employeeDto.setTphone(employee.getTphone());
 			employeeDto.setType(employee.getType());
-			employeeDto.setConsigno(employee.getConsigno());
-			employeeDto.setConexpon(employee.getConexpon());
+			
 			employeeDto.setService(employee.getService());
 			employeeDto.setWkcphone(employee.getWkcphone());
 			employeeDto.setEmptype(employee.getEmptype());
@@ -115,8 +114,7 @@ public class DownLoadEmployeeService {
 				employeeDto.setTaddress(employee.getTaddress());
 				employeeDto.setTphone(employee.getTphone());
 				employeeDto.setType(employee.getType());
-				employeeDto.setConsigno(employee.getConsigno());
-				employeeDto.setConexpon(employee.getConexpon());
+				
 				employeeDto.setService(employee.getService());
 				employeeDto.setWkcphone(employee.getWkcphone());
 				employeeDto.setEmptype(employee.getEmptype());

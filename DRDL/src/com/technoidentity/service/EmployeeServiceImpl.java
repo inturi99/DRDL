@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import sun.misc.BASE64Decoder;
@@ -20,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	public EmployeeDao employeeDao;
 
-	@Transactional
+	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 	public void addEmployee(EmployeeDto employeeDto) {
 		try {
 			// TODO Auto-generated method stub
@@ -48,8 +49,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			employee.setTaddress(employeeDto.getTaddress());
 			employee.setTphone(employeeDto.getTphone());
 			employee.setType(employeeDto.getType());
-			employee.setConsigno(employeeDto.getConsigno());
-			employee.setConexpon(employeeDto.getConexpon());
+			
 			employee.setService(employeeDto.getService());
 			employee.setWkcphone(employeeDto.getWkcphone());
 			employee.setEmptype(employeeDto.getEmptype());
@@ -110,8 +110,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			employee.setTaddress(employeeDto.getTaddress());
 			employee.setTphone(employeeDto.getTphone());
 			employee.setType(employeeDto.getType());
-			employee.setConsigno(employeeDto.getConsigno());
-			employee.setConexpon(employeeDto.getConexpon());
+			
 			employee.setService(employeeDto.getService());
 			employee.setWkcphone(employeeDto.getWkcphone());
 			employee.setEmptype(employeeDto.getEmptype());
@@ -175,8 +174,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				employeeDto.setTaddress(employee.getTaddress());
 				employeeDto.setTphone(employee.getTphone());
 				employeeDto.setType(employee.getType());
-				employeeDto.setConsigno(employee.getConsigno());
-				employeeDto.setConexpon(employee.getConexpon());
+				
 				employeeDto.setService(employee.getService());
 				employeeDto.setWkcphone(employee.getWkcphone());
 				employeeDto.setEmptype(employee.getEmptype());
@@ -242,8 +240,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			employeeDto.setTaddress(employee.getTaddress());
 			employeeDto.setTphone(employee.getTphone());
 			employeeDto.setType(employee.getType());
-			employeeDto.setConsigno(employee.getConsigno());
-			employeeDto.setConexpon(employee.getConexpon());
+			
 			employeeDto.setService(employee.getService());
 			employeeDto.setWkcphone(employee.getWkcphone());
 			employeeDto.setEmptype(employee.getEmptype());
@@ -302,8 +299,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 						employeeDto.setTaddress(employee.getTaddress());
 						employeeDto.setTphone(employee.getTphone());
 						employeeDto.setType(employee.getType());
-						employeeDto.setConsigno(employee.getConsigno());
-						employeeDto.setConexpon(employee.getConexpon());
+						
 						employeeDto.setService(employee.getService());
 						employeeDto.setWkcphone(employee.getWkcphone());
 						employeeDto.setEmptype(employee.getEmptype());
@@ -363,8 +359,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				employeeDto.setTaddress(employee.getTaddress());
 				employeeDto.setTphone(employee.getTphone());
 				employeeDto.setType(employee.getType());
-				employeeDto.setConsigno(employee.getConsigno());
-				employeeDto.setConexpon(employee.getConexpon());
+				
 				employeeDto.setService(employee.getService());
 				employeeDto.setWkcphone(employee.getWkcphone());
 				employeeDto.setEmptype(employee.getEmptype());
@@ -426,8 +421,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 						employeeDto.setTaddress(employee.getTaddress());
 						employeeDto.setTphone(employee.getTphone());
 						employeeDto.setType(employee.getType());
-						employeeDto.setConsigno(employee.getConsigno());
-						employeeDto.setConexpon(employee.getConexpon());
+						
 						employeeDto.setService(employee.getService());
 						employeeDto.setWkcphone(employee.getWkcphone());
 						employeeDto.setEmptype(employee.getEmptype());
@@ -485,8 +479,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				employeeDto.setTaddress(employee.getTaddress());
 				employeeDto.setTphone(employee.getTphone());
 				employeeDto.setType(employee.getType());
-				employeeDto.setConsigno(employee.getConsigno());
-				employeeDto.setConexpon(employee.getConexpon());
+				
 				employeeDto.setService(employee.getService());
 				employeeDto.setWkcphone(employee.getWkcphone());
 				employeeDto.setEmptype(employee.getEmptype());
