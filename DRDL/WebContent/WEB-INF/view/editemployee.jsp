@@ -180,12 +180,16 @@ body {
 								<form:input path="iboss" placeholder="iboss"
 									cssClass="form-control" />
 							</div>
-							<label for="project" class="col-sm-2 control-label">PROJECT</label>
-							<div class="col-sm-4">
-								<form:input path="project" placeholder="project"
-									cssClass="form-control" />
-							</div>
-						</div>
+							<label for="project" class="col-sm-2 control-label">PROJECT </label>
+								<div class="col-sm-4">
+									<form:select path="project"
+										cssClass="form-control" >
+										<form:option label="-- Select Project --" value="-1" />
+				               <form:options items="${pList}" itemLabel="projectCode"
+					                   itemValue="projectCode" />
+								</form:select>
+								</div>
+								</div>
 						<div class="form-group">
 							<label for="job" class="col-sm-2 control-label">JOB</label>
 							<div class="col-sm-4">

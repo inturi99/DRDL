@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.service.DownloadServiceImpl;
 import com.technoidentity.service.EmployeeService;
+import com.technoidentity.service.ProjectService;
 
 @Controller
 public class EmployeeController {
@@ -30,10 +31,13 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	@Autowired
 	private DownloadServiceImpl downloadServiceImpl;
+	@Autowired
+	private ProjectService projectService;
     
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
 		map.put("employeeDto", new EmployeeDto());
+		map.put("pList", projectService.listProject());
 		return "employee";
 	}
 
@@ -83,6 +87,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String getEmployeeId(
 			@RequestParam(value = "id", required = true) String id, Model model) {
+		model.addAttribute("pList",projectService.listProject());
 		model.addAttribute("employeeDto", employeeService.getEmployeeId(id));
 		return "editemployee";
 	}
@@ -92,6 +97,7 @@ public class EmployeeController {
 			@RequestParam(value = "id", required = true) String id, Model model) {
 		employeeDto.setId(id);
 		employeeService.updateEmpolyee(employeeDto);
+		model.addAttribute("pList",projectService.listProject());
 		model.addAttribute("id", id);
 		return "redirect:/list";
 	}
