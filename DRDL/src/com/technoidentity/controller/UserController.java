@@ -67,5 +67,11 @@ public class UserController {
 		return "redirect:/login";
 	}
 
+		@RequestMapping(value="/logout",method = RequestMethod.GET)
+		public ModelAndView logOut(HttpSession session) {
+			session.invalidate();
+			return new ModelAndView("redirect:login");
+		}
+
 
 }

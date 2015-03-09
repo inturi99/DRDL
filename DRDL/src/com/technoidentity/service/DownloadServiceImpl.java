@@ -1,16 +1,12 @@
 package com.technoidentity.service;
 
-import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.HashMap;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -30,7 +26,7 @@ public class DownloadServiceImpl {
 	@Autowired
 	private DownLoadEmployeeService downLoadEmployeeService;
 	public static final String TEMPLATE = "/employees.jrxml";
-	public static final String outPdf ="E:/STS_ID-Programes/DRDLProject/DRDL/DRDL/src/resources/employees.pdf";
+	public static final String outPdf ="/employees.pdf";
 	
 	
 	public HttpServletResponse download(HttpServletResponse response,String id)  {

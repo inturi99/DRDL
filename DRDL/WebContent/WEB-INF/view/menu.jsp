@@ -43,6 +43,8 @@
 					<li><a href="#">SELECT PROJECT</a></li>
 					<li><a href="#">SALARY FULL LIST </a></li>					
 				</ul></li>
-	<li><a href="#">EXIT</a></li>
+	
 	<li><a href="list">EMPLOYEE</a></li>
+	<li>
+	<a href="logout">EXIT</a></li>
 </ul>
