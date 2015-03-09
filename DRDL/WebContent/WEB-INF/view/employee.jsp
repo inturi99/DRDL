@@ -160,9 +160,9 @@ $(document).ready(function () {
 								<form:input path="iboss" placeholder="iboss"
 									cssClass="form-control" />
 							</div>
-							<label for="resp" class="col-sm-2 control-label">RESP</label>
+							<label for="project" class="col-sm-2 control-label">PROJECT</label>
 							<div class="col-sm-4">
-								<form:input path="resp" placeholder="resp"
+								<form:input path="project" placeholder="project"
 									cssClass="form-control" />
 							</div>
 						</div>
@@ -220,7 +220,11 @@ $(document).ready(function () {
 								<form:input path="wkcphone" placeholder="wkcphone"
 									cssClass="form-control" />
 							</div>
-
+                              <label for="resp" class="col-sm-2 control-label">RESP</label>
+							<div class="col-sm-4">
+								<form:input path="resp" placeholder="resp"
+									cssClass="form-control" />
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="col-sm-2 control-label">PASSWORD</label>
