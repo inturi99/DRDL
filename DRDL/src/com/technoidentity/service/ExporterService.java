@@ -33,7 +33,7 @@ public class ExporterService {
 			 
 			// Set our response properties
 			// Here you can declare a custom filename
-			String fileName = "UserReport.xls";
+			String fileName = "Employee.xls";
 			response.setHeader("Content-Disposition", "inline; filename=" + fileName);
 			
 			// Set content type

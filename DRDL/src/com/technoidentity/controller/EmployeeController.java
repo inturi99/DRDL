@@ -30,7 +30,7 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	@Autowired
 	private DownloadServiceImpl downloadServiceImpl;
-
+    
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
 		map.put("employeeDto", new EmployeeDto());
@@ -112,9 +112,11 @@ public class EmployeeController {
 	model.put("list", employeeService.listEmployees());
 	return new ModelAndView("/search",model);
 	}
-	@RequestMapping(value = "/download", method = RequestMethod.GET)
-	public void download(@RequestParam String type,HttpServletResponse response) {
-		downloadServiceImpl.download(type,response);
+	@RequestMapping(value = "/dowanload/{id}", method = RequestMethod.GET)
+	public String download(
+			@PathVariable("id") String id,HttpServletResponse responce, Model model){
+		model.addAttribute("id",downloadServiceImpl.download(responce ,id));
+	return "home";	
 	}
 
 }

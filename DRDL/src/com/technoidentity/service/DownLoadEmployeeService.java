@@ -19,8 +19,10 @@ import com.technoidentity.model.Employee;
 public class DownLoadEmployeeService {
 	@Autowired
 	private EmployeeDao employeeDao;
+	List<EmployeeDto> employeeDtoList ;
 	@Transactional
-	public EmployeeDto getEmployeeId(String id) {
+	public JRDataSource getEmployeeId(String id) {
+		employeeDtoList = new ArrayList<EmployeeDto>();
 		EmployeeDto employeeDto = new EmployeeDto();
 		try {
 			Employee employee = employeeDao.getEmployeeId(new Integer(id));
@@ -72,17 +74,18 @@ public class DownLoadEmployeeService {
 			employeeDto.setMobile(employee.getMobile());
 			employeeDto.setVerified(employee.getVerified());
 			employeeDto.setPunch(employee.getPunch());
+			employeeDtoList.add(employeeDto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return employeeDto;
+		return new JRBeanCollectionDataSource(employeeDtoList);
 
 	}
-
+    @Transactional
 	public JRDataSource getDataSource() {
-		List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();
+    	employeeDtoList = new ArrayList<EmployeeDto>();
 		try {
-			List<Employee> employeeList = employeeDao.listcontractEmployees();
+			List<Employee> employeeList = employeeDao.listEmployees();
 			for (Employee employee : employeeList) {
 				EmployeeDto employeeDto = new EmployeeDto();
 				employeeDto.setId(employee.getId().toString());
