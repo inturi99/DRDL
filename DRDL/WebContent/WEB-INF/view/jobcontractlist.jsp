@@ -21,7 +21,7 @@
             <th class="text-center">AMOUNT</th>
            <th class="text-center">RECIPT NO</th>
             <th class="text-center">PAYMENT MODE</th>
-            
+            <th class="text-center">Authorization Person</th>
             <th></th>
             <th></th>
         </tr>
@@ -34,6 +34,7 @@
                 <td align="center">${jobContractDto.amt} </td>
                 <td align="center">${jobContractDto.receipt}</td>
                <td align="center">${jobContractDto.paymode} </td>
+               <td align="center">${jobContractDto.authorization} </td>
                  <td align="center"><a href="editjobcontract?id=${jobContractDto.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td align="center"><a href="deletejobcontract/${jobContractDto.id}"><span class="glyphicon glyphicon-remove"></span></a></td>
             </tr>

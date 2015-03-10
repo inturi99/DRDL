@@ -40,6 +40,8 @@ public class JobContract {
     private Employee employee;
 	@ManyToOne
     private ProjectManager projectManager;
+	@Column(name="authorization")
+	private String authorization;
 	public Integer getId() {
 		return id;
 	}
@@ -99,6 +101,12 @@ public class JobContract {
 	}
 	public void setProjectManager(ProjectManager projectManager) {
 		this.projectManager = projectManager;
+	}
+	public String getAuthorization() {
+		return authorization;
+	}
+	public void setAuthorization(String authorization) {
+		this.authorization = authorization;
 	}
 	
 }

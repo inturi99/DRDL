@@ -134,11 +134,15 @@
 						</div>
 						<div class="pmode">
 							<div class="form-group">
-								<label for="paymode" class="col-sm-2 control-label">Employee</label>
-								<div class="col-sm-5">
-									<form:input path="receipt" id="receipt" placeholder="receipt"
-										cssClass="form-control" />
-								</div>
+								<label for="paymode" class="col-sm-2 control-label">Authorization Person</label>
+								<div class="col-sm-4">
+								<form:select path="authorization" cssClass="form-control">
+									<form:option label="-- Select Authorization Person --"
+										value="" />
+									<form:options items="${pmlist}" itemLabel="name"
+										itemValue="name" />
+								</form:select>
+							</div>
 							</div>
 						</div>
 						<div class="form-group">

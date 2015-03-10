@@ -37,6 +37,7 @@ public class JobContractServiceImpl implements JobContractService {
 		jobContract.setJcdate(jobContractDto.getJcdate());
 		jobContract.setPdate(jobContractDto.getPdate());
 		jobContract.setReceipt(jobContractDto.getReceipt());
+		jobContract.setAuthorization(jobContractDto.getAuthorization());
 		jobContractDao.addJobContract(jobContract);
 	}
 
@@ -54,6 +55,7 @@ public class JobContractServiceImpl implements JobContractService {
 		jobContract.setJcdate(jobContractDto.getJcdate());
 		jobContract.setPdate(jobContractDto.getPdate());
 		jobContract.setReceipt(jobContractDto.getReceipt());
+		jobContract.setAuthorization(jobContractDto.getAuthorization());
 		jobContractDao.updateJobContract(jobContract);
 		
 	}
@@ -73,6 +75,7 @@ public class JobContractServiceImpl implements JobContractService {
 			jobContractDto.setJcdate(jobContract.getJcdate());
 			jobContractDto.setPdate(jobContract.getPdate());
 			jobContractDto.setReceipt(jobContract.getReceipt());
+			jobContractDto.setAuthorization(jobContract.getProjectManager().getName());
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -95,6 +98,7 @@ public class JobContractServiceImpl implements JobContractService {
 				jobContractDto.setJcdate(jobContract.getJcdate());
 				jobContractDto.setPdate(jobContract.getPdate());
 				jobContractDto.setReceipt(jobContract.getReceipt());
+				jobContractDto.setAuthorization(jobContract.getAuthorization());
 				jobContractDtoList.add(jobContractDto);
 			}
 		return jobContractDtoList;

@@ -18,6 +18,18 @@
             
             });
         </script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $(".pmode").hide();
+            $("#paymode1").click(function () {
+                $(".pmode").show();
+            });
+            $("#paymode2").click(function () {
+                $(".pmode").hide();
+            });
+        });
+        
+        </script>
 
 <style>
 .error {
@@ -120,10 +132,23 @@ body {
 								<div class="form-group">
 								<label for="paymode" class="col-sm-5 control-label">Payment Mode</label>
 								<div class="col-sm-5">
-									Cash:<form:radiobutton path="paymode" value="cash" id="paymode"/>
-									Cheque:<form:radiobutton path="paymode" value="cheque" id="paymode" />	
+									Cash:<form:radiobutton path="paymode" value="cash" id="paymode1"/>
+									Cheque:<form:radiobutton path="paymode" value="cheque" id="paymode2" />	
 								</div>
 							</div>
+							<div class="pmode">
+							<div class="form-group">
+								<label for="paymode" class="col-sm-2 control-label">Authorization Person</label>
+								<div class="col-sm-4">
+								<form:select path="authorization" cssClass="form-control">
+									<form:option label="-- Select Authorization Person --"
+										value="" />
+									<form:options items="${pmlist}" itemLabel="name"
+										itemValue="name" />
+								</form:select>
+							</div>
+							</div>
+						</div>
 						<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<button type="submit" class="btn btn-primary">

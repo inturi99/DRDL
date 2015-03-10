@@ -17,6 +17,7 @@ public class JobContractDto {
 	private String paymode;
 	private String employeeId;
 	private String projectManagerId;
+	private String authorization;
 	public String getId() {
 		return id;
 	}
@@ -76,6 +77,12 @@ public class JobContractDto {
 	}
 	public void setProjectManagerId(String projectManagerId) {
 		this.projectManagerId = projectManagerId;
+	}
+	public String getAuthorization() {
+		return authorization;
+	}
+	public void setAuthorization(String authorization) {
+		this.authorization = authorization;
 	}
 	
 	
