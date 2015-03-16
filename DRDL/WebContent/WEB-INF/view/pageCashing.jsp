@@ -29,6 +29,8 @@
 	rel="stylesheet" type="text/css" />
 	<link href="<c:url value="/resources/css/datepicker.css" />"
 	rel="stylesheet" type="text/css" />
+	<link href="<c:url value="/resources/css/bootstrap-datepicker3.css" />"
+	rel="stylesheet" type="text/css" />
 <script src="./resources/js/bootstrap-datepicker.js"
 	type="text/javascript"></script>
 	<script type="text/javascript" src="resources/js/b64.js"></script>
