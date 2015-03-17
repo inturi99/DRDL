@@ -12,7 +12,7 @@ $(document).ready(function(){
     monthDefault: 'Month', /* Optional */
     yearDefault: 'Year', /* Optional */
     minimumAge: 8, /* Optional */
-    maximumAge: 100 /* Optional */
+    maximumAge: 10 /* Optional */
   });
 });
 </script>
