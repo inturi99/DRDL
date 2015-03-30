@@ -141,8 +141,8 @@ public class Employee {
 	@Column(name = "punch")
 	@Size(min = 2, max = 5)
 	private String punch;
-	/* @OneToMany(mappedBy = "employee")
-	 private List<MonthlyAttendance> monthlyAttendances;*/
+	@OneToMany(mappedBy = "employee")
+	 private List<MonthlyAttendance> monthlyAttendances;
 	
 	public String getEmployeeNumber() {
 		return employeeNumber;
@@ -157,13 +157,13 @@ public class Employee {
 		return pmcode;
 	}
 	       
-	/*public void setMonthlyAttendances(List<MonthlyAttendance> monthlyAttendances) {
+	public void setMonthlyAttendances(List<MonthlyAttendance> monthlyAttendances) {
 		this.monthlyAttendances = monthlyAttendances;
 	}
 
 	public List<MonthlyAttendance> getMonthlyAttendances() {
 		return monthlyAttendances;
-	}*/
+	}
 
 	public void setPmcode(Integer pmcode) {
 		this.pmcode = pmcode;

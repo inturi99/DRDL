@@ -3,6 +3,7 @@ package com.technoidentity.dto;
 
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -59,7 +60,8 @@ public class EmployeeDto {
 
 	private String verified;
 	private String punch;
-    
+    private List<IncrementsDto> incrementsDto;
+    private List<MonthlyAttendanceDto> monthlyAttendanceDto;
 	
 	public String getEmployeeNumber() {
 		return employeeNumber;
@@ -85,8 +87,18 @@ public class EmployeeDto {
 	public void setIboss(Integer iboss) {
 		this.iboss = iboss;
 	}
+	
 
 	
+	public List<MonthlyAttendanceDto> getMonthlyAttendanceDto() {
+		return monthlyAttendanceDto;
+	}
+
+	public void setMonthlyAttendanceDto(
+			List<MonthlyAttendanceDto> monthlyAttendanceDto) {
+		this.monthlyAttendanceDto = monthlyAttendanceDto;
+	}
+
 	public Double getSalary() {
 		return salary;
 	}
@@ -366,5 +378,14 @@ public class EmployeeDto {
 	public void setPunch(String punch) {
 		this.punch = punch;
 	}
+
+	public List<IncrementsDto> getIncrementsDto() {
+		return incrementsDto;
+	}
+
+	public void setIncrementsDto(List<IncrementsDto> incrementsDto) {
+		this.incrementsDto = incrementsDto;
+	}
+	
 
 }

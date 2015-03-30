@@ -73,6 +73,11 @@ public class EmployeeDaoImpl implements EmployeeDao{
 				.add(Restrictions.eq("name", name))
 				.list();
 	}
+
+	@Override
+	public Employee getEmploeeAttendance(Integer id) {
+		return (Employee) sessionFactory.getCurrentSession().createQuery("FROM Employee as e LEFT JOIN FETCH  e.MonthlyAttendance WHERE e.id="+id).uniqueResult();
+	}
 	
 
 }

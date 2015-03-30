@@ -14,5 +14,7 @@ public interface EmployeeDao {
 	    public void removeEmploye(Integer id);
 	    public List<Employee> listcontractEmployees();
 	    public List<Employee> getEmployeeByEmployeeId(Integer id);
+	    
+	    public Employee getEmploeeAttendance(Integer id);
 
 }

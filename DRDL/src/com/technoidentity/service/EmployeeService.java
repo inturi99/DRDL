@@ -14,5 +14,7 @@ public interface EmployeeService {
     public void removeEmloyee(Integer id);
     public List<EmployeeDto> listContractEmployee();
     public List<EmployeeDto> getEmployeeByEmployeeId(String employeeId);
+    public EmployeeDto getEmploeeAttendance(String employeeId);
+
 
 }
