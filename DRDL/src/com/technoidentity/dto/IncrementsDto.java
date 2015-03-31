@@ -2,11 +2,13 @@ package com.technoidentity.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 public class IncrementsDto {
 
 	private String id;
-	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateIncr;
 	
 	private Double increment; 

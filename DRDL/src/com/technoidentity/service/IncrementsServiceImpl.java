@@ -44,7 +44,7 @@ public class IncrementsServiceImpl implements IncrementsService {
 						Employee employee =(Employee) employeeDao.getEmployeeId(new Integer(employeeId));
 						incrementsDto.setEmployeeId(employee.getId().toString());
 						incrementsDto.setDateIncr(increments.getDateIncr());
-						incrementsDto.setIncrement(incrementsDto.getIncrement());
+						incrementsDto.setIncrement(increments.getIncrement());
 						incrementsDtoList.add(incrementsDto);
 						
 			}

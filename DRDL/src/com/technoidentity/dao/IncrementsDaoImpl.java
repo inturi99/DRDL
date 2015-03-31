@@ -19,7 +19,7 @@ public class IncrementsDaoImpl implements IncrementsDao{
 
 	@Override
 	public List<Increments> findByEmployeeId(Integer employeeId) {	
-	return  sessionFactory.getCurrentSession().createQuery("from Increments where employee_id =:employeeId").setParameter("employeeId", employeeId).list();
+	return  sessionFactory.getCurrentSession().createQuery("from Increments where employeeId =:employeeId").setParameter("employeeId", employeeId).list();
 	}
 	
 	

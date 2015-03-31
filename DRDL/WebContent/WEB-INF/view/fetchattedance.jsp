@@ -56,15 +56,7 @@
 						<table id="loadTable" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-								    <th class="text-center">Employee Id </th>
-								     <th class="text-center">Employee Name </th>
-									<th class="text-center">Month</th>
-									<th class="text-center">Prasent</th>
-									<th class="text-center">Absent</th>
-									<th class="text-center">Late</th>
-									<th></th>
-									<th></th>
-									<th></th>
+								   
 								</tr>
 							</thead>
 							<tbody id="tbody">

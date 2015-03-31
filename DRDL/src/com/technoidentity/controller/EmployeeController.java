@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.service.DownloadServiceImpl;
 import com.technoidentity.service.EmployeeService;
+import com.technoidentity.service.IncrementsService;
 import com.technoidentity.service.MonthlyAttendanceService;
 import com.technoidentity.service.ProjectService;
 
@@ -36,6 +37,8 @@ public class EmployeeController {
 	private ProjectService projectService;
 	@Autowired
 	private MonthlyAttendanceService monthlyAttendanceService;
+	@Autowired
+	private IncrementsService incrementsService;
     
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
@@ -127,6 +130,7 @@ public class EmployeeController {
 	public ModelAndView fetchByEmployeeId(@PathVariable("employeeId") String employeeId,ModelMap model){
 	model.put("employees", employeeService.getEmploeeAttendance(employeeId));
 	model.put("attendence", monthlyAttendanceService.getEmployeeByEmployeeId(employeeId));
+	model.put("increments", incrementsService.findByEmployeeId(employeeId));
 	return new ModelAndView("/fetch",model);
 	}
 	@RequestMapping(value="/load/{employeeNumber}/{name}",method=RequestMethod.GET)

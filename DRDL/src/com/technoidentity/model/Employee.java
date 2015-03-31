@@ -143,7 +143,17 @@ public class Employee {
 	private String punch;
 	@OneToMany(mappedBy = "employee")
 	 private List<MonthlyAttendance> monthlyAttendances;
+	@OneToMany(mappedBy="employee")
+	private List<Increments> increments;
 	
+	public List<Increments> getIncrements() {
+		return increments;
+	}
+
+	public void setIncrements(List<Increments> increments) {
+		this.increments = increments;
+	}
+
 	public String getEmployeeNumber() {
 		return employeeNumber;
 	}
