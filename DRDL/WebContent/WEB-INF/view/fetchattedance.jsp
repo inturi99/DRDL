@@ -26,7 +26,7 @@
 		<div class="col-sm-offset-1 col-sm-10">
 			<div class="panel panel-primary ">
 				<div class="panel-body">
-					<form:form method="get" action="fetch" commandName="monthlyAttendanceDto"
+					<form:form method="get" action="fetch" commandName="employeeDto"
 						cssClass="form-horizontal">
 						<div class="form-group">
 							<label for="employeeId" class="col-sm-2 control-label">Employee

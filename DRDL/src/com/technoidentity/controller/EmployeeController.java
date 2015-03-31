@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.service.DownloadServiceImpl;
 import com.technoidentity.service.EmployeeService;
+import com.technoidentity.service.MonthlyAttendanceService;
 import com.technoidentity.service.ProjectService;
 
 @Controller
@@ -33,6 +34,8 @@ public class EmployeeController {
 	private DownloadServiceImpl downloadServiceImpl;
 	@Autowired
 	private ProjectService projectService;
+	@Autowired
+	private MonthlyAttendanceService monthlyAttendanceService;
     
 	@RequestMapping(value = "/addEmployee", method = RequestMethod.GET)
 	public String loadEmployee(Map<String, Object> map) {
@@ -113,7 +116,7 @@ public class EmployeeController {
 	return new ModelAndView("/search",model);
 	}
 	
-	/*@RequestMapping(value="/fetch",method=RequestMethod.GET)
+	@RequestMapping(value="/fetch",method=RequestMethod.GET)
 	public ModelAndView fetchByEmployee(Map<String, Object> map,HttpServletRequest request){
 		map.put("list", employeeService.listEmployees());	
 		map.put("employeeDto", new EmployeeDto());
@@ -123,9 +126,9 @@ public class EmployeeController {
 	@RequestMapping(value="/fetch/{employeeId}",method=RequestMethod.GET)
 	public ModelAndView fetchByEmployeeId(@PathVariable("employeeId") String employeeId,ModelMap model){
 	model.put("employees", employeeService.getEmploeeAttendance(employeeId));
-	return new ModelAndView("/search",model);
-	}*/
-	
+	model.put("attendence", monthlyAttendanceService.getEmployeeByEmployeeId(employeeId));
+	return new ModelAndView("/fetch",model);
+	}
 	@RequestMapping(value="/load/{employeeNumber}/{name}",method=RequestMethod.GET)
 	public ModelAndView loadByemployeeNumberandName(@PathVariable("employeeNumber") String employeeNumber,@PathVariable("name") String name,ModelMap model){
 	model.put("employees", employeeService.find(employeeNumber, name));

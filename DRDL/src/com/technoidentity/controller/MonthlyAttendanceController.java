@@ -38,7 +38,7 @@ public class MonthlyAttendanceController {
 		monthlyAttendanceService.addAttendence(monthlyAttendanceDto);
 		return "redirect:/list";
 	}
-	@RequestMapping(value="/fetch",method=RequestMethod.GET)
+	/*@RequestMapping(value="/fetch",method=RequestMethod.GET)
 	public ModelAndView fetchByEmployeeId(Map<String, Object> map,HttpServletRequest request){
 		map.put("list", employeeService.listEmployees());	
 		map.put("monthlyAttendanceDto", new MonthlyAttendanceDto());
@@ -49,6 +49,6 @@ public class MonthlyAttendanceController {
 	public ModelAndView fetchByEmployeeId(@PathVariable("employeeId") String employeeId,ModelMap model){
 	model.put("attendance", monthlyAttendanceService.getEmployeeByEmployeeId(employeeId));
 	return new ModelAndView("/fetch",model);
-	}
+	}*/
 
 }

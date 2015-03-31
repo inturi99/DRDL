@@ -13,14 +13,18 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import com.technoidentity.dao.EmployeeDao;
+import com.technoidentity.dao.MonthlyAttendanceDao;
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.model.Employee;
+import com.technoidentity.model.MonthlyAttendance;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	public EmployeeDao employeeDao;
-
+	@Autowired
+	public MonthlyAttendanceDao monthlyAttendanceDao;
+	
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 	public void addEmployee(EmployeeDto employeeDto) {
 		try {
@@ -508,61 +512,31 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Transactional(readOnly=false)
-	public EmployeeDto getEmploeeAttendance(String employeeId) {
-		EmployeeDto employeeDto = new EmployeeDto();
+	public List<EmployeeDto> getEmploeeAttendance(String employeeId) {
+		List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();
 		try {
-			Employee employee = employeeDao.getEmploeeAttendance(new Integer(employeeId));
-			employeeDto.setId(employee.getId().toString());
-			String empId=employee.getId().toString();
-			String empName=employee.getName().substring(0, 3).toUpperCase();
-			String empNo=empName +" - "+ empId;
-			employeeDto.setEmployeeNumber(empNo);
-			employeeDto.setName(employee.getName());
-			employeeDto.setDesignation(employee.getDesignation());
-			employeeDto.setProject(employee.getProject());
-			employeeDto.setEmail(employee.getEmail());
-			employeeDto.setQual(employee.getQual());
-			employeeDto.setLab(employee.getLab());
-			employeeDto.setDob(employee.getDob());
-			employeeDto.setIdcardno(employee.getIdcardno());
-			employeeDto.setDoj(employee.getDoj());
-			employeeDto.setDol(employee.getDol());
-			employeeDto.setWkc(employee.getWkc());
-			employeeDto.setDept(employee.getDept());
-			employeeDto.setPmcode(employee.getPmcode());
-			employeeDto.setIboss(employee.getIboss());
-			employeeDto.setResp(employee.getResp());
-			employeeDto.setJob(employee.getJob());
-			employeeDto.setSalary(employee.getSalary());
-			employeeDto.setPaddress(employee.getPaddress());
-			employeeDto.setPphone(employee.getPphone());
-			employeeDto.setTaddress(employee.getTaddress());
-			employeeDto.setTphone(employee.getTphone());
-			employeeDto.setType(employee.getType());
+			List<Employee> employeeList = employeeDao.getEmployeeByEmployeeId(new Integer(employeeId));
+			List<MonthlyAttendance> monthlyAttendenceList = monthlyAttendanceDao.getEmployeeByEmployeeId(new Integer(employeeId));
 			
-			employeeDto.setService(employee.getService());
-			employeeDto.setWkcphone(employee.getWkcphone());
-			employeeDto.setEmptype(employee.getEmptype());
-			employeeDto.setPassword(employee.getPassword());
-
-			byte[] photoBytes = employee.getPhoto();
-			BASE64Encoder bn = new BASE64Encoder();
-			String photoInString = bn.encodeBuffer(photoBytes);
-			employeeDto.setPhoto(photoInString);
-
-			employeeDto.setCatg(employee.getCatg());
-			employeeDto.setStart_sal(employee.getStart_sal());
-			employeeDto.setBoard_type(employee.getBoard_type());
-			employeeDto.setUpdate_on(employee.getUpdate_on());
-			employeeDto.setDot(employee.getDot());
-			employeeDto.setEmpid_new(employee.getEmpid_new());
-			employeeDto.setMobile(employee.getMobile());
-			employeeDto.setVerified(employee.getVerified());
-			employeeDto.setPunch(employee.getPunch());
+			for (Employee employee : employeeList) {
+				EmployeeDto employeeDto = new EmployeeDto();
+				employeeDto.setId(employee.getId().toString());
+				employeeDto.setEmployeeNumber(employee.getEmployeeNumber());
+				employeeDto.setName(employee.getName());
+				employeeDto.setDesignation(employee.getDesignation());
+				employeeDto.setProject(employee.getProject());
+				employeeDto.setEmail(employee.getEmail());
+				employeeDto.setQual(employee.getQual());
+				employeeDto.setLab(employee.getLab());
+				employeeDto.setDob(employee.getDob());
+				employeeDto.setIdcardno(employee.getIdcardno());
+				// employeeDto.setMonthlyAttendanceDto(monthlyAttendanceService.getEmployeeByEmployeeId(employeeId));
+				employeeDtoList.add(employeeDto);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return employeeDto;
+		return employeeDtoList;
 
 
 	}
