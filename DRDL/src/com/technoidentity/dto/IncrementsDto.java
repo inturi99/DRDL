@@ -11,7 +11,7 @@ public class IncrementsDto {
 	
 	private Double increment; 
 	
-    private Integer employeeId;
+    private String employeeId;
 
 	public String getId() {
 		return id;
@@ -37,11 +37,11 @@ public class IncrementsDto {
 		this.increment = increment;
 	}
 
-	public Integer getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(Integer employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 	

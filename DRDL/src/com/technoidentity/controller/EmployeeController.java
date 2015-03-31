@@ -113,7 +113,7 @@ public class EmployeeController {
 	return new ModelAndView("/search",model);
 	}
 	
-	@RequestMapping(value="/fetch",method=RequestMethod.GET)
+	/*@RequestMapping(value="/fetch",method=RequestMethod.GET)
 	public ModelAndView fetchByEmployee(Map<String, Object> map,HttpServletRequest request){
 		map.put("list", employeeService.listEmployees());	
 		map.put("employeeDto", new EmployeeDto());
@@ -124,7 +124,7 @@ public class EmployeeController {
 	public ModelAndView fetchByEmployeeId(@PathVariable("employeeId") String employeeId,ModelMap model){
 	model.put("employees", employeeService.getEmploeeAttendance(employeeId));
 	return new ModelAndView("/search",model);
-	}
+	}*/
 	
 	@RequestMapping(value="/load/{employeeNumber}/{name}",method=RequestMethod.GET)
 	public ModelAndView loadByemployeeNumberandName(@PathVariable("employeeNumber") String employeeNumber,@PathVariable("name") String name,ModelMap model){

@@ -4,10 +4,10 @@
 <script language="javascript" type="text/javascript">
 	$(document).ready(function() {
 		$('#button').click(function() {
-			var employeeNumber = $('#employeeNumber').val();
+			var employeeId = $('#employeeId').val();
 			$.ajax({
 				type : 'GET',
-				url : "/DRDL/fetch/" + "/" + employeeNumber,
+				url : "/DRDL/fetch/" + "/" + employeeId,
 				success : function loadTable(response) {
 					$("#tbody").html(response);
 
@@ -26,17 +26,17 @@
 		<div class="col-sm-offset-1 col-sm-10">
 			<div class="panel panel-primary ">
 				<div class="panel-body">
-					<form:form method="get" action="load" commandName="employeeDto"
+					<form:form method="get" action="fetch" commandName="monthlyAttendanceDto"
 						cssClass="form-horizontal">
 						<div class="form-group">
 							<label for="employeeId" class="col-sm-2 control-label">Employee
 								Id </label>
 							<div class="col-sm-3">
-								<form:select path="id" id="employeeNumber"
+								<form:select path="id" id="employeeId"
 									cssClass="form-control">
 									<form:option label="-- Select Employee Id --" value="-1" />
-									<form:options items="${list}" itemLabel="employeeNumber"
-										itemValue="employeeNumber" />
+									<form:options items="${list}" itemLabel="id"
+										itemValue="id" />
 								</form:select>
 							</div>
 							<%-- <label for="employeeId" class="col-sm-2 control-label">Employee
@@ -56,19 +56,19 @@
 						<table id="loadTable" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th class="text-center">Employee Type</th>
-									<th class="text-center">Emp NO</th>
-									<th class="text-center">Name</th>
-									<th class="text-center">Email</th>
-									<th class="text-center">Date Of Birth</th>
-									<th class="text-center">Qualififaction</th>
+								    <th class="text-center">Employee Id </th>
+								     <th class="text-center">Employee Name </th>
+									<th class="text-center">Month</th>
+									<th class="text-center">Prasent</th>
+									<th class="text-center">Absent</th>
+									<th class="text-center">Late</th>
 									<th></th>
 									<th></th>
 									<th></th>
 								</tr>
 							</thead>
 							<tbody id="tbody">
-								<jsp:include page="search.jsp" />
+								<jsp:include page="fetch.jsp" />
 							</tbody>
 						</table>
 					</form:form>

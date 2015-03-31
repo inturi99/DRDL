@@ -76,7 +76,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Override
 	public Employee getEmploeeAttendance(Integer id) {
-		return (Employee) sessionFactory.getCurrentSession().createQuery("FROM Employee as e LEFT JOIN FETCH  e.MonthlyAttendance WHERE e.id="+id).uniqueResult();
+		return (Employee) sessionFactory.getCurrentSession().createQuery("from Employee where id=:id").setParameter("id", id).uniqueResult();
 	}
 	
 
