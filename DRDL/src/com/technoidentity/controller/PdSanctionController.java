@@ -2,16 +2,20 @@ package com.technoidentity.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.technoidentity.dto.PdSanctionDto;
 import com.technoidentity.service.PdSanctionService;
@@ -58,12 +62,25 @@ public class PdSanctionController {
 		
 		return "redirect:/pdList";
 	}
-	
-
 	@RequestMapping("/pdList")
 	public String listPdSanction(Map<String, Object> map) {
 		map.put("pdList", pdSanctionService.listPdSanction());
 		return "pdsanctionlist";
+	}
+	
+	@RequestMapping(value="/pdsanction",method=RequestMethod.GET)
+	public ModelAndView loadPdsanctionPropCode(Map<String, Object> map,HttpServletRequest request){
+		map.put("pdlist", pdSanctionService.listPdSanction());
+		map.put("pdSanctionDto", new PdSanctionDto());
+		return new ModelAndView("/pdsanctionreportlist");
+	}
+	
+	
+	@RequestMapping(value="/pdsanction/{propcode}",method=RequestMethod.GET)
+	public ModelAndView loadPdsanctionPropCode(@PathVariable("propcode") String propcode,ModelMap model){
+	model.put("pdsanction", pdSanctionService.findByPropCode(propcode));
+	model.put("pdlist", pdSanctionService.listPdSanction());
+	return new ModelAndView("/fetchpdsanction",model);
 	}
 
 }

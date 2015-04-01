@@ -97,7 +97,7 @@
 							<div class="col-sm-4">
 								<form:select path="employeeId" cssClass="form-control">
 									<form:option label="-- Select Employee Id --" value="-1" />
-									<form:options items="${list}" itemLabel="employeeNumber"
+									<form:options items="${jclist}" itemLabel="employeeNumber"
 										itemValue="id" />
 								</form:select>
 							</div>

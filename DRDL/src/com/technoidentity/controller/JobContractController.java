@@ -30,7 +30,7 @@ private EmployeeService employeeService;
 private ProjectManagerService projectManagerService;
 @RequestMapping(value = "/addJobContract", method = RequestMethod.GET)
 public String loadJobContract(Map<String, Object> map,HttpServletRequest request) {
-	map.put("list", employeeService.listEmployees());
+	map.put("jclist", employeeService.listContractEmployee());
 	map.put("pmlist",projectManagerService.listProjectManagers());
 	map.put("jobContractDto", new JobContractDto());
 	return "jobcontract";
@@ -56,7 +56,7 @@ public String deleteEmployee(@PathVariable("jobcontratId") Integer jobcontratId)
 public String getJobContractId(
 		@RequestParam(value = "id", required = true) String id, Model model) {
 	model.addAttribute("jobContractDto", jobContractService.getJobContractId(id));
-	model.addAttribute("list", employeeService.listEmployees());
+	model.addAttribute("jclist", employeeService.listContractEmployee());
 	model.addAttribute("pmlist",projectManagerService.listProjectManagers());
 	return "editjobcontract";
 }
@@ -67,7 +67,7 @@ public String upJobContract(@ModelAttribute("jobContractDto") JobContractDto job
 	jobContractDto.setId(id);
 	jobContractService.updateJobContract(jobContractDto);
 	model.addAttribute("id",id);
-	model.addAttribute("list", employeeService.listEmployees());
+	model.addAttribute("jclist", employeeService.listContractEmployee());
 	model.addAttribute("pmlist",projectManagerService.listProjectManagers());
 	return "redirect:/jcList";
 }

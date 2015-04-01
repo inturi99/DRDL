@@ -95,6 +95,36 @@ PdSanction pdSanction=pdSanctionDao.getId(new Integer(id));
 						return pdSanctionDto;
 		}
 
+	@Transactional(readOnly=false)
+	public List<PdSanctionDto> findByPropCode(String propcode) {
+		List<PdSanctionDto> pdSanctionDtoList = new ArrayList<PdSanctionDto>();
+		try{
+		List<PdSanction> pdSanctionList = pdSanctionDao.findByPropCode(propcode);
+		for (PdSanction pdSanction : pdSanctionList) {
+			PdSanctionDto pdSanctionDto = new PdSanctionDto();
+			pdSanctionDto.setId(pdSanction.getId().toString());
+			pdSanctionDto.setPropcode(pdSanction.getPropcode());
+			pdSanctionDto.setNatureofjob(pdSanction.getNatureofjob());
+			pdSanctionDto.setAmount(pdSanction.getAmount());
+			pdSanctionDto.setDemandingofficer(pdSanction
+					.getDemandingofficer());
+			pdSanctionDto.setSanctioncode(pdSanction.getSanctioncode());
+
+			pdSanctionDto.setDate(pdSanction.getDate());
+			pdSanctionDto.setPddecision(pdSanction.getPddecision());
+			pdSanctionDto.setRemarks(pdSanction.getRemarks());
+
+			pdSanctionDto.setDescription(pdSanction.getDescription());
+
+			pdSanctionDtoList.add(pdSanctionDto);
+		}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		return pdSanctionDtoList;
+	}
+
 	}
 
 

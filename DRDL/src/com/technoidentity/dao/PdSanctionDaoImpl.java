@@ -37,5 +37,12 @@ public class PdSanctionDaoImpl implements PdSanctionDao {
 			return pdSanction;
 				
 	}
+
+	@Override
+	public List<PdSanction> findByPropCode(String propcode) {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery("from PdSanction where propcode =:propcode").setParameter("propcode", propcode).list();
+		
+	}
 	}
 

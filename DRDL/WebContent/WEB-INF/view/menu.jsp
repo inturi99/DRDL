@@ -17,7 +17,7 @@
 			 <a href="#" class="dropdown-toggle" data-toggle="dropdown">JOB CONTRACT PROPOSALS</a>
              <ul class="dropdown-menu">
                <li><a tabindex="-1" href="jcList">NON SALARY TYPE </a></li>
-               <li><a tabindex="-1" href="list">SALARY TYPE </a></li>
+               <li><a tabindex="-1" href="fetch">SALARY TYPE </a></li>
              </ul>
 			</li>
 		</ul>
