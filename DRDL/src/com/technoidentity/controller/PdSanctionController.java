@@ -3,6 +3,7 @@ package com.technoidentity.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.technoidentity.dto.PdSanctionDto;
+import com.technoidentity.service.PdSanctionDownloadServiceImpl;
+import com.technoidentity.service.PdSanctionReportServiceImpl;
 import com.technoidentity.service.PdSanctionService;
 import com.technoidentity.service.SoClearenceService;
 
@@ -27,7 +30,8 @@ public class PdSanctionController {
 	private PdSanctionService pdSanctionService;
 	@Autowired
 	private SoClearenceService soClearenceService;
-
+    @Autowired
+    private PdSanctionDownloadServiceImpl pdSanctionDownloadServiceImpl;
 	@RequestMapping(value = "/addPdSanction", method = RequestMethod.GET)
 	public String loadSoCleance(Map<String, Object> map) {
 		map.put("pdSanctionDto", new PdSanctionDto());
@@ -81,6 +85,12 @@ public class PdSanctionController {
 	model.put("pdsanction", pdSanctionService.findByPropCode(propcode));
 	model.put("pdlist", pdSanctionService.listPdSanction());
 	return new ModelAndView("/fetchpdsanction",model);
+	}
+	@RequestMapping(value = "/report/pdsanction/{id}", method = RequestMethod.GET)
+	public String downloadpdsanction(
+			@PathVariable("id") String id,HttpServletResponse response, Model model){
+		model.addAttribute("id",pdSanctionDownloadServiceImpl.download(response, id));
+	return "home";	
 	}
 
 }
