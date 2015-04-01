@@ -22,7 +22,7 @@ public class SoClearenceDaoImpl implements SoClearenceDao {
 	@Override
 	public void editSoClearence(SoClearence soClearence) {
 		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().save(soClearence);
+		sessionFactory.getCurrentSession().update(soClearence);
 	}
 
 	public List<SoClearence> listSoClearence() {

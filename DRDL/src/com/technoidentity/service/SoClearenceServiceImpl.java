@@ -27,7 +27,7 @@ public class SoClearenceServiceImpl implements SoClearenceService {
 
 	@Transactional
 	public void editSoClearence(SoClearenceDto soClearenceDto) {
-		SoClearence soClearence = new SoClearence();
+		SoClearence soClearence = soClearenceDao.getId(new Integer(soClearenceDto.getId()));
 		soClearence.setPropcode(soClearenceDto.getPropcode());
 		soClearence.setDemandingofficer(soClearenceDto.getDemandingofficer());
 		soClearence.setNatureofjob(soClearenceDto.getNatureofjob());

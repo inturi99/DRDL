@@ -34,7 +34,7 @@ public class PdSanctionServiceImpl implements PdSanctionService {
 
 	@Transactional
 	public void editPdSanction(PdSanctionDto pdSanctionDto) {
-		PdSanction pdSanction = new PdSanction();
+		PdSanction pdSanction =pdSanctionDao.getId(new Integer(pdSanctionDto.getId()));
 		pdSanction.setPropcode(pdSanctionDto.getPropcode());
 		pdSanction.setNatureofjob(pdSanctionDto.getNatureofjob());
 		pdSanction.setAmount(pdSanctionDto.getAmount());

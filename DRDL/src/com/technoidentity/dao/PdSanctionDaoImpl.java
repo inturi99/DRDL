@@ -22,7 +22,7 @@ public class PdSanctionDaoImpl implements PdSanctionDao {
 	@Override
 	public void editPdSanction(PdSanction pdSanction) {
 		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().save(pdSanction);
+		sessionFactory.getCurrentSession().update(pdSanction);
 	}
 
 	public List<PdSanction> listPdSanction() {
