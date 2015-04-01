@@ -45,7 +45,7 @@
 				data-toggle="dropdown" href="#">REPORTS<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="#">JOB CONTRACT </a></li>
-					<li><a href="#">STATUS REPORT</a></li>
+					<li><a href="pdsanction">STATUS REPORT</a></li>
 					<li><a href="#">SELECT PROJECT</a></li>
 					<li><a href="#">SALARY FULL LIST </a></li>					
 				</ul></li>

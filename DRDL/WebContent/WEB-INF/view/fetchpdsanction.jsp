@@ -10,7 +10,7 @@
                 <td align="center">${pdsanctionDto.demandingofficer}</td>
                    <td align="center"> <fmt:formatDate value="${pdsanctionDto.date}" pattern="dd/MM/yyyy"/></td>
                      <td align="center">${pdsanctionDto.pddecision} </td>
-					  <td align="center"><a href="dowanload/${employeeDto.id}"><span class="glyphicon glyphicon-download"></span></a></td>
+					  <td align="center"><a href="report/pdsanction/${pdsanctionDto.id}"><span class="glyphicon glyphicon-download"></span></a></td>
 					</tr>
 				</core:forEach>
 
