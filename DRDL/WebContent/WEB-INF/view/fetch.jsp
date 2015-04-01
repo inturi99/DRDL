@@ -10,24 +10,20 @@
 </core:forEach>
 <td align="center">Month</td>
 <td align="center">Days Present</td>
-<td align="center">Salary</td>
+<td align="center">Basic Salary</td>
+<!-- <td align="center">Increment Date</td>
+<td align="center">Increment</td> -->
 <core:forEach items="${attendence}" var="attendenctDto">
-	<tr>
+<%-- <core:forEach items="${increments}" var="incrementsDto">
+ --%>	<tr>
 		<td align="center"><fmt:formatDate value="${attendenctDto.date}"
 				pattern="MMM/yyyy" /></td>
 		<td align="center">${attendenctDto.prasent}</td>
 		<td align="center">${attendenctDto.salary}</td>
-		<td align="center"><fmt:formatDate value="${attendenctDto.dateIncr}"
-				pattern="dd/MM/yyyy" /></td>
-		<td align="center">${attendenctDto.increment}</td>
-		</tr>
-</core:forEach>
-<td align="center">Employee</td>
-<core:forEach items="${increments}" var="incrementsDto">
-	<tr>
-		<td align="center"><fmt:formatDate value="${incrementsDto.dateIncr}"
+		<%-- <td align="center"><fmt:formatDate value="${incrementsDto.dateIncr}"
 				pattern="dd/MM/yyyy" /></td>
 		<td align="center">${incrementsDto.increment}</td>
-		</tr>
+	 --%>	</tr>
 </core:forEach>
-
+<%-- </core:forEach>
+ --%>

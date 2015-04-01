@@ -130,9 +130,25 @@ public class EmployeeController {
 	public ModelAndView fetchByEmployeeId(@PathVariable("employeeId") String employeeId,ModelMap model){
 	model.put("employees", employeeService.getEmploeeAttendance(employeeId));
 	model.put("attendence", monthlyAttendanceService.getEmployeeByEmployeeId(employeeId));
-	model.put("increments", incrementsService.findByEmployeeId(employeeId));
+	//model.put("increments", incrementsService.findByEmployeeId(employeeId));
 	return new ModelAndView("/fetch",model);
 	}
+	
+	@RequestMapping(value="/increments",method=RequestMethod.GET)
+	public ModelAndView fetchByEmployeeIncrements(Map<String, Object> map,HttpServletRequest request){
+		map.put("list", employeeService.listEmployees());	
+		map.put("employeeDto", new EmployeeDto());
+		return new ModelAndView("/incrementslist");
+	}
+	
+	@RequestMapping(value="/increments/{employeeId}",method=RequestMethod.GET)
+	public ModelAndView fetchByEmployeeIncrements(@PathVariable("employeeId") String employeeId,ModelMap model){
+	model.put("employees", employeeService.getEmploeeAttendance(employeeId));
+	model.put("increments", incrementsService.findByEmployeeId(employeeId));
+	return new ModelAndView("/fetchincremetns",model);
+	}
+	
+	
 	@RequestMapping(value="/load/{employeeNumber}/{name}",method=RequestMethod.GET)
 	public ModelAndView loadByemployeeNumberandName(@PathVariable("employeeNumber") String employeeNumber,@PathVariable("name") String name,ModelMap model){
 	model.put("employees", employeeService.find(employeeNumber, name));

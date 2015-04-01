@@ -53,6 +53,10 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 				</value>
 				<value>com.technoidentity.model.Increments
 				</value>
+				<value>com.technoidentity.model.SoClearence
+				</value>
+				<value>com.technoidentity.model.PdSanction
+				</value>
 				</list>
 		</property>
 		<property name="hibernateProperties">

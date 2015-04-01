@@ -32,6 +32,6 @@ public String loadIncrement(Map<String, Object> map,HttpServletRequest request) 
 @RequestMapping(value="/addIncrement",method=RequestMethod.POST)
 public String addAttendance(@ModelAttribute("incrementsDto") @Valid IncrementsDto incrementsDto,BindingResult result){
 	incrementsService.addIncrement(incrementsDto);
-	return "redirect:/list";
+	return "redirect:/increments";
 }
 }

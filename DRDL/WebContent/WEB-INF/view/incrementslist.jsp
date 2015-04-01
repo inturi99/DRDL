@@ -7,7 +7,7 @@
 			var employeeNumber = $('#employeeNumber').val();
 			$.ajax({
 				type : 'GET',
-				url : "/DRDL/fetch/" + "/" + employeeNumber,
+				url : "/DRDL/increments/" + "/" + employeeNumber,
 				success : function loadTable(response) {
 					$("#tbody").html(response);
 
@@ -26,7 +26,7 @@
 		<div class="col-sm-offset-1 col-sm-10">
 			<div class="panel panel-primary ">
 				<div class="panel-body">
-					<form:form method="get" action="fetch" commandName="employeeDto"
+					<form:form method="get" action="increments" commandName="employeeDto"
 						cssClass="form-horizontal">
 						<div class="form-group">
 							<label for="employeeId" class="col-sm-2 control-label">Employee
@@ -52,6 +52,9 @@
 							 --%>
 							 <button type="button" class="btn btn-primary" id="button">Search</button>
 						</div>
+						<div > <a href="addIncrement" class="btn btn-primary">
+                                  <span class="glyphicon glyphicon-plus"></span>
+                                         Add Increment</a></div>
 						<div id="info"></div>
 						<table id="loadTable" class="table table-striped table-bordered">
 							<thead>
@@ -60,7 +63,7 @@
 								</tr>
 							</thead>
 							<tbody id="tbody">
-								<jsp:include page="fetch.jsp" />
+								<jsp:include page="fetchincremetns.jsp" />
 							</tbody>
 						</table>
 					</form:form>

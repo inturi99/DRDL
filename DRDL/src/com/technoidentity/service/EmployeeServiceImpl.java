@@ -516,7 +516,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();
 		try {
 			List<Employee> employeeList = employeeDao.getEmployeeByEmployeeId(new Integer(employeeId));
-			List<MonthlyAttendance> monthlyAttendenceList = monthlyAttendanceDao.getEmployeeByEmployeeId(new Integer(employeeId));
+			//List<MonthlyAttendance> monthlyAttendenceList = monthlyAttendanceDao.getEmployeeByEmployeeId(new Integer(employeeId));
 			
 			for (Employee employee : employeeList) {
 				EmployeeDto employeeDto = new EmployeeDto();
@@ -530,7 +530,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				employeeDto.setLab(employee.getLab());
 				employeeDto.setDob(employee.getDob());
 				employeeDto.setIdcardno(employee.getIdcardno());
-				// employeeDto.setMonthlyAttendanceDto(monthlyAttendanceService.getEmployeeByEmployeeId(employeeId));
+			//	employeeDto.setMonthlyAttendanceDto((monthlyAttendenceList).getEmployeeByEmployeeId(new Integer(employeeId)));
 				employeeDtoList.add(employeeDto);
 			}
 		} catch (Exception e) {
