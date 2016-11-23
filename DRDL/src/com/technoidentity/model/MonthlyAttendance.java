@@ -20,7 +20,7 @@ public class MonthlyAttendance {
 	@GeneratedValue
 	@Column(name = "id")
 	private Integer id;
-	@Column(name="date")
+	@Column(name="date1")
 	private Date date;
 	@Column(name="prasent")
 	private Integer prasent;

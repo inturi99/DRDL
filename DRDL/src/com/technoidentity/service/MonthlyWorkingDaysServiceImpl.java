@@ -12,6 +12,7 @@ import com.technoidentity.model.MonthlyWorkingDays;
 public class MonthlyWorkingDaysServiceImpl implements MonthlyWorkingDaysService {
 	@Autowired
 	public MonthlyWorkingDaysDao monthlyWorkingDaysDao;
+	@Override
 	@Transactional
 	public void saveMonthlyworkingdays(MonthlyWorkingDaysDto monthlyWorkingDaysDto)
 	    {

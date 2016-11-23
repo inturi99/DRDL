@@ -13,6 +13,7 @@ public class SoClearenceServiceImpl implements SoClearenceService {
 	@Autowired
 	private SoClearenceDao soClearenceDao;
 
+	@Override
 	@Transactional
 	public void addSoClearence(SoClearenceDto soClearenceDto) {
 		SoClearence soClearence = new SoClearence();
@@ -25,6 +26,7 @@ public class SoClearenceServiceImpl implements SoClearenceService {
 		soClearenceDao.addSoClearence(soClearence);
 	}
 
+	@Override
 	@Transactional
 	public void editSoClearence(SoClearenceDto soClearenceDto) {
 		SoClearence soClearence = soClearenceDao.getId(new Integer(soClearenceDto.getId()));
@@ -37,6 +39,7 @@ public class SoClearenceServiceImpl implements SoClearenceService {
 		soClearenceDao.editSoClearence(soClearence);
 	}
 
+	@Override
 	@Transactional
 	public List<SoClearenceDto> listSoClearence() {
 		List<SoClearenceDto> soClearenceDtoList = new ArrayList<SoClearenceDto>();
@@ -61,6 +64,7 @@ public class SoClearenceServiceImpl implements SoClearenceService {
 		return soClearenceDtoList;
 	}
 
+	@Override
 	@Transactional
 	public SoClearenceDto getId(String id) {
 			SoClearence soClearence=soClearenceDao.getId(new Integer(id));
@@ -75,6 +79,7 @@ public class SoClearenceServiceImpl implements SoClearenceService {
 						return soClearenceDto;
 		}
 
+	@Override
 	@Transactional(readOnly = false)
 	public List<SoClearenceDto> listSoClearenceOfficer() {
 		List<SoClearenceDto> soClearenceDtoList = new ArrayList<SoClearenceDto>();

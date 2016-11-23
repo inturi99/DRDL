@@ -38,7 +38,7 @@ public class PdSanctionDownloadServiceImpl {
 			 
 			// 2.  Retrieve template
 			//FileInputStream filereportStream = new FileInputStream(new File(TEMPLATE));
-		     InputStream reportStream = (InputStream) this.getClass().getResourceAsStream(TEMPLATE); 
+		     InputStream reportStream = this.getClass().getResourceAsStream(TEMPLATE); 
 			
 			
 			// 3. Convert template to JasperDesign
@@ -55,7 +55,7 @@ public class PdSanctionDownloadServiceImpl {
 			 
 			// 6. Create an output byte stream where data will be written
 			FileInputStream inStream = new FileInputStream(outPdf);
-			InputStream outrtStream = (InputStream)inStream;
+			InputStream outrtStream = inStream;
 			// 7. Export report
 			response=write(response,outrtStream);
 			 

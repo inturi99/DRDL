@@ -16,6 +16,7 @@ public class VendorServiceImpl implements VendorService {
 	@Autowired
 	private VendorDao vendorDao;
 
+	@Override
 	@Transactional
 	public void addVendor(VendorDto vendorDto) {
 		try{
@@ -35,6 +36,7 @@ public class VendorServiceImpl implements VendorService {
 		}
 	}
 
+	@Override
 	@Transactional
 	public void updateVendor(VendorDto vendorDto) {
 		try{
@@ -50,6 +52,7 @@ public class VendorServiceImpl implements VendorService {
 		}
 	}
 
+	@Override
 	@Transactional
 	public VendorDto getVendorId(String id) {
 		Vendor vendor = vendorDao.getVendorId(new Integer(id));
@@ -63,6 +66,7 @@ public class VendorServiceImpl implements VendorService {
 		return vendorDto;
 	}
 
+	@Override
 	@Transactional
 	public List<VendorDto> listVendors() {
 		List<VendorDto> vendorDtoList = new ArrayList<VendorDto>();
@@ -85,6 +89,7 @@ public class VendorServiceImpl implements VendorService {
 
 	}
 
+	@Override
 	@Transactional
 	public void removeVendor(Integer id) {
 		// TODO Auto-generated method stub

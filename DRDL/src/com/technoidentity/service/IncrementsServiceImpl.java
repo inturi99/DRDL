@@ -20,6 +20,7 @@ public class IncrementsServiceImpl implements IncrementsService {
 	@Autowired
 	public EmployeeDao employeeDao;
 
+	@Override
 	@Transactional
 	public void addIncrement(IncrementsDto incrementsDto) {
 		// TODO Auto-generated method stub
@@ -34,6 +35,7 @@ public class IncrementsServiceImpl implements IncrementsService {
 		
 	}
 
+	@Override
 	@Transactional(readOnly=false)
 	public List<IncrementsDto> findByEmployeeId(String employeeId) {
 		List<IncrementsDto> incrementsDtoList = new ArrayList<IncrementsDto>();
@@ -41,7 +43,7 @@ public class IncrementsServiceImpl implements IncrementsService {
 			List<Increments> incrementsList =incrementsDao.findByEmployeeId(new Integer(employeeId));
 					for(Increments increments:incrementsList){
 						IncrementsDto incrementsDto=new IncrementsDto();
-						Employee employee =(Employee) employeeDao.getEmployeeId(new Integer(employeeId));
+						Employee employee =employeeDao.getEmployeeId(new Integer(employeeId));
 						incrementsDto.setEmployeeId(employee.getId().toString());
 						incrementsDto.setDateIncr(increments.getDateIncr());
 						incrementsDto.setIncrement(increments.getIncrement());

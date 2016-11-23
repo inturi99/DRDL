@@ -25,6 +25,7 @@ public class PdSanctionDaoImpl implements PdSanctionDao {
 		sessionFactory.getCurrentSession().update(pdSanction);
 	}
 
+	@Override
 	public List<PdSanction> listPdSanction() {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession()

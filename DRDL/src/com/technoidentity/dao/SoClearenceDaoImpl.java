@@ -25,6 +25,7 @@ public class SoClearenceDaoImpl implements SoClearenceDao {
 		sessionFactory.getCurrentSession().update(soClearence);
 	}
 
+	@Override
 	public List<SoClearence> listSoClearence() {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession()

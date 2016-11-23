@@ -23,6 +23,7 @@ public class JobContractServiceImpl implements JobContractService {
      @Autowired
      private ProjectManagerDao projectManagerDao;
 
+	@Override
 	@Transactional
 	public void addJobContract(JobContractDto jobContractDto) {
 		Employee employee=employeeDao.getEmployeeId(new Integer(jobContractDto.getEmployeeId()));     
@@ -41,6 +42,7 @@ public class JobContractServiceImpl implements JobContractService {
 		jobContractDao.addJobContract(jobContract);
 	}
 
+	@Override
 	@Transactional
 	public void updateJobContract(JobContractDto jobContractDto) {
 		Employee employee=employeeDao.getEmployeeId(new Integer(jobContractDto.getEmployeeId()));     
@@ -60,6 +62,7 @@ public class JobContractServiceImpl implements JobContractService {
 		
 	}
 
+	@Override
 	@Transactional
 	public JobContractDto getJobContractId(String id) {
 		JobContractDto jobContractDto=new JobContractDto();
@@ -82,6 +85,7 @@ public class JobContractServiceImpl implements JobContractService {
 		return jobContractDto;
 	}
 
+	@Override
 	@Transactional
 	public List<JobContractDto> listJobContracts() {
 		List<JobContractDto> jobContractDtoList=new ArrayList<JobContractDto>();
@@ -104,6 +108,7 @@ public class JobContractServiceImpl implements JobContractService {
 		return jobContractDtoList;
 	}
 
+	@Override
 	@Transactional
 	public void removeJobContractEmloyee(Integer id) {
 		jobContractDao.removeJobContractEmploye(id);

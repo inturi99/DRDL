@@ -19,6 +19,7 @@ public class MonthlyAttendanceServiceImpl implements MonthlyAttendanceService {
 	public MonthlyAttendanceDao monthlyAttendanceDao;
 	@Autowired
 	public EmployeeDao employeeDao;
+	@Override
 	@Transactional(readOnly=false)
 	public void addAttendence(MonthlyAttendanceDto monthlyAttendanceDto) {
 		try {
@@ -39,6 +40,7 @@ public class MonthlyAttendanceServiceImpl implements MonthlyAttendanceService {
 		}
 	}
 
+	@Override
 	@Transactional(readOnly=false)
 	public List<MonthlyAttendanceDto> getEmployeeByEmployeeId(String employeeId) {
 		List<MonthlyAttendanceDto> monthlyAttendanceDtoList = new ArrayList<MonthlyAttendanceDto>();
@@ -49,7 +51,7 @@ public class MonthlyAttendanceServiceImpl implements MonthlyAttendanceService {
 			
 			for (MonthlyAttendance monthlyAttendance : monthlyAttendanceList) {
 				MonthlyAttendanceDto monthlyAttendanceDto = new MonthlyAttendanceDto();
-				Employee employee =(Employee) employeeDao.getEmployeeId(new Integer(employeeId));
+				Employee employee =employeeDao.getEmployeeId(new Integer(employeeId));
 				
 				monthlyAttendanceDto.setEmployeeId(employee.getId().toString());
 				monthlyAttendanceDto.setEmployeeName(employee.getName());

@@ -21,6 +21,7 @@ public class SalaryTypeServiceImpl implements SalaryTypeService {
 	@Autowired
 	private IncrementsDao incrementsDao;
 
+	@Override
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
 	public List<SalaryTypeDto> findBySalaryType(String employeeNumber,
 			String name) {

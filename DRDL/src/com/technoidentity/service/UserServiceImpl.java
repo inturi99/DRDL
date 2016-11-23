@@ -12,18 +12,21 @@ import com.technoidentity.model.User;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
+	@Override
 	@Transactional
 	public void addUser(User user) {
 		// TODO Auto-generated method stub
 		userDao.addUser(user);;
 		
 	}
+	@Override
 	@Transactional
 	public List<User> validateLoginUser(String name, String password) {
 		// TODO Auto-generated method stub
 		return userDao.validateLoginUser(name, password);
 	}
 
+	@Override
 	@Transactional
 	public List<User> getUserByUser(String name) {
 		// TODO Auto-generated method stub

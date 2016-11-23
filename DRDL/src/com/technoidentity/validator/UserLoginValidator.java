@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 
-import com.technoidentity.model.ProjectManager;
 import com.technoidentity.model.User;
-import com.technoidentity.service.ProjectManagerService;
 import com.technoidentity.service.UserService;
 
 

@@ -16,6 +16,7 @@ public class PdSanctionServiceImpl implements PdSanctionService {
 	@Autowired
 	private PdSanctionDao pdSanctionDao;
 
+	@Override
 	@Transactional
 	public void addPdSanction(PdSanctionDto pdSanctionDto) {
 		PdSanction pdSanction = new PdSanction();
@@ -32,6 +33,7 @@ public class PdSanctionServiceImpl implements PdSanctionService {
 		pdSanctionDao.addPdSanction(pdSanction);
 	}
 
+	@Override
 	@Transactional
 	public void editPdSanction(PdSanctionDto pdSanctionDto) {
 		PdSanction pdSanction =pdSanctionDao.getId(new Integer(pdSanctionDto.getId()));
@@ -47,6 +49,7 @@ public class PdSanctionServiceImpl implements PdSanctionService {
 		pdSanctionDao.editPdSanction(pdSanction);
 	}
 
+	@Override
 	@Transactional
 	public List<PdSanctionDto> listPdSanction(){
 		List<PdSanctionDto> pdSanctionDtoList = new ArrayList<PdSanctionDto>();
@@ -77,6 +80,7 @@ public class PdSanctionServiceImpl implements PdSanctionService {
 		return pdSanctionDtoList;
 	}
 
+	@Override
 	@Transactional
 	public PdSanctionDto getId(String id) {
 PdSanction pdSanction=pdSanctionDao.getId(new Integer(id));
@@ -95,6 +99,7 @@ PdSanction pdSanction=pdSanctionDao.getId(new Integer(id));
 						return pdSanctionDto;
 		}
 
+	@Override
 	@Transactional(readOnly=false)
 	public List<PdSanctionDto> findByPropCode(String propcode) {
 		List<PdSanctionDto> pdSanctionDtoList = new ArrayList<PdSanctionDto>();

@@ -16,7 +16,6 @@ import com.technoidentity.dao.EmployeeDao;
 import com.technoidentity.dao.MonthlyAttendanceDao;
 import com.technoidentity.dto.EmployeeDto;
 import com.technoidentity.model.Employee;
-import com.technoidentity.model.MonthlyAttendance;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -25,6 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	public MonthlyAttendanceDao monthlyAttendanceDao;
 	
+	@Override
 	@Transactional(readOnly=false, propagation=Propagation.REQUIRED)
 	public void addEmployee(EmployeeDto employeeDto) {
 		try {
@@ -81,6 +81,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 	}
 
+	@Override
 	@Transactional
 	public void updateEmpolyee(EmployeeDto employeeDto) {
 		try {
@@ -143,6 +144,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
+	@Override
 	@Transactional
 	public List<EmployeeDto> listEmployees() {
 		// TODO Auto-generated method stub
@@ -206,12 +208,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDtoList;
 	}
 
+	@Override
 	@Transactional
 	public void removeEmloyee(Integer id) {
 		// TODO Auto-generated method stub
 		employeeDao.removeEmploye(id);
 	}
 
+	@Override
 	@Transactional
 	public EmployeeDto getEmployeeId(String id) {
 		EmployeeDto employeeDto = new EmployeeDto();
@@ -271,6 +275,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
+	@Override
 	@Transactional
 	public List<EmployeeDto> findByFirstName(String name) {
 		// TODO Auto-generated method stub
@@ -390,6 +395,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		return employeeDtoList;
 	}
+	@Override
 	@Transactional
 	public List<EmployeeDto> listContractEmployee() {
 		// TODO Auto-generated method stub
@@ -452,6 +458,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				}
 				return employeeDtoList;
 		}
+	@Override
 	@Transactional
 	public List<EmployeeDto> find(String employeeNumber, String name) {
 		List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();
@@ -511,6 +518,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDtoList;
 	}
 
+	@Override
 	@Transactional(readOnly=false)
 	public List<EmployeeDto> getEmploeeAttendance(String employeeId) {
 		List<EmployeeDto> employeeDtoList = new ArrayList<EmployeeDto>();

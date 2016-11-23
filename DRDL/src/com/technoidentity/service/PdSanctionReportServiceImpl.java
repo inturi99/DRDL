@@ -21,6 +21,7 @@ public class PdSanctionReportServiceImpl implements PdSanctionReportService {
 	private PdSanctionDao pdSanctionDao;
 	List<PdSanctionDto> pdSanctionDtoList;
 
+	@Override
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
 	public JRDataSource getPdSanctionId(String id) {
 		pdSanctionDtoList = new ArrayList<PdSanctionDto>();
@@ -50,6 +51,7 @@ public class PdSanctionReportServiceImpl implements PdSanctionReportService {
 
 	}
 
+	@Override
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
 	public JRDataSource getDataSource() {
 		try {
